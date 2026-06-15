@@ -14,3 +14,5 @@ openai>=1.40
 python-dotenv
 pyyaml
 pytest
+pyroomacoustics
+fast_mp3_augment
