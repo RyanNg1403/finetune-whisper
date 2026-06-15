@@ -63,7 +63,8 @@ Concise map of every file and its purpose. Kept under 100 lines. `[planned]` = n
 ## research/ (experimental notes)
 | File | Purpose |
 |------|---------|
-| `2026-06-15-hard-terms-candidates.md` | Shortlist of ASR-hard terms (Qwen, Groq, Aider…) for a future sharper before/after. |
+| `2026-06-15-hard-terms-v2-tech.md` | **Current** — 34+ tech-only hard terms, OOV + context-anchored homophones. |
+| `2026-06-15-hard-terms-candidates.md` | v1 (superseded) — first hard-term shortlist incl. human names. |
 
 ## results/ (deliverables)
 | File | Purpose |
