@@ -151,6 +151,7 @@ terms:
     alts: ["v l l m", "velm", "v llm"]
   - canonical: "Ollama"
     category: tool
+    spoken: "Oh-lama"      # Kokoro weakens the leading 'O'; this restores oh-LAH-mah
     alts: ["olama", "o llama", "oh llama"]
   - canonical: "Whisper"
     category: tool

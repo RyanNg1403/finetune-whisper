@@ -57,8 +57,11 @@ def main():
     ap.add_argument("--split", choices=["train", "val"], required=True)
     ap.add_argument("--estimate-only", action="store_true")
     ap.add_argument("--limit", type=int, default=None)
-    ap.add_argument("--no-qc", action="store_true", help="disable back-transcription QC")
-    ap.add_argument("--max-tries", type=int, default=2, help="QC retries (low: each retry is a paid call)")
+    # QC off by default: the QC judge can't read our domain jargon (false-drops good audio),
+    # and each OpenAI retry is a paid call. OpenAI pronounces terms well; spoken-form handles
+    # the rest. Opt in with --qc if ever needed.
+    ap.add_argument("--qc", action="store_true", help="enable per-clip back-transcription QC")
+    ap.add_argument("--max-tries", type=int, default=2, help="QC retries (each retry is a paid call)")
     args = ap.parse_args()
 
     out_dir, jobs = plan(args.split)
@@ -73,7 +76,7 @@ def main():
         return
 
     client = _client()
-    ref = None if args.no_qc else get_reference(config.QC_MODEL)
+    ref = get_reference(config.QC_MODEL) if args.qc else None
     out_dir.mkdir(parents=True, exist_ok=True)
     manifest = out_dir / "manifest_openai.jsonl"
     n = 0
