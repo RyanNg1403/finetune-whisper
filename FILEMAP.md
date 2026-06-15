@@ -33,7 +33,7 @@ Concise map of every file and its purpose. Kept under 100 lines. `[planned]` = n
 | `audio_io.py` | Save / load 16 kHz mono WAV (resample + downmix). |
 | `augment.py` | Train aug chain (noise/reverb/EQ/MP3) + deterministic seeded val chain. |
 | `synth_supertonic.py` | Render 70% of train + half of val_clean via local Supertonic ONNX TTS. CLI. |
-| `synth_openai.py` | `[planned]` Render 30% of train + half of val_clean via OpenAI TTS (paid, gated). |
+| `synth_openai.py` | Render 30% of train + half of val_clean via OpenAI TTS (paid, gated). CLI. |
 | `bake_val_aug.py` | `[planned]` Bake fixed-seed augmented val set from val_clean. |
 | `dataset.py` | `[planned]` Whisper ASR dataset + padding collator (on-the-fly train aug). |
 | `eval.py` | `[planned]` WER + term-recall over any model/manifest (baseline + finetuned). CLI. |
