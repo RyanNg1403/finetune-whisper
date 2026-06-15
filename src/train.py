@@ -61,7 +61,9 @@ def main():
         greater_is_better=False,
         logging_steps=25,
         report_to=[],
-        dataloader_num_workers=4,        # parallelize CPU audio aug so it doesn't starve MPS
+        # num_workers=0: macOS forked dataloader workers deadlock with the audio libs, and
+        # augmentation is cheap (~37 ms/clip) so serial loading in the main process is fine.
+        dataloader_num_workers=0,
         dataloader_pin_memory=False,
     )
     if args.smoke:   # minimal dry run: a few steps, no eval/save/best-model
