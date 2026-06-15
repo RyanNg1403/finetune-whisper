@@ -98,6 +98,28 @@ terms:
     spoken: "mini max"
     alts: ["mini max", "many max", "mini-max", "minimax m3"]
 
+  # --- added 2026-06-15 (verified June-trend pass: Codex + user) ---
+  - canonical: "Kiro"
+    category: product           # AWS agentic IDE (replaced Amazon Q Developer, 2026)
+    spoken: "kee-roh"
+    alts: ["kero", "kiro", "kilo", "hero", "key row", "cairo"]
+  - canonical: "LiteLLM"
+    category: tool              # BerriAI LLM gateway / proxy
+    spoken: "light L L M"
+    alts: ["light llm", "lite lm", "light lm", "little lm", "lite l l m"]
+  - canonical: "smolagents"
+    category: tool              # Hugging Face minimalist agents lib (lowercase brand)
+    spoken: "small agents"
+    alts: ["small agents", "smol agents", "smallagents", "smole agents"]
+  - canonical: "Manus"
+    category: product           # autonomous AI agent (Butterfly Effect / Monica.im)
+    spoken: "man-us"
+    alts: ["minus", "manus", "madness", "mannes", "man us"]
+  - canonical: "Claude Mythos 5"
+    category: model             # Anthropic restricted Mythos-class model (Jun 9 2026)
+    spoken: "Claude Mith-oss five"
+    alts: ["claude mythos", "cloud mythos", "claude mithos", "claude methos", "mythos five", "claude mythos 5"]
+
   # ============================================================
   # Group B — homophone / context-dependent (MUST be anchored)
   # Transcribe the tech spelling ONLY when anchors co-occur;
@@ -158,11 +180,44 @@ terms:
     anchors: ["app builder", "prompt", "full-stack", "deploy", "no-code"]
     everyday: "lovable (adjective)"
     alts: ["lovable", "loveable", "love a bull"]
-  - canonical: "Continue"
-    category: product           # VS Code AI extension — BORDERLINE (faded buzz; keep as cleanest negative-anchor)
-    anchors: ["VS Code", "extension", "autocomplete", "open source", "plugin"]
-    everyday: "continue (the verb)"
-    alts: ["continue", "contin you"]
+
+  # --- added 2026-06-15 (verified June-trend pass: Codex + user) ---
+  - canonical: "Antigravity"
+    category: product           # Google agentic dev platform (Antigravity 2.0, I/O 2026)
+    spoken: "anti gravity"
+    anchors: ["Google", "Gemini", "agentic coding", "IDE", "CLI", "SDK"]
+    everyday: "antigravity (the physics concept)"
+    alts: ["anti gravity", "anti-gravity", "antigravity", "entity gravity"]
+  - canonical: "OpenCode"
+    category: product           # terminal coding agent (opencode.ai) — proper-name caps (user call)
+    spoken: "open code"
+    anchors: ["terminal", "coding agent", "TUI", "CLI", "models"]
+    everyday: "open code / open-source code"
+    alts: ["open code", "opencode", "open-code", "open coat"]
+  - canonical: "Stagehand"
+    category: tool              # Browserbase AI browser-automation SDK
+    spoken: "stage hand"
+    anchors: ["Browserbase", "browser automation", "Playwright", "act", "extract", "observe"]
+    everyday: "stagehand (theater crew)"
+    alts: ["stage hand", "stagehand", "stage-hand", "staged hand"]
+  - canonical: "Comet"
+    category: product           # Perplexity AI browser (Chromium)
+    spoken: "comet"
+    anchors: ["Perplexity", "browser", "assistant", "Chromium", "tabs"]
+    everyday: "comet (astronomy) / comment"
+    alts: ["comet", "comment", "commet", "comit"]
+  - canonical: "Kilo Code"
+    category: product           # agentic coding tool (Roo fork; GA Apr 2026; confusable w/ Kiro)
+    spoken: "kilo code"
+    anchors: ["VS Code", "agentic coding", "MCP", "Roo", "extension", "CLI"]
+    everyday: "kilo code (literal)"
+    alts: ["kilo code", "key low code", "kilocode", "kilo-code", "kilo coat"]
+  - canonical: "Claude Fable 5"
+    category: model             # Anthropic's most capable public model (Jun 9 2026)
+    spoken: "Claude Fable five"
+    anchors: ["Anthropic", "Claude", "model", "Mythos", "release"]
+    everyday: "fable (a moral story)"
+    alts: ["claude fable", "cloud fable", "claude fabel", "claude foible", "fable five", "claude fable 5"]
 
 # ------------------------------------------------------------
 # DROPPED after the trending pass (faded as of June 2026):
