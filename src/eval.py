@@ -36,9 +36,10 @@ def evaluate(model_path, manifest_dir, device=None, batch_size=16):
         hyps.extend(proc.batch_decode(ids, skip_special_tokens=True))
         refs.extend(r["text"] for r in chunk)
     ts = load_terms()
-    tr = term_recall(refs, hyps, ts)
     return {"n": len(rows), "wer": compute_wer(refs, hyps),
-            "term_recall": tr, "refs": refs, "hyps": hyps}
+            "term_recall": term_recall(refs, hyps, ts),
+            "term_recall_strict": term_recall(refs, hyps, ts, strict=True),
+            "refs": refs, "hyps": hyps}
 
 
 def main():
@@ -48,7 +49,8 @@ def main():
     args = ap.parse_args()
     rep = evaluate(args.model, args.manifest_dir)
     print(json.dumps({"model": args.model, "n": rep["n"], "wer": round(rep["wer"], 4),
-                      "term_recall_overall": round(rep["term_recall"]["overall"], 4)}, indent=2))
+                      "term_recall_lenient": round(rep["term_recall"]["overall"], 4),
+                      "term_recall_strict": round(rep["term_recall_strict"]["overall"], 4)}, indent=2))
 
 
 if __name__ == "__main__":

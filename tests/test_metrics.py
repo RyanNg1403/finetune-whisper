@@ -24,6 +24,16 @@ def test_term_recall_hits_canonical():
     assert r_bad["overall"] == 1.0
 
 
+def test_term_recall_strict_requires_correct_spelling():
+    ts = load_terms()
+    refs = ["i tried claude opus today"]
+    hyps = ["i tried cloud opus today"]   # phonetic near-miss
+    # lenient: alt 'cloud opus' canonicalizes to claude opus -> hit
+    assert term_recall(refs, hyps, ts)["overall"] == 1.0
+    # strict: must spell it right -> miss
+    assert term_recall(refs, hyps, ts, strict=True)["overall"] == 0.0
+
+
 def test_term_recall_misses_unrelated():
     ts = load_terms()
     refs = ["i tried claude opus today"]
