@@ -31,6 +31,7 @@ def main():
     ap.add_argument("--batch-size", type=int, default=8)
     ap.add_argument("--grad-accum", type=int, default=2)
     ap.add_argument("--lr", type=float, default=1e-5)
+    ap.add_argument("--smoke", action="store_true", help="few-step dry run to validate the loop")
     args = ap.parse_args()
 
     proc = WhisperProcessor.from_pretrained(config.MODEL_ID)
@@ -60,7 +61,15 @@ def main():
         greater_is_better=False,
         logging_steps=25,
         report_to=[],
+        dataloader_num_workers=4,        # parallelize CPU audio aug so it doesn't starve MPS
+        dataloader_pin_memory=False,
     )
+    if args.smoke:   # minimal dry run: a few steps, no eval/save/best-model
+        targs.max_steps = 4
+        targs.num_train_epochs = 1
+        targs.eval_strategy = "no"
+        targs.save_strategy = "no"
+        targs.load_best_model_at_end = False
     trainer = Seq2SeqTrainer(
         model=model, args=targs, train_dataset=train_ds, eval_dataset=eval_ds,
         data_collator=collator, compute_metrics=build_compute_metrics(proc),
