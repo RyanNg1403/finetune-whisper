@@ -20,6 +20,7 @@ Concise map of every file and its purpose. Kept under 100 lines. `[planned]` = n
 | File | Purpose |
 |------|---------|
 | `terms.yaml` | 50 curated AI-dev terms: canonical spelling + category + spoken alts. |
+| `terms_hard.yaml` | 32 research-backed hard terms (Jun-2026 trending pass): Group A OOV + Group B context-anchored homophones (`anchors`/`everyday` fields). Not yet merged into the dataset. |
 | `corpus.jsonl` | 1047 authored sentences `{id,text,terms,split}` (963 train / 84 val). |
 | `audio/{train,val_clean,val_aug}/` | `[planned]` generated WAVs + per-engine manifests (gitignored). |
 
