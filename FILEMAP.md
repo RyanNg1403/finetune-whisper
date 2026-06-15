@@ -50,7 +50,18 @@ Concise map of every file and its purpose. Kept under 100 lines. `[planned]` = n
 | `test_build_corpus.py` | Coverage validation + disjoint split. |
 | `test_audio_io.py` | 16 kHz mono roundtrip + resample/downmix. |
 | `test_augment.py` | Train aug changes signal; seeded val aug is deterministic. |
+| `test_qc.py` | QC fuzzy term-intelligibility + regenerate helper. |
 | `test_dataset.py` / `test_eval.py` | `[planned]` dataset/collator + eval wiring. |
+
+## experiments/ (saved diagnostics, not pipeline)
+| File | Purpose |
+|------|---------|
+| `qc_viability.py` | Supertonic QC pass-rate measurement (82/85%). |
+| `kokoro_viability.py` | Kokoro QC pass-rate (90%) head-to-head. |
+| `term_audit.py` | One-time per-term Kokoro pronunciation audit across voices. |
+
+## kokoro_models/ (gitignored)
+Kokoro ONNX bulk-TTS engine: `kokoro-v1.0.onnx` + `voices-v1.0.bin`. Needs system `espeak-ng`.
 
 ## supertonic/ (gitignored, cloned)
 Local Supertonic-3 ONNX TTS engine. `py/helper.py` is imported by `synth_supertonic.py`;

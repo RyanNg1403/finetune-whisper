@@ -21,14 +21,17 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--split", choices=["train", "val"], required=True)
     ap.add_argument("--limit", type=int, default=None)
-    ap.add_argument("--no-qc", action="store_true", help="disable back-transcription QC")
+    # Kokoro is deterministic + pronunciation is controlled via spoken-form and validated by
+    # the one-time per-term audit, so per-clip QC is OFF by default (the QC judge can't read
+    # our domain jargon and would false-drop good audio). Opt in with --qc to re-enable.
+    ap.add_argument("--qc", action="store_true", help="enable per-clip back-transcription QC")
     ap.add_argument("--max-tries", type=int, default=3)
     args = ap.parse_args()
 
     from kokoro_onnx import Kokoro
     kok = Kokoro(str(config.KOKORO_ONNX), str(config.KOKORO_VOICES_BIN))
     ts = load_terms()
-    ref = None if args.no_qc else get_reference(config.QC_MODEL)
+    ref = get_reference(config.QC_MODEL) if args.qc else None
 
     full = [r for r in load_corpus() if r["split"] == args.split]
     n_full = len(full)
