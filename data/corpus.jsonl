@@ -1,0 +1,1047 @@
+{"id": "c0488", "text": "Prompt engineering is iterative; you rarely nail the instructions on the first try.", "terms": ["prompt engineering"], "split": "train"}
+{"id": "c0248", "text": "Anthropic's MCP plus a tight RAG layer is a surprisingly powerful combo.", "terms": ["Anthropic", "MCP", "RAG"], "split": "train"}
+{"id": "c0667", "text": "Our RAG store uses cosine similarity over normalized embeddings.", "terms": ["RAG", "embeddings"], "split": "train"}
+{"id": "c0145", "text": "Windsurf's Cascade kept context across files better than I anticipated.", "terms": ["Windsurf"], "split": "train"}
+{"id": "c0376", "text": "xAI's eval scores climbed enough that we added it to our model rotation.", "terms": ["xAI", "evals"], "split": "train"}
+{"id": "c0509", "text": "Agentic coding turned my backlog into something the model grinds through overnight.", "terms": ["agentic coding"], "split": "train"}
+{"id": "c0939", "text": "GPT-5 and Claude Opus both nail long context windows in our evals.", "terms": ["GPT-5", "Claude Opus", "context window", "evals"], "split": "train"}
+{"id": "c0370", "text": "Mistral plus Ollama is genuinely the fastest local stack I've set up.", "terms": ["Mistral", "Ollama"], "split": "train"}
+{"id": "c0806", "text": "We layer RLHF on top of supervised fine-tuning, then run the full evals.", "terms": ["RLHF", "fine-tuning", "evals"], "split": "train"}
+{"id": "c0632", "text": "RAG retrieval failed silently until we added an eval for empty results.", "terms": ["RAG", "evals"], "split": "train"}
+{"id": "c0080", "text": "Claude Sonnet wrote a cleaner system prompt than I would have.", "terms": ["Claude Sonnet", "system prompt"], "split": "train"}
+{"id": "c0077", "text": "Devin picked up the ticket, branched off main, and pushed a clean diff.", "terms": ["Devin"], "split": "train"}
+{"id": "c0288", "text": "Anthropic's docs on prompt caching saved us a fortune in repeated context tokens.", "terms": ["Anthropic"], "split": "train"}
+{"id": "c0054", "text": "We spun up subagents in Claude Code to review each microservice separately.", "terms": ["subagents", "Claude Code"], "split": "train"}
+{"id": "c0401", "text": "Bad tool calling usually means your tool descriptions are vague or contradictory.", "terms": ["tool calling"], "split": "train"}
+{"id": "c0976", "text": "The transformer's residual connections are why deep stacks even train.", "terms": ["transformer"], "split": "train"}
+{"id": "c0618", "text": "Our nightly evals run against a frozen set of two hundred prompts.", "terms": ["evals"], "split": "train"}
+{"id": "c0642", "text": "MCP let us reuse the same GitHub tool across three different agents.", "terms": ["MCP"], "split": "train"}
+{"id": "c0497", "text": "Agentic coding made code review more important, not less, because the agent writes fast.", "terms": ["agentic coding"], "split": "train"}
+{"id": "c1019", "text": "We measure inference cost in tokens, not requests, for accurate forecasting.", "terms": ["inference", "tokens"], "split": "train"}
+{"id": "c0821", "text": "Four-bit quantization barely touched accuracy but halved our memory footprint.", "terms": ["quantization"], "split": "train"}
+{"id": "c1040", "text": "Whisper gave us the words, the transformer gave us the meaning.", "terms": ["Whisper", "transformer"], "split": "train"}
+{"id": "c0749", "text": "We documented every MCP tool so new engineers ramp in a day.", "terms": ["MCP"], "split": "train"}
+{"id": "c0838", "text": "Hugging Face hosts the weights, and we load them straight into PyTorch.", "terms": ["Hugging Face", "PyTorch"], "split": "train"}
+{"id": "c0290", "text": "OpenAI and xAI both pushed multimodal updates the same morning, which was funny.", "terms": ["OpenAI", "xAI"], "split": "train"}
+{"id": "c0330", "text": "Anthropic and xAI both emphasized agent reliability in their latest releases.", "terms": ["Anthropic", "xAI"], "split": "train"}
+{"id": "c0425", "text": "Context engineering got way easier once we started caching tokens between turns.", "terms": ["context engineering", "tokens"], "split": "train"}
+{"id": "c0963", "text": "Ollama gave the whole team a consistent local inference baseline.", "terms": ["Ollama", "inference"], "split": "train"}
+{"id": "c0302", "text": "I grabbed the LoRA weights off Hugging Face and merged them into the base in minutes.", "terms": ["LoRA", "Hugging Face"], "split": "train"}
+{"id": "c0283", "text": "DeepMind's Gemini and OpenAI's GPT-5 felt neck and neck on the coding subset.", "terms": ["DeepMind", "Gemini", "OpenAI", "GPT-5"], "split": "train"}
+{"id": "c0692", "text": "When the chain of thought rambles, the answer usually rambles too.", "terms": ["chain of thought"], "split": "train"}
+{"id": "c0631", "text": "Cranking test-time compute is a knob we tune per request now.", "terms": ["test-time compute"], "split": "train"}
+{"id": "c0753", "text": "We keep the base frozen and only ship the LoRA delta to clients.", "terms": ["LoRA"], "split": "train"}
+{"id": "c1031", "text": "Hugging Face accelerate handled the multi-GPU PyTorch sharding for us.", "terms": ["Hugging Face", "PyTorch"], "split": "train"}
+{"id": "c0800", "text": "Test-time compute is the lever we pull when accuracy matters more than speed.", "terms": ["test-time compute"], "split": "train"}
+{"id": "c0728", "text": "I trace the chain of thought whenever an answer surprises me.", "terms": ["chain of thought"], "split": "train"}
+{"id": "c0416", "text": "Tool calling lets the model actually run the tests instead of just guessing they pass.", "terms": ["tool calling"], "split": "train"}
+{"id": "c0912", "text": "Quantization plus vLLM is the combo that finally made local inference viable.", "terms": ["quantization", "vLLM", "inference"], "split": "train"}
+{"id": "c1034", "text": "Claude Opus rarely needed guardrails as a crutch, but we kept them anyway.", "terms": ["Claude Opus", "guardrails"], "split": "train"}
+{"id": "c0432", "text": "I've stopped calling it prompt engineering and started calling it context engineering.", "terms": ["prompt engineering", "context engineering"], "split": "train"}
+{"id": "c0949", "text": "LlamaIndex made it easy to mix keyword search with embeddings retrieval.", "terms": ["LlamaIndex", "embeddings"], "split": "train"}
+{"id": "c1039", "text": "A clean system prompt with tight guardrails beats a clever one that leaks.", "terms": ["system prompt", "guardrails"], "split": "train"}
+{"id": "c0467", "text": "We wrapped the whole agentic workflow in guardrails so it can't touch production secrets.", "terms": ["agentic workflow", "guardrails"], "split": "train"}
+{"id": "c0990", "text": "Tokens streamed out of vLLM faster than the frontend could render them.", "terms": ["tokens", "vLLM"], "split": "train"}
+{"id": "c0148", "text": "Copilot's PR summaries are decent but Claude Opus writes deeper reviews.", "terms": ["Copilot", "Claude Opus"], "split": "train"}
+{"id": "c0652", "text": "Anthropic open-sourced the Model Context Protocol and adoption exploded.", "terms": ["Anthropic", "Model Context Protocol"], "split": "train"}
+{"id": "c0534", "text": "Vibe coding is improvisation; harness engineering is composing the score.", "terms": ["vibe coding", "harness engineering"], "split": "train"}
+{"id": "c0194", "text": "GPT-5 is fast on simple stuff, but Claude Opus wins the hard reasoning.", "terms": ["GPT-5", "Claude Opus"], "split": "train"}
+{"id": "c0604", "text": "The model burns extra test-time compute to double-check tricky math.", "terms": ["test-time compute"], "split": "train"}
+{"id": "c0654", "text": "Fine-tuning the small model got us close to the big one at a tenth the cost.", "terms": ["fine-tuning"], "split": "train"}
+{"id": "c1012", "text": "We watch tokens per request as a leading indicator of cost creep.", "terms": ["tokens"], "split": "train"}
+{"id": "c0880", "text": "Claude Opus kept the whole spec in its context window without losing track.", "terms": ["Claude Opus", "context window"], "split": "train"}
+{"id": "c0150", "text": "Replit Agent is a fun on-ramp before people graduate to Cursor.", "terms": ["Replit", "Cursor"], "split": "train"}
+{"id": "c0365", "text": "xAI shipped a longer context window and the evals improved on our doc tasks.", "terms": ["xAI", "evals"], "split": "train"}
+{"id": "c0137", "text": "Cursor indexed faster than Windsurf on our monster monorepo.", "terms": ["Cursor", "Windsurf"], "split": "train"}
+{"id": "c0870", "text": "PyTorch's autocast gave us mixed precision training almost for free.", "terms": ["PyTorch"], "split": "train"}
+{"id": "c0836", "text": "The model hallucination got worse once the context window was nearly full.", "terms": ["hallucination", "context window"], "split": "train"}
+{"id": "c0623", "text": "Reasoning models trade latency for test-time compute, and users notice.", "terms": ["test-time compute"], "split": "train"}
+{"id": "c0525", "text": "Our agentic workflow spawns subagents on demand and tears them down after.", "terms": ["agentic workflow", "subagents"], "split": "train"}
+{"id": "c0426", "text": "Agentic coding shines when the task is repetitive but too fiddly for a simple script.", "terms": ["agentic coding"], "split": "train"}
+{"id": "c0743", "text": "Fine-tuning made the model fluent in our config DSL.", "terms": ["fine-tuning"], "split": "train"}
+{"id": "c0203", "text": "Devin, Codex, and Claude Code are basically the agent trio everyone debates.", "terms": ["Devin", "Codex", "Claude Code"], "split": "train"}
+{"id": "c0718", "text": "RLHF works best when your reward signal actually reflects user happiness.", "terms": ["RLHF"], "split": "train"}
+{"id": "c0776", "text": "An MCP server plus Claude Code basically replaced our internal CLI.", "terms": ["MCP", "Claude Code"], "split": "train"}
+{"id": "c0658", "text": "We cap test-time compute so a runaway reasoning loop can't bankrupt us.", "terms": ["test-time compute"], "split": "train"}
+{"id": "c0201", "text": "Windsurf shipped a Whisper-powered voice mode that's surprisingly usable.", "terms": ["Windsurf", "Whisper"], "split": "train"}
+{"id": "c0975", "text": "We benchmark embeddings inference separately from generation for clarity.", "terms": ["embeddings", "inference"], "split": "train"}
+{"id": "c0361", "text": "We benchmarked GPT-5, Gemini, and Claude Sonnet on the same MCP toolset.", "terms": ["GPT-5", "Gemini", "Claude Sonnet", "MCP"], "split": "train"}
+{"id": "c0303", "text": "OpenAI's latest Codex update finally respects our repo's lint config.", "terms": ["OpenAI", "Codex"], "split": "train"}
+{"id": "c0732", "text": "Model Context Protocol means I can demo against real data without a custom bridge.", "terms": ["Model Context Protocol"], "split": "train"}
+{"id": "c0630", "text": "The chain of thought leaked into the final answer, which we had to suppress.", "terms": ["chain of thought"], "split": "train"}
+{"id": "c0457", "text": "I do prompt engineering in the morning and harness engineering in the afternoon.", "terms": ["prompt engineering", "harness engineering"], "split": "train"}
+{"id": "c0829", "text": "Whisper struggled with the heavy accent, so we fine-tuned it on our data.", "terms": ["Whisper", "fine-tuning"], "split": "train"}
+{"id": "c0050", "text": "Replit's mobile app let me fix a bug from my phone on the train.", "terms": ["Replit"], "split": "train"}
+{"id": "c0031", "text": "GPT-5 with a tight system prompt handled our support triage flawlessly.", "terms": ["GPT-5", "system prompt"], "split": "train"}
+{"id": "c0698", "text": "Fine-tuning a tiny model on Hugging Face beat prompting the big one for classification.", "terms": ["fine-tuning", "Hugging Face"], "split": "train"}
+{"id": "c0685", "text": "Our RAG recall jumped after we switched embedding models.", "terms": ["RAG", "embeddings"], "split": "train"}
+{"id": "c0957", "text": "PyTorch and Hugging Face transformers cover ninety percent of our experiments.", "terms": ["PyTorch", "Hugging Face", "transformer"], "split": "train"}
+{"id": "c0242", "text": "We compared DeepMind's Gemini and Anthropic's Claude Opus on multi-step planning tasks.", "terms": ["DeepMind", "Gemini", "Anthropic", "Claude Opus"], "split": "train"}
+{"id": "c0117", "text": "We capped the context window so Claude Haiku wouldn't drift off topic.", "terms": ["context window", "Claude Haiku"], "split": "train"}
+{"id": "c0840", "text": "GPT-5 has a massive context window, but it still costs tokens to fill it.", "terms": ["GPT-5", "context window", "tokens"], "split": "train"}
+{"id": "c0331", "text": "We fine-tuned Whisper for accented speech and the word error rate dropped sharply.", "terms": ["Whisper", "fine-tuning"], "split": "train"}
+{"id": "c0841", "text": "The transformer block count is the first thing I check when sizing a model.", "terms": ["transformer"], "split": "train"}
+{"id": "c0312", "text": "DeepMind, xAI, and OpenAI are all chasing better long-horizon agents right now.", "terms": ["DeepMind", "xAI", "OpenAI"], "split": "train"}
+{"id": "c0089", "text": "Cursor's tab model and Copilot feel like they're converging lately.", "terms": ["Cursor", "Copilot"], "split": "train"}
+{"id": "c0894", "text": "Our embeddings model runs on PyTorch and serves through a tiny FastAPI app.", "terms": ["embeddings", "PyTorch"], "split": "train"}
+{"id": "c0712", "text": "Our RAG pipeline filters by metadata before semantic search even runs.", "terms": ["RAG"], "split": "train"}
+{"id": "c0232", "text": "Anthropic's reasoning traces are genuinely useful when you're debugging agent loops.", "terms": ["Anthropic"], "split": "train"}
+{"id": "c0885", "text": "We embed the docs once, store the embeddings, and reuse them across queries.", "terms": ["embeddings"], "split": "train"}
+{"id": "c0149", "text": "Devin took the whole sprint ticket and I just reviewed the diff.", "terms": ["Devin"], "split": "train"}
+{"id": "c0583", "text": "Prompt engineering is still my fastest lever for fixing a misbehaving agent.", "terms": ["prompt engineering"], "split": "train"}
+{"id": "c0291", "text": "DeepMind's embeddings paper basically rewired how I think about retrieval.", "terms": ["DeepMind", "embeddings"], "split": "train"}
+{"id": "c0830", "text": "LangChain and LlamaIndex both ship retrievers, but the abstractions differ a lot.", "terms": ["LangChain", "LlamaIndex"], "split": "train"}
+{"id": "c0461", "text": "Vibe coding is how I start, evals are how I sleep at night.", "terms": ["vibe coding", "evals"], "split": "train"}
+{"id": "c0977", "text": "LangChain plus LlamaIndex felt redundant, so we standardized on one.", "terms": ["LangChain", "LlamaIndex"], "split": "train"}
+{"id": "c0057", "text": "Codex handled the dependency bump but I still ran the full evals myself.", "terms": ["Codex", "evals"], "split": "train"}
+{"id": "c0735", "text": "The LoRA adapter overfit, so we pulled back the learning rate.", "terms": ["LoRA"], "split": "train"}
+{"id": "c0451", "text": "Agentic coding turned a two-day refactor into a coffee break, no exaggeration.", "terms": ["agentic coding"], "split": "train"}
+{"id": "c0005", "text": "Did you see the GPT-5 benchmarks they dropped this morning?", "terms": ["GPT-5"], "split": "train"}
+{"id": "c0298", "text": "We serve the fine-tuned transformer with vLLM behind a thin gateway.", "terms": ["transformer", "vLLM", "fine-tuning"], "split": "train"}
+{"id": "c1036", "text": "Ollama, vLLM, and PyTorch cover local, serving, and training respectively.", "terms": ["Ollama", "vLLM", "PyTorch"], "split": "train"}
+{"id": "c0539", "text": "Agentic coding doesn't replace engineers, it just changes what we spend time on.", "terms": ["agentic coding"], "split": "train"}
+{"id": "c0941", "text": "Ollama's quantized models are perfect for offline inference demos.", "terms": ["Ollama", "quantization", "inference"], "split": "train"}
+{"id": "c0122", "text": "Anthropic's Claude Haiku is the unsung hero of our cost spreadsheet.", "terms": ["Anthropic", "Claude Haiku"], "split": "train"}
+{"id": "c0177", "text": "I prefer Claude Sonnet's tone over GPT-5 for customer-facing copy.", "terms": ["Claude Sonnet", "GPT-5"], "split": "train"}
+{"id": "c0516", "text": "Agentic coding feels less like coding and more like managing a very literal employee.", "terms": ["agentic coding"], "split": "train"}
+{"id": "c0334", "text": "I run Ollama with a Mistral model for quick local experiments before hitting the API.", "terms": ["Ollama", "Mistral"], "split": "train"}
+{"id": "c0450", "text": "Context engineering is why our agent stopped hallucinating file paths that don't exist.", "terms": ["context engineering"], "split": "train"}
+{"id": "c1017", "text": "PyTorch on a Mac with MPS is surprisingly usable for small transformers.", "terms": ["PyTorch", "transformer"], "split": "train"}
+{"id": "c0185", "text": "Copilot is the default at big companies, but Cursor wins the power users.", "terms": ["Copilot", "Cursor"], "split": "train"}
+{"id": "c0540", "text": "Our agentic workflow uses MCP servers for every external tool calling integration.", "terms": ["agentic workflow", "MCP", "tool calling"], "split": "train"}
+{"id": "c1000", "text": "Whisper streaming mode let us transcribe live with barely any lag.", "terms": ["Whisper"], "split": "train"}
+{"id": "c0928", "text": "The system prompt got so long it crowded out the actual context window.", "terms": ["system prompt", "context window"], "split": "train"}
+{"id": "c0393", "text": "I spun up three subagents, one for tests, one for docs, one for the refactor.", "terms": ["subagents"], "split": "train"}
+{"id": "c0669", "text": "The Model Context Protocol handshake negotiates which tools are available.", "terms": ["Model Context Protocol"], "split": "train"}
+{"id": "c0629", "text": "RLHF is expensive, so we lean on cheaper preference data where we can.", "terms": ["RLHF"], "split": "train"}
+{"id": "c0545", "text": "Prompt engineering is the entry point everyone learns before context engineering.", "terms": ["prompt engineering", "context engineering"], "split": "train"}
+{"id": "c0299", "text": "Anthropic and DeepMind both leaned hard into agentic workflows this year.", "terms": ["Anthropic", "DeepMind"], "split": "train"}
+{"id": "c1044", "text": "Caching the system prompt tokens cut our repeated inference cost dramatically.", "terms": ["system prompt", "tokens", "inference"], "split": "train"}
+{"id": "c0738", "text": "We expose test-time compute as a per-tenant config, not a global flag.", "terms": ["test-time compute"], "split": "train"}
+{"id": "c0828", "text": "The transformer attention layers are where most of the inference time goes.", "terms": ["transformer", "inference"], "split": "train"}
+{"id": "c0067", "text": "Devin's planning step reminds me a lot of how Claude Code breaks down work.", "terms": ["Devin", "Claude Code"], "split": "train"}
+{"id": "c0435", "text": "MCP gave our tool calling a standard interface, which cut integration time in half.", "terms": ["MCP", "tool calling"], "split": "train"}
+{"id": "c0572", "text": "Vibe coding feels productive, but harness engineering is what makes it repeatable.", "terms": ["vibe coding", "harness engineering"], "split": "train"}
+{"id": "c0257", "text": "We host everything on vLLM now, even the little Mistral models for cheap tasks.", "terms": ["vLLM", "Mistral"], "split": "train"}
+{"id": "c0616", "text": "I exposed our internal search as an MCP tool and the latency was fine.", "terms": ["MCP"], "split": "train"}
+{"id": "c0986", "text": "Hallucination is the failure mode that scares stakeholders the most.", "terms": ["hallucination"], "split": "train"}
+{"id": "c0343", "text": "I grabbed a quantized GPT-5 alternative from Hugging Face and ran it under Ollama.", "terms": ["GPT-5", "Hugging Face", "Ollama"], "split": "train"}
+{"id": "c0294", "text": "Mistral's instruct checkpoint on Hugging Face is a great fine-tuning starting point.", "terms": ["Mistral", "Hugging Face", "fine-tuning"], "split": "train"}
+{"id": "c0822", "text": "vLLM's paged attention is the reason our inference costs dropped so much.", "terms": ["vLLM", "inference"], "split": "train"}
+{"id": "c1005", "text": "The transformer learns embeddings for tokens during pretraining itself.", "terms": ["transformer", "embeddings", "tokens"], "split": "train"}
+{"id": "c0098", "text": "Codex generated the SDK client and it compiled on the first try.", "terms": ["Codex"], "split": "train"}
+{"id": "c0558", "text": "Harness engineering is where you decide how much autonomy the agent really gets.", "terms": ["harness engineering"], "split": "train"}
+{"id": "c0849", "text": "I profiled the PyTorch training loop and found the data loader was the bottleneck.", "terms": ["PyTorch"], "split": "train"}
+{"id": "c0468", "text": "Vibe coding a feature flag in Cursor and shipping it behind a toggle is my Tuesday.", "terms": ["vibe coding", "Cursor"], "split": "train"}
+{"id": "c0905", "text": "vLLM's continuous batching keeps the GPU busy during inference spikes.", "terms": ["vLLM", "inference"], "split": "train"}
+{"id": "c0932", "text": "Hallucination dropped sharply once the embeddings retrieval actually matched.", "terms": ["hallucination", "embeddings"], "split": "train"}
+{"id": "c0404", "text": "Vibe coding is fine for throwaway scripts, but please write evals for anything serious.", "terms": ["vibe coding", "evals"], "split": "train"}
+{"id": "c0456", "text": "When tool calling and the system prompt disagree, the system prompt usually wins.", "terms": ["tool calling", "system prompt"], "split": "train"}
+{"id": "c0852", "text": "Transformer attention scales quadratically, so the context window isn't free.", "terms": ["transformer", "context window"], "split": "train"}
+{"id": "c0023", "text": "Anthropic shipped a new Claude Opus that's noticeably better at agentic coding.", "terms": ["Anthropic", "Claude Opus", "agentic coding"], "split": "train"}
+{"id": "c0613", "text": "Reading the chain of thought, I noticed it misread the units halfway through.", "terms": ["chain of thought"], "split": "train"}
+{"id": "c0415", "text": "I delegate the boring parts to subagents and keep the architecture decisions for myself.", "terms": ["subagents"], "split": "train"}
+{"id": "c0710", "text": "We ask the model for a chain of thought, then grade only the conclusion.", "terms": ["chain of thought"], "split": "train"}
+{"id": "c0684", "text": "Test-time compute is the reason these reasoning models feel slow but smart.", "terms": ["test-time compute"], "split": "train"}
+{"id": "c0455", "text": "Spinning up subagents for every subtask is overkill; sometimes one good loop is enough.", "terms": ["subagents"], "split": "train"}
+{"id": "c0510", "text": "Our agentic workflow logs every tool call so we can debug what the agent did.", "terms": ["agentic workflow"], "split": "train"}
+{"id": "c0350", "text": "xAI's Grok update made the comparison threads on social media wild again.", "terms": ["xAI"], "split": "train"}
+{"id": "c0212", "text": "We host the Mistral model on vLLM and it screams on a single A100.", "terms": ["Mistral", "vLLM"], "split": "train"}
+{"id": "c0831", "text": "Claude Opus handled the long context window without dropping any details.", "terms": ["Claude Opus", "context window"], "split": "train"}
+{"id": "c0120", "text": "I love how Windsurf surfaces the model's plan before it touches anything.", "terms": ["Windsurf"], "split": "train"}
+{"id": "c0796", "text": "We run evals before and after every fine-tuning job, no exceptions.", "terms": ["evals", "fine-tuning"], "split": "train"}
+{"id": "c0199", "text": "Claude Sonnet handled the subagents orchestration without any hand-holding.", "terms": ["Claude Sonnet", "subagents"], "split": "train"}
+{"id": "c0633", "text": "I wrapped our calendar in an MCP server so the agent can book meetings.", "terms": ["MCP"], "split": "train"}
+{"id": "c0872", "text": "LangChain agents are easy to start but hard to debug when they loop.", "terms": ["LangChain"], "split": "train"}
+{"id": "c0207", "text": "OpenAI and DeepMind both shipped updates this week, so the leaderboard is total chaos.", "terms": ["OpenAI", "DeepMind"], "split": "train"}
+{"id": "c0158", "text": "Replit's secrets manager kept my API keys out of the source.", "terms": ["Replit"], "split": "train"}
+{"id": "c0328", "text": "I switched the RAG generator from GPT-5 to Claude Opus for the cleaner citations.", "terms": ["RAG", "GPT-5", "Claude Opus"], "split": "train"}
+{"id": "c0578", "text": "The agentic workflow spawned subagents, ran the tests, and summarized the results.", "terms": ["agentic workflow", "subagents"], "split": "train"}
+{"id": "c0834", "text": "Every token you waste in the system prompt is a token you can't use for context.", "terms": ["tokens", "system prompt"], "split": "train"}
+{"id": "c0734", "text": "Fine-tuning paid off for classification but RAG won for open questions.", "terms": ["fine-tuning", "RAG"], "split": "train"}
+{"id": "c0526", "text": "Vibe coding the weekend project, then refactoring it into something real on Monday.", "terms": ["vibe coding"], "split": "train"}
+{"id": "c0650", "text": "Our RAG pipeline reranks the top fifty chunks before stuffing the prompt.", "terms": ["RAG"], "split": "train"}
+{"id": "c0382", "text": "Anthropic's Claude Opus and DeepMind's Gemini are my two long-context workhorses.", "terms": ["Anthropic", "Claude Opus", "DeepMind", "Gemini"], "split": "train"}
+{"id": "c0573", "text": "Context engineering matters most exactly when your context window starts to fill up.", "terms": ["context engineering", "context window"], "split": "train"}
+{"id": "c0877", "text": "We log every hallucination into our evals harness for later analysis.", "terms": ["hallucination", "evals"], "split": "train"}
+{"id": "c0671", "text": "We fine-tuned on transcripts so the model picks up our house style.", "terms": ["fine-tuning"], "split": "train"}
+{"id": "c0398", "text": "Context engineering and prompt engineering blur together once you're building real agents.", "terms": ["context engineering", "prompt engineering"], "split": "train"}
+{"id": "c1029", "text": "Token streaming from Ollama feels instant even on modest hardware.", "terms": ["tokens", "Ollama"], "split": "train"}
+{"id": "c0093", "text": "We routed cheap calls to Claude Haiku and hard ones to Claude Opus.", "terms": ["Claude Haiku", "Claude Opus"], "split": "train"}
+{"id": "c0833", "text": "We benchmark inference latency on vLLM before every release.", "terms": ["inference", "vLLM"], "split": "train"}
+{"id": "c0222", "text": "The RAG pipeline got a lot snappier once we moved embeddings to a vector store.", "terms": ["RAG", "embeddings"], "split": "train"}
+{"id": "c0717", "text": "LoRA let us personalize the model per team without forking the base.", "terms": ["LoRA"], "split": "train"}
+{"id": "c0640", "text": "Budgeting test-time compute per query keeps our costs predictable.", "terms": ["test-time compute"], "split": "train"}
+{"id": "c0854", "text": "We serve embeddings through vLLM and the inference path is rock solid.", "terms": ["embeddings", "vLLM", "inference"], "split": "train"}
+{"id": "c0007", "text": "Gemini's long context window is genuinely useful when I dump an entire repo in.", "terms": ["Gemini", "context window"], "split": "train"}
+{"id": "c0175", "text": "Claude Code ran the full evals, fixed two regressions, and reported back.", "terms": ["Claude Code", "evals"], "split": "train"}
+{"id": "c0260", "text": "DeepMind's Gemini is shockingly good at parsing messy PDFs in our pipeline.", "terms": ["DeepMind", "Gemini"], "split": "train"}
+{"id": "c0486", "text": "I keep subagents stateless so I can retry any of them without side effects.", "terms": ["subagents"], "split": "train"}
+{"id": "c0190", "text": "I let Codex draft and Claude Sonnet polish, a nice little pipeline.", "terms": ["Codex", "Claude Sonnet"], "split": "train"}
+{"id": "c0804", "text": "Our evals nightly diff against the golden set and page us on regressions.", "terms": ["evals"], "split": "train"}
+{"id": "c0178", "text": "Codex paired nicely with Cursor once I set up the right config.", "terms": ["Codex", "Cursor"], "split": "train"}
+{"id": "c0791", "text": "A short chain of thought beat a long one once we tuned the prompt.", "terms": ["chain of thought"], "split": "train"}
+{"id": "c1037", "text": "We watch hallucination rate and token usage on the same evals dashboard.", "terms": ["hallucination", "tokens", "evals"], "split": "train"}
+{"id": "c0496", "text": "Prompt engineering, context engineering, harness engineering \u2014 it's all just steering the model.", "terms": ["prompt engineering", "context engineering", "harness engineering"], "split": "train"}
+{"id": "c0612", "text": "After RLHF the assistant stopped over-apologizing in every single reply.", "terms": ["RLHF"], "split": "train"}
+{"id": "c0681", "text": "We host the LoRA weights on Hugging Face for the rest of the team.", "terms": ["LoRA", "Hugging Face"], "split": "train"}
+{"id": "c0039", "text": "We let Devin take the on-call grunt work so the humans could focus.", "terms": ["Devin"], "split": "train"}
+{"id": "c0729", "text": "Test-time compute scaling laws are the reason everyone's chasing reasoning now.", "terms": ["test-time compute"], "split": "train"}
+{"id": "c0996", "text": "We generate embeddings with a transformer encoder and index them nightly.", "terms": ["embeddings", "transformer"], "split": "train"}
+{"id": "c0193", "text": "Cursor and Windsurf both stole good ideas from Claude Code, fair play.", "terms": ["Cursor", "Windsurf", "Claude Code"], "split": "train"}
+{"id": "c0621", "text": "Without RLHF the base model was way too eager to make stuff up.", "terms": ["RLHF"], "split": "train"}
+{"id": "c0615", "text": "RAG plus a tight system prompt got us most of the way there.", "terms": ["RAG", "system prompt"], "split": "train"}
+{"id": "c0835", "text": "Ollama is perfect for offline demos when you have no internet on the plane.", "terms": ["Ollama"], "split": "train"}
+{"id": "c0813", "text": "The context window filled up halfway through the conversation and answers got worse.", "terms": ["context window"], "split": "train"}
+{"id": "c0808", "text": "Our RAG agent calls MCP tools to fetch fresh data mid-conversation.", "terms": ["RAG", "MCP"], "split": "train"}
+{"id": "c0473", "text": "Context engineering is the reason my agent can work in a million-token context window now.", "terms": ["context engineering", "context window"], "split": "train"}
+{"id": "c0086", "text": "We swapped the RAG backend and reran evals on Claude Haiku overnight.", "terms": ["RAG", "evals", "Claude Haiku"], "split": "train"}
+{"id": "c0189", "text": "Gemini, GPT-5, and Claude Opus all made my model evaluation spreadsheet.", "terms": ["Gemini", "GPT-5", "Claude Opus"], "split": "train"}
+{"id": "c0820", "text": "We trained the classifier head in PyTorch and exported it for serving.", "terms": ["PyTorch"], "split": "train"}
+{"id": "c0823", "text": "Pull a quick model with Ollama, then move to vLLM once you scale.", "terms": ["Ollama", "vLLM"], "split": "train"}
+{"id": "c0801", "text": "RAG kept our answers fresh while fine-tuning kept them on-brand.", "terms": ["RAG", "fine-tuning"], "split": "train"}
+{"id": "c0772", "text": "RLHF without good evals is just flying blind, honestly.", "terms": ["RLHF", "evals"], "split": "train"}
+{"id": "c0476", "text": "Vibe coding the UI and then asking for evals on the logic is a solid split.", "terms": ["vibe coding", "evals"], "split": "train"}
+{"id": "c0065", "text": "I asked Gemini and Claude Opus the same prompt and compared their plans.", "terms": ["Gemini", "Claude Opus"], "split": "train"}
+{"id": "c0817", "text": "LangChain made prototyping the agent fast, but we ripped it out for production.", "terms": ["LangChain"], "split": "train"}
+{"id": "c0908", "text": "Every extra tool in the system prompt costs you tokens and adds latency.", "terms": ["system prompt", "tokens"], "split": "train"}
+{"id": "c0431", "text": "If tool calling fails silently, your agentic workflow will quietly go off the rails.", "terms": ["tool calling", "agentic workflow"], "split": "train"}
+{"id": "c0649", "text": "Test-time compute scaling is basically letting the model think longer.", "terms": ["test-time compute"], "split": "train"}
+{"id": "c0886", "text": "The hallucination vanished the moment we shortened the context window.", "terms": ["hallucination", "context window"], "split": "train"}
+{"id": "c0723", "text": "Anthropic's Model Context Protocol basically ended our custom plugin sprawl.", "terms": ["Anthropic", "Model Context Protocol"], "split": "train"}
+{"id": "c0021", "text": "I let Codex handle the boilerplate and saved Claude Opus for the architecture calls.", "terms": ["Codex", "Claude Opus"], "split": "train"}
+{"id": "c0036", "text": "Gemini's two million token context window is honestly absurd in a good way.", "terms": ["Gemini", "context window"], "split": "train"}
+{"id": "c0597", "text": "Before evals, we were basically shipping prompt changes on vibes.", "terms": ["evals"], "split": "train"}
+{"id": "c0180", "text": "Devin shipped a fix while I was in the standup talking about it.", "terms": ["Devin"], "split": "train"}
+{"id": "c0027", "text": "OpenAI's Codex now feels like a real teammate rather than a fancy autocomplete.", "terms": ["OpenAI", "Codex"], "split": "train"}
+{"id": "c0375", "text": "Claude Sonnet handles the cheap RAG queries and Claude Opus takes the hard ones.", "terms": ["Claude Sonnet", "RAG", "Claude Opus"], "split": "train"}
+{"id": "c0783", "text": "Test-time compute scaling beat parameter scaling for our reasoning benchmark.", "terms": ["test-time compute"], "split": "train"}
+{"id": "c0679", "text": "Our evals measure tool-call accuracy separately from final answers.", "terms": ["evals", "tool calling"], "split": "train"}
+{"id": "c0766", "text": "Our RAG answers degrade gracefully when retrieval comes back empty.", "terms": ["RAG"], "split": "train"}
+{"id": "c0130", "text": "Codex handled the test scaffolding so I could focus on the tricky logic.", "terms": ["Codex"], "split": "train"}
+{"id": "c0402", "text": "I think prompt engineering is evolving into something closer to context engineering.", "terms": ["prompt engineering", "context engineering"], "split": "train"}
+{"id": "c0916", "text": "Ollama runs the model, PyTorch trained it, and the loop closes nicely.", "terms": ["Ollama", "PyTorch"], "split": "train"}
+{"id": "c0818", "text": "LlamaIndex handles our document ingestion and chunking surprisingly well.", "terms": ["LlamaIndex"], "split": "train"}
+{"id": "c0943", "text": "The system prompt sets the tone and the guardrails keep it honest.", "terms": ["system prompt", "guardrails"], "split": "train"}
+{"id": "c1035", "text": "The transformer's KV cache is what makes incremental inference affordable.", "terms": ["transformer", "inference"], "split": "train"}
+{"id": "c0233", "text": "Mistral, OpenAI, and xAI all updated their pricing within the same two weeks.", "terms": ["Mistral", "OpenAI", "xAI"], "split": "train"}
+{"id": "c0856", "text": "Drop the quantization to eight bits if accuracy starts slipping.", "terms": ["quantization"], "split": "train"}
+{"id": "c0953", "text": "The context window is your scratchpad, so don't fill it with junk.", "terms": ["context window"], "split": "train"}
+{"id": "c0351", "text": "Claude Opus beat GPT-5 on our internal evals, but it was close on cost.", "terms": ["Claude Opus", "GPT-5", "evals"], "split": "train"}
+{"id": "c0605", "text": "More test-time compute helped on the hard problems but barely moved the easy ones.", "terms": ["test-time compute"], "split": "train"}
+{"id": "c0418", "text": "Context engineering is the difference between an agent that wanders and one that ships.", "terms": ["context engineering"], "split": "train"}
+{"id": "c0900", "text": "Whisper handles overlapping speakers worse than I expected in our tests.", "terms": ["Whisper"], "split": "train"}
+{"id": "c0237", "text": "OpenAI dropped GPT-5 and the whole office spent the afternoon poking at it.", "terms": ["OpenAI", "GPT-5"], "split": "train"}
+{"id": "c0680", "text": "Fine-tuning shrank our prompt by half, which saved real tokens.", "terms": ["fine-tuning", "tokens"], "split": "train"}
+{"id": "c0770", "text": "Fine-tuning was the only way to fit our task in a tiny context window.", "terms": ["fine-tuning", "context window"], "split": "train"}
+{"id": "c0587", "text": "Tool calling plus prompt engineering is most of what I tune when an agent stalls.", "terms": ["tool calling", "prompt engineering"], "split": "train"}
+{"id": "c0326", "text": "xAI's docs improved a ton after they hired a real developer relations team.", "terms": ["xAI"], "split": "train"}
+{"id": "c0620", "text": "The LoRA checkpoint is like forty megabytes, which is wild.", "terms": ["LoRA"], "split": "train"}
+{"id": "c0962", "text": "The transformer generates each token conditioned on everything before it.", "terms": ["transformer", "tokens"], "split": "train"}
+{"id": "c0523", "text": "Context engineering is deciding what the model remembers and what it forgets.", "terms": ["context engineering"], "split": "train"}
+{"id": "c1027", "text": "Quantization let the transformer fit in the context of a tiny edge device.", "terms": ["quantization", "transformer"], "split": "train"}
+{"id": "c0910", "text": "We feed Whisper transcripts into LlamaIndex to make calls searchable.", "terms": ["Whisper", "LlamaIndex"], "split": "train"}
+{"id": "c0319", "text": "Pull Whisper from Hugging Face, fine-tune on your domain, and accuracy climbs fast.", "terms": ["Whisper", "Hugging Face", "fine-tuning"], "split": "train"}
+{"id": "c0508", "text": "Context engineering is curating the model's working memory, full stop.", "terms": ["context engineering"], "split": "train"}
+{"id": "c0240", "text": "Anthropic shipped Claude Sonnet improvements that made our RAG citations far cleaner.", "terms": ["Anthropic", "Claude Sonnet", "RAG"], "split": "train"}
+{"id": "c0085", "text": "Windsurf is my pick when I want the editor to drive more of the loop.", "terms": ["Windsurf"], "split": "train"}
+{"id": "c0495", "text": "Tool calling failures dropped sharply once we added retries with backoff.", "terms": ["tool calling"], "split": "train"}
+{"id": "c0173", "text": "Devin handled the dependency hell so I could keep building features.", "terms": ["Devin"], "split": "train"}
+{"id": "c0752", "text": "Fine-tuning on customer tickets taught the model our acronyms.", "terms": ["fine-tuning"], "split": "train"}
+{"id": "c0015", "text": "I wired up an MCP server so Claude Code can hit our internal ticketing system.", "terms": ["MCP", "Claude Code"], "split": "train"}
+{"id": "c0405", "text": "Harness engineering is where I spend most of my week now, tuning the scaffolding.", "terms": ["harness engineering"], "split": "train"}
+{"id": "c0224", "text": "Mistral's smaller checkpoints are perfect for fine-tuning on a single consumer GPU.", "terms": ["Mistral", "fine-tuning"], "split": "train"}
+{"id": "c0378", "text": "OpenAI, Anthropic, and DeepMind dominate the API conversation, but Mistral owns open models.", "terms": ["OpenAI", "Anthropic", "DeepMind", "Mistral"], "split": "train"}
+{"id": "c0505", "text": "Subagents are great, but every handoff is a chance for context to get lost.", "terms": ["subagents"], "split": "train"}
+{"id": "c0250", "text": "I ran Whisper through vLLM batching and transcription throughput tripled.", "terms": ["Whisper", "vLLM"], "split": "train"}
+{"id": "c0424", "text": "Prompt engineering plus solid evals is how we keep regressions out of production.", "terms": ["prompt engineering", "evals"], "split": "train"}
+{"id": "c0309", "text": "Anthropic's Claude Opus and OpenAI's GPT-5 are the two I keep in rotation.", "terms": ["Anthropic", "Claude Opus", "OpenAI", "GPT-5"], "split": "train"}
+{"id": "c0280", "text": "Running vLLM on two GPUs let us serve GPT-5-class loads on open models.", "terms": ["vLLM", "GPT-5"], "split": "train"}
+{"id": "c0276", "text": "Anthropic's Claude Opus is my pick when correctness matters more than speed.", "terms": ["Anthropic", "Claude Opus"], "split": "train"}
+{"id": "c0967", "text": "A hallucination here means a wrong dosage, so the guardrails are strict.", "terms": ["hallucination", "guardrails"], "split": "train"}
+{"id": "c0355", "text": "DeepMind's Gemini handled the video frames while Whisper handled the audio.", "terms": ["DeepMind", "Gemini", "Whisper"], "split": "train"}
+{"id": "c0595", "text": "The Model Context Protocol basically standardized how we plug tools into the model.", "terms": ["Model Context Protocol"], "split": "train"}
+{"id": "c0181", "text": "Gemini handled the image-heavy ticket that stumped my text-only setup.", "terms": ["Gemini"], "split": "train"}
+{"id": "c0607", "text": "The Model Context Protocol lets Claude Code reach our staging database safely.", "terms": ["Model Context Protocol", "Claude Code"], "split": "train"}
+{"id": "c0661", "text": "Claude Code discovered our MCP tools automatically once we registered them.", "terms": ["Claude Code", "MCP"], "split": "train"}
+{"id": "c0503", "text": "Prompt engineering is the on-ramp; context engineering is where the depth is.", "terms": ["prompt engineering", "context engineering"], "split": "train"}
+{"id": "c0589", "text": "We wired the internal wiki into a RAG pipeline so the bot stops guessing at policy names.", "terms": ["RAG"], "split": "train"}
+{"id": "c0011", "text": "Copilot autocomplete is fine, but I still tab over to Cursor for bigger changes.", "terms": ["Copilot", "Cursor"], "split": "train"}
+{"id": "c0300", "text": "Mistral quietly became the default open model in a lot of European startups.", "terms": ["Mistral"], "split": "train"}
+{"id": "c0200", "text": "We ran evals comparing Codex, GPT-5, and Claude Opus on bug fixes.", "terms": ["evals", "Codex", "GPT-5", "Claude Opus"], "split": "train"}
+{"id": "c0901", "text": "Ollama plus a quantized seven billion model is my default dev setup now.", "terms": ["Ollama", "quantization"], "split": "train"}
+{"id": "c0580", "text": "Harness engineering taught me to log every tool call so debugging isn't guesswork.", "terms": ["harness engineering"], "split": "train"}
+{"id": "c0032", "text": "I keep my Copilot subscription mostly for the inline suggestions in the IDE.", "terms": ["Copilot"], "split": "train"}
+{"id": "c0968", "text": "LlamaIndex node parsers let us tune how many tokens land in each chunk.", "terms": ["LlamaIndex", "tokens"], "split": "train"}
+{"id": "c0504", "text": "Agentic coding in Claude Code let me ship a feature without leaving the terminal.", "terms": ["agentic coding", "Claude Code"], "split": "train"}
+{"id": "c0278", "text": "OpenAI, DeepMind, and Mistral all submitted to the same public benchmark this round.", "terms": ["OpenAI", "DeepMind", "Mistral"], "split": "train"}
+{"id": "c0816", "text": "The transformer architecture really changed how we think about sequence modeling.", "terms": ["transformer"], "split": "train"}
+{"id": "c0617", "text": "Spelling it out: Model Context Protocol is just a clean contract for tools.", "terms": ["Model Context Protocol"], "split": "train"}
+{"id": "c0443", "text": "Vibe coding got a bad reputation, but it's just rapid prototyping with an LLM.", "terms": ["vibe coding"], "split": "train"}
+{"id": "c0778", "text": "Our evals run on every pull request and gate the merge.", "terms": ["evals"], "split": "train"}
+{"id": "c0478", "text": "We assign subagents to independent files so they never block each other.", "terms": ["subagents"], "split": "train"}
+{"id": "c0362", "text": "Anthropic's Claude Opus pricing dropped, so we moved more traffic over to it.", "terms": ["Anthropic", "Claude Opus"], "split": "train"}
+{"id": "c0079", "text": "Replit's free tier is perfect for teaching kids to code.", "terms": ["Replit"], "split": "train"}
+{"id": "c0356", "text": "I keep an Ollama instance of Mistral running for offline note summarization.", "terms": ["Ollama", "Mistral"], "split": "train"}
+{"id": "c0437", "text": "Harness engineering is basically building the rails so the model can't derail itself.", "terms": ["harness engineering"], "split": "train"}
+{"id": "c0844", "text": "vLLM batches requests so well that inference feels nearly free at scale.", "terms": ["vLLM", "inference"], "split": "train"}
+{"id": "c0596", "text": "I spent the afternoon writing an MCP server that wraps our ticketing API.", "terms": ["MCP"], "split": "train"}
+{"id": "c0972", "text": "Ollama lets me compare two models side by side without any cloud cost.", "terms": ["Ollama"], "split": "train"}
+{"id": "c0042", "text": "The new Claude Opus from Anthropic crushed our internal coding evals.", "terms": ["Claude Opus", "Anthropic", "evals"], "split": "train"}
+{"id": "c0950", "text": "Ollama lets junior devs run the transformer without touching CUDA at all.", "terms": ["Ollama", "transformer"], "split": "train"}
+{"id": "c0601", "text": "We did a round of RLHF and the refusals got way more sensible.", "terms": ["RLHF"], "split": "train"}
+{"id": "c0500", "text": "Harness engineering is about the loop, the tools, and the stopping conditions.", "terms": ["harness engineering"], "split": "train"}
+{"id": "c0140", "text": "Codex and Copilot both come up in our tooling reviews constantly.", "terms": ["Codex", "Copilot"], "split": "train"}
+{"id": "c0459", "text": "Agentic coding with Claude Opus handled the entire dependency upgrade by itself.", "terms": ["agentic coding", "Claude Opus"], "split": "train"}
+{"id": "c0490", "text": "Agentic coding with guardrails is how we let the model touch the database safely.", "terms": ["agentic coding", "guardrails"], "split": "train"}
+{"id": "c0366", "text": "I built a LoRA adapter for the transformer and merged it before deploying.", "terms": ["LoRA", "transformer"], "split": "train"}
+{"id": "c0537", "text": "Tool calling latency is the silent killer of any responsive agentic workflow.", "terms": ["tool calling", "agentic workflow"], "split": "train"}
+{"id": "c0786", "text": "The Model Context Protocol abstracts the transport, so stdio or HTTP both work.", "terms": ["Model Context Protocol"], "split": "train"}
+{"id": "c0141", "text": "Replit makes deploying a side project a five-minute affair.", "terms": ["Replit"], "split": "train"}
+{"id": "c0677", "text": "Spinning up an MCP server took me twenty minutes with the SDK.", "terms": ["MCP"], "split": "train"}
+{"id": "c0321", "text": "Mistral and OpenAI took very different paths on open versus closed weights.", "terms": ["Mistral", "OpenAI"], "split": "train"}
+{"id": "c0914", "text": "Guardrails flagged the prompt injection before the model ever saw it.", "terms": ["guardrails"], "split": "train"}
+{"id": "c0267", "text": "DeepMind quietly bumped Gemini's context window and nobody made a big deal of it.", "terms": ["DeepMind", "Gemini"], "split": "train"}
+{"id": "c0903", "text": "Embeddings for code search work shockingly well once you chunk by function.", "terms": ["embeddings"], "split": "train"}
+{"id": "c1026", "text": "LangChain's structured output helped our guardrails parse responses reliably.", "terms": ["LangChain", "guardrails"], "split": "train"}
+{"id": "c0127", "text": "Claude Code respected my system prompt and stayed in scope the whole run.", "terms": ["Claude Code", "system prompt"], "split": "train"}
+{"id": "c0429", "text": "Harness engineering means I design the guardrails before I hand the agent the keys.", "terms": ["harness engineering", "guardrails"], "split": "train"}
+{"id": "c0133", "text": "I keep Claude Haiku for triage and escalate to Claude Sonnet when needed.", "terms": ["Claude Haiku", "Claude Sonnet"], "split": "train"}
+{"id": "c0794", "text": "Defining MCP tools well is honestly half the battle for tool calling.", "terms": ["MCP", "tool calling"], "split": "train"}
+{"id": "c0636", "text": "Fine-tuning gave us tone control that no system prompt could match.", "terms": ["fine-tuning", "system prompt"], "split": "train"}
+{"id": "c0381", "text": "xAI's agents felt rough early, but the last two updates closed the gap with OpenAI.", "terms": ["xAI", "OpenAI"], "split": "train"}
+{"id": "c1020", "text": "Whisper plus a transformer summarizer is our whole meeting-notes pipeline.", "terms": ["Whisper", "transformer"], "split": "train"}
+{"id": "c0724", "text": "We treat evals as the source of truth, not anyone's gut feeling.", "terms": ["evals"], "split": "train"}
+{"id": "c0494", "text": "I orchestrate subagents the way a tech lead delegates tickets in a standup.", "terms": ["subagents"], "split": "train"}
+{"id": "c0646", "text": "A single LoRA adapter on top of the base model handled all our SQL.", "terms": ["LoRA"], "split": "train"}
+{"id": "c0259", "text": "OpenAI's reasoning models and Anthropic's Claude Opus trade blows on math evals.", "terms": ["OpenAI", "Anthropic", "Claude Opus", "evals"], "split": "train"}
+{"id": "c0369", "text": "DeepMind's Gemini still leads my multimodal evals, with Claude Opus close behind.", "terms": ["DeepMind", "Gemini", "evals", "Claude Opus"], "split": "train"}
+{"id": "c0314", "text": "I wired Claude Opus to an MCP filesystem server and let it browse the repo.", "terms": ["Claude Opus", "MCP"], "split": "train"}
+{"id": "c0884", "text": "Guardrails should never depend on the model behaving, assume it won't.", "terms": ["guardrails"], "split": "train"}
+{"id": "c0387", "text": "I love vibe coding for side projects, but I would never ship it to prod untested.", "terms": ["vibe coding"], "split": "train"}
+{"id": "c0163", "text": "Windsurf handled the database refactor without breaking the migrations.", "terms": ["Windsurf"], "split": "train"}
+{"id": "c0305", "text": "We retrained the Whisper head with LoRA and kept the encoder frozen.", "terms": ["Whisper", "LoRA"], "split": "train"}
+{"id": "c0287", "text": "Hugging Face Spaces is where half our demos live these days.", "terms": ["Hugging Face"], "split": "train"}
+{"id": "c0538", "text": "Prompt engineering taught me to be specific; context engineering taught me to be selective.", "terms": ["prompt engineering", "context engineering"], "split": "train"}
+{"id": "c0606", "text": "We feed the changelog through RAG so release notes are always grounded.", "terms": ["RAG"], "split": "train"}
+{"id": "c0514", "text": "Tool calling is the bridge between the model's reasoning and the actual system.", "terms": ["tool calling"], "split": "train"}
+{"id": "c0715", "text": "Our evals include a few golden transcripts we never want to regress on.", "terms": ["evals"], "split": "train"}
+{"id": "c0069", "text": "We fine-tuned Whisper on our domain audio and accuracy jumped a lot.", "terms": ["fine-tuning", "Whisper"], "split": "train"}
+{"id": "c0444", "text": "Harness engineering decisions outlive any single prompt engineering tweak you make.", "terms": ["harness engineering", "prompt engineering"], "split": "train"}
+{"id": "c0695", "text": "I containerized the MCP server so anyone can run it locally.", "terms": ["MCP"], "split": "train"}
+{"id": "c0517", "text": "The agentic workflow ran fine in dev but tool calling broke against the real API.", "terms": ["agentic workflow", "tool calling"], "split": "train"}
+{"id": "c0956", "text": "We saw fewer hallucinations after tightening the system prompt instructions.", "terms": ["hallucination", "system prompt"], "split": "train"}
+{"id": "c0946", "text": "vLLM exposes prometheus metrics so we watch inference throughput live.", "terms": ["vLLM", "inference"], "split": "train"}
+{"id": "c0238", "text": "Honestly xAI's velocity reminds me of early OpenAI back in the day.", "terms": ["xAI", "OpenAI"], "split": "train"}
+{"id": "c0266", "text": "After fine-tuning, the embeddings clustered our product categories almost perfectly.", "terms": ["fine-tuning", "embeddings"], "split": "train"}
+{"id": "c0600", "text": "Turns out LoRA adapters are small enough to hot-swap per customer.", "terms": ["LoRA"], "split": "train"}
+{"id": "c0412", "text": "We let interns do vibe coding on the dashboard while seniors review the agentic workflow.", "terms": ["vibe coding", "agentic workflow"], "split": "train"}
+{"id": "c0091", "text": "Replit Agent built a full CRUD app from a one-paragraph description.", "terms": ["Replit"], "split": "train"}
+{"id": "c0896", "text": "The transformer decoder generates one token at a time during inference.", "terms": ["transformer", "tokens", "inference"], "split": "train"}
+{"id": "c0925", "text": "Strong guardrails turned a chatty model into a reliable support agent.", "terms": ["guardrails"], "split": "train"}
+{"id": "c0399", "text": "We use Claude Code for agentic coding and it handles multi-file edits surprisingly well.", "terms": ["Claude Code", "agentic coding"], "split": "train"}
+{"id": "c1033", "text": "Embeddings plus vLLM inference gave our search a real-time feel.", "terms": ["embeddings", "vLLM", "inference"], "split": "train"}
+{"id": "c0529", "text": "Tool calling is where most of my agent bugs actually live, not in the reasoning.", "terms": ["tool calling"], "split": "train"}
+{"id": "c0862", "text": "LlamaIndex retrieval feeds the right chunks so the context window stays lean.", "terms": ["LlamaIndex", "context window"], "split": "train"}
+{"id": "c0711", "text": "Test-time compute lets a smaller model punch above its weight on reasoning.", "terms": ["test-time compute"], "split": "train"}
+{"id": "c1011", "text": "Ollama's modelfile lets you bake a system prompt right into the model.", "terms": ["Ollama", "system prompt"], "split": "train"}
+{"id": "c0484", "text": "Vibe coding is honest about what it is: fast, fun, and a little reckless.", "terms": ["vibe coding"], "split": "train"}
+{"id": "c0602", "text": "RLHF aligned the tone, but it didn't fix the factual errors.", "terms": ["RLHF"], "split": "train"}
+{"id": "c0125", "text": "Cursor plus Claude Sonnet is the combo I recommend to most new hires.", "terms": ["Cursor", "Claude Sonnet"], "split": "train"}
+{"id": "c0879", "text": "Fine-tuning the system prompt beat fine-tuning the weights for our use case.", "terms": ["fine-tuning", "system prompt"], "split": "train"}
+{"id": "c0940", "text": "Quantization made the transformer small enough to ship on a phone.", "terms": ["quantization", "transformer"], "split": "train"}
+{"id": "c0863", "text": "A single hallucination in a financial report can cost you the whole client.", "terms": ["hallucination"], "split": "train"}
+{"id": "c0511", "text": "Vibe coding is a vibe until the linter starts screaming at you.", "terms": ["vibe coding"], "split": "train"}
+{"id": "c1013", "text": "The context window is a hard limit, so we summarize aggressively.", "terms": ["context window"], "split": "train"}
+{"id": "c0758", "text": "Each MCP server runs in its own sandbox for security reasons.", "terms": ["MCP"], "split": "train"}
+{"id": "c0295", "text": "Anthropic released a new Claude Sonnet tier and our latency budget got way easier.", "terms": ["Anthropic", "Claude Sonnet"], "split": "train"}
+{"id": "c0926", "text": "We compute embeddings on a GPU and the inference batch runs in milliseconds.", "terms": ["embeddings", "inference"], "split": "train"}
+{"id": "c0213", "text": "Anthropic's MCP spec made tool integration way less painful for our whole team.", "terms": ["Anthropic", "MCP"], "split": "train"}
+{"id": "c0555", "text": "Agentic coding plus RAG means the model writes against your actual documentation.", "terms": ["agentic coding", "RAG"], "split": "train"}
+{"id": "c0038", "text": "Codex and GPT-5 both come from OpenAI but they feel like different tools.", "terms": ["Codex", "GPT-5", "OpenAI"], "split": "train"}
+{"id": "c0394", "text": "The tool calling broke because the schema didn't match what the model expected.", "terms": ["tool calling"], "split": "train"}
+{"id": "c0436", "text": "Vibe coding is underrated for exploring ideas you can't fully specify yet.", "terms": ["vibe coding"], "split": "train"}
+{"id": "c0696", "text": "Model Context Protocol adoption made our integration backlog shrink overnight.", "terms": ["Model Context Protocol"], "split": "train"}
+{"id": "c0809", "text": "We swapped to vLLM for serving and our inference throughput nearly tripled overnight.", "terms": ["vLLM", "inference"], "split": "train"}
+{"id": "c0126", "text": "We A/B tested GPT-5 against Claude Opus on customer email drafts.", "terms": ["GPT-5", "Claude Opus"], "split": "train"}
+{"id": "c0024", "text": "We swapped our RAG pipeline to use Gemini for the cheaper embeddings.", "terms": ["RAG", "Gemini"], "split": "train"}
+{"id": "c0013", "text": "Claude Code just spun up three subagents to parallelize the test fixes.", "terms": ["Claude Code", "subagents"], "split": "train"}
+{"id": "c0648", "text": "We summarize the chain of thought for the user instead of dumping it raw.", "terms": ["chain of thought"], "split": "train"}
+{"id": "c0102", "text": "GPT-5 answered fast, but Claude Sonnet's plan was more thorough.", "terms": ["GPT-5", "Claude Sonnet"], "split": "train"}
+{"id": "c0923", "text": "Inference latency is dominated by how many tokens the transformer must generate.", "terms": ["inference", "tokens", "transformer"], "split": "train"}
+{"id": "c0116", "text": "Replit Agent is basically vibe coding with a deploy button attached.", "terms": ["Replit", "vibe coding"], "split": "train"}
+{"id": "c0576", "text": "Prompt engineering is where beginners start, but context engineering is where pros live.", "terms": ["prompt engineering", "context engineering"], "split": "train"}
+{"id": "c1018", "text": "Guardrails turned an unpredictable demo into something we could actually ship.", "terms": ["guardrails"], "split": "train"}
+{"id": "c0121", "text": "Gemini handled the giant log dump that blew past my other model's limit.", "terms": ["Gemini"], "split": "train"}
+{"id": "c0385", "text": "Honestly the MCP rollout from Anthropic changed how our whole team builds agents.", "terms": ["MCP", "Anthropic"], "split": "train"}
+{"id": "c0420", "text": "Vibe coding the first draft and then doing real engineering on top is my actual process.", "terms": ["vibe coding"], "split": "train"}
+{"id": "c0048", "text": "Devin opened five PRs overnight and three of them actually passed CI.", "terms": ["Devin"], "split": "train"}
+{"id": "c0172", "text": "GPT-5 wrote the docs and Copilot suggested the code samples inline.", "terms": ["GPT-5", "Copilot"], "split": "train"}
+{"id": "c0318", "text": "Gemini from DeepMind handled the spreadsheet extraction task with zero hand-holding.", "terms": ["Gemini", "DeepMind"], "split": "train"}
+{"id": "c0325", "text": "We ran a LoRA sweep on the transformer and logged every eval to a dashboard.", "terms": ["LoRA", "transformer", "evals"], "split": "train"}
+{"id": "c0543", "text": "Subagents with overlapping responsibilities are a recipe for conflicting edits.", "terms": ["subagents"], "split": "train"}
+{"id": "c0264", "text": "We feed RAG context into Claude Sonnet and let it cite sources inline.", "terms": ["RAG", "Claude Sonnet"], "split": "train"}
+{"id": "c0146", "text": "I asked Gemini to explain the algorithm and it drew a clean diagram.", "terms": ["Gemini"], "split": "train"}
+{"id": "c0044", "text": "Copilot Workspace tries to be agentic but Cursor still feels more natural to me.", "terms": ["Copilot", "Cursor", "agentic coding"], "split": "train"}
+{"id": "c0338", "text": "xAI's open checkpoint runs surprisingly well under vLLM with a bit of tuning.", "terms": ["xAI", "vLLM"], "split": "train"}
+{"id": "c0087", "text": "Claude Code respects my hooks and never pushes without asking.", "terms": ["Claude Code"], "split": "train"}
+{"id": "c0377", "text": "Our embeddings job runs nightly and syncs the index back to Hugging Face.", "terms": ["embeddings", "Hugging Face"], "split": "train"}
+{"id": "c1032", "text": "The guardrails block any prompt trying to override the system prompt.", "terms": ["guardrails", "system prompt"], "split": "train"}
+{"id": "c0462", "text": "Harness engineering means building observability into the agent loop from day one.", "terms": ["harness engineering"], "split": "train"}
+{"id": "c0407", "text": "Cursor made agentic coding accessible to people who never touched an agent loop before.", "terms": ["Cursor", "agentic coding"], "split": "train"}
+{"id": "c0691", "text": "RLHF needs human raters, and good raters are surprisingly hard to find.", "terms": ["RLHF"], "split": "train"}
+{"id": "c0262", "text": "xAI's API finally added streaming, which we'd been waiting on for months.", "terms": ["xAI"], "split": "train"}
+{"id": "c0851", "text": "We run evals nightly to track hallucination before it ships.", "terms": ["evals", "hallucination"], "split": "train"}
+{"id": "c0346", "text": "Anthropic's Claude Sonnet handled the streaming MCP responses without a hitch.", "terms": ["Anthropic", "Claude Sonnet", "MCP"], "split": "train"}
+{"id": "c0481", "text": "Context engineering is what separates a toy agent from one you can actually trust.", "terms": ["context engineering"], "split": "train"}
+{"id": "c0227", "text": "OpenAI's tool-calling format and Anthropic's MCP are converging more than people admit.", "terms": ["OpenAI", "Anthropic", "MCP"], "split": "train"}
+{"id": "c0979", "text": "Whisper plus Ollama on my laptop is a complete offline voice assistant.", "terms": ["Whisper", "Ollama"], "split": "train"}
+{"id": "c0165", "text": "Devin and GPT-5 are both on my eval shortlist for next quarter.", "terms": ["Devin", "GPT-5", "evals"], "split": "train"}
+{"id": "c0336", "text": "We store all our embeddings indexes alongside the model cards on Hugging Face.", "terms": ["embeddings", "Hugging Face"], "split": "train"}
+{"id": "c0311", "text": "Hugging Face datasets made assembling our fine-tuning corpus almost effortless.", "terms": ["Hugging Face", "fine-tuning"], "split": "train"}
+{"id": "c0982", "text": "PyTorch checkpointing let us resume the long run after the node crashed.", "terms": ["PyTorch"], "split": "train"}
+{"id": "c0403", "text": "My agentic workflow pulls from a RAG index before it even starts writing code.", "terms": ["agentic workflow", "RAG"], "split": "train"}
+{"id": "c1021", "text": "Ollama keeps the quantized model resident so the first inference isn't slow.", "terms": ["Ollama", "quantization", "inference"], "split": "train"}
+{"id": "c0108", "text": "Claude Haiku is shockingly capable for how little it costs per million tokens.", "terms": ["Claude Haiku", "tokens"], "split": "train"}
+{"id": "c0918", "text": "A subtle hallucination is more dangerous than an obvious one in production.", "terms": ["hallucination"], "split": "train"}
+{"id": "c0156", "text": "I trust Claude Opus for architecture and Codex for the boilerplate.", "terms": ["Claude Opus", "Codex"], "split": "train"}
+{"id": "c0937", "text": "Whisper timestamps let us align embeddings to exact moments in the call.", "terms": ["Whisper", "embeddings"], "split": "train"}
+{"id": "c0427", "text": "We built an agentic workflow that triages bugs and opens draft fixes automatically.", "terms": ["agentic workflow"], "split": "train"}
+{"id": "c0281", "text": "Anthropic's safety filters are stricter than what we saw from Mistral's open release.", "terms": ["Anthropic", "Mistral"], "split": "train"}
+{"id": "c0208", "text": "Mistral keeps punching above its weight with those open-weight releases on Hugging Face.", "terms": ["Mistral", "Hugging Face"], "split": "train"}
+{"id": "c0155", "text": "Gemini's huge context window means I rarely have to chunk documents.", "terms": ["Gemini", "context window"], "split": "train"}
+{"id": "c0638", "text": "The RLHF reward model started gaming us, so we retrained it.", "terms": ["RLHF"], "split": "train"}
+{"id": "c0586", "text": "Our agentic workflow uses subagents for parallel research and one agent for the writeup.", "terms": ["agentic workflow", "subagents"], "split": "train"}
+{"id": "c0090", "text": "I prototyped the LangChain agent and pointed it at Gemini first.", "terms": ["LangChain", "Gemini"], "split": "train"}
+{"id": "c0797", "text": "LoRA plus a tight system prompt was our whole personalization story.", "terms": ["LoRA", "system prompt"], "split": "train"}
+{"id": "c0384", "text": "Mistral, xAI, and Hugging Face together cover almost all of our open-model needs.", "terms": ["Mistral", "xAI", "Hugging Face"], "split": "train"}
+{"id": "c0983", "text": "The context window matters most when the conversation runs for hours.", "terms": ["context window"], "split": "train"}
+{"id": "c0528", "text": "Subagents let me parallelize a job that used to take a single agent forever.", "terms": ["subagents"], "split": "train"}
+{"id": "c0561", "text": "Prompt engineering and context engineering are the steering wheel and the map.", "terms": ["prompt engineering", "context engineering"], "split": "train"}
+{"id": "c0569", "text": "Context engineering is why we cache the system prompt and only swap the relevant parts.", "terms": ["context engineering", "system prompt"], "split": "train"}
+{"id": "c0582", "text": "Tool calling, context engineering, and a tight harness \u2014 that's the whole modern agent.", "terms": ["tool calling", "context engineering", "harness engineering"], "split": "train"}
+{"id": "c0099", "text": "Replit is where I send people who've never opened a terminal.", "terms": ["Replit"], "split": "train"}
+{"id": "c0793", "text": "RAG with hybrid search, keyword plus vectors, fixed our recall gap.", "terms": ["RAG"], "split": "train"}
+{"id": "c0673", "text": "RLHF is where alignment work really starts paying off in production.", "terms": ["RLHF"], "split": "train"}
+{"id": "c0590", "text": "Honestly, a clean RAG setup beat fine-tuning for our support use case.", "terms": ["RAG", "fine-tuning"], "split": "train"}
+{"id": "c0357", "text": "Anthropic, OpenAI, xAI, and DeepMind all updated within a single sprint, somehow.", "terms": ["Anthropic", "OpenAI", "xAI", "DeepMind"], "split": "train"}
+{"id": "c0744", "text": "We serve the LoRA-tuned model on vLLM with continuous batching.", "terms": ["LoRA", "vLLM"], "split": "train"}
+{"id": "c0335", "text": "Anthropic's Claude Opus is shockingly steady on long multi-file refactors.", "terms": ["Anthropic", "Claude Opus"], "split": "train"}
+{"id": "c0419", "text": "Our agentic workflow chains planning, implementation, and review into one loop.", "terms": ["agentic workflow"], "split": "train"}
+{"id": "c0317", "text": "xAI shipped a fine-tuning endpoint, so now everyone's comparing it to OpenAI's.", "terms": ["xAI", "fine-tuning", "OpenAI"], "split": "train"}
+{"id": "c0871", "text": "Trim the system prompt and you reclaim a surprising number of tokens.", "terms": ["system prompt", "tokens"], "split": "train"}
+{"id": "c1003", "text": "vLLM and Ollama both speak the OpenAI API, so swapping is painless.", "terms": ["vLLM", "Ollama", "OpenAI"], "split": "train"}
+{"id": "c0533", "text": "The agentic workflow does a chain of thought pass, then drafts, then self-reviews.", "terms": ["agentic workflow", "chain of thought"], "split": "train"}
+{"id": "c0777", "text": "We adopted the Model Context Protocol the same week Anthropic announced it.", "terms": ["Model Context Protocol", "Anthropic"], "split": "train"}
+{"id": "c0548", "text": "The agentic workflow failed gracefully because harness engineering planned for it.", "terms": ["agentic workflow", "harness engineering"], "split": "train"}
+{"id": "c0756", "text": "We let test-time compute scale with problem difficulty automatically.", "terms": ["test-time compute"], "split": "train"}
+{"id": "c0373", "text": "We pull base transformers from Hugging Face and do all fine-tuning in-house.", "terms": ["transformer", "Hugging Face", "fine-tuning"], "split": "train"}
+{"id": "c0202", "text": "Cursor with Claude Haiku is plenty for my small everyday edits.", "terms": ["Cursor", "Claude Haiku"], "split": "train"}
+{"id": "c0002", "text": "Honestly Cursor with Claude Sonnet feels snappier than Copilot for everyday edits.", "terms": ["Cursor", "Claude Sonnet", "Copilot"], "split": "train"}
+{"id": "c0532", "text": "Agentic coding made fine-tuning feel optional for a lot of our internal tools.", "terms": ["agentic coding", "fine-tuning"], "split": "train"}
+{"id": "c0608", "text": "I love that MCP decouples the tools from whichever model we're running.", "terms": ["MCP"], "split": "train"}
+{"id": "c0261", "text": "I pinned the Whisper version from Hugging Face so our transcripts stay reproducible.", "terms": ["Whisper", "Hugging Face"], "split": "train"}
+{"id": "c0701", "text": "The chain of thought is great for debugging but I'd never show it to users.", "terms": ["chain of thought"], "split": "train"}
+{"id": "c0887", "text": "Ollama makes it dead simple to swap one transformer for another locally.", "terms": ["Ollama", "transformer"], "split": "train"}
+{"id": "c0814", "text": "I caught a nasty hallucination where it cited a paper that never existed.", "terms": ["hallucination"], "split": "train"}
+{"id": "c0524", "text": "Agentic coding with proper guardrails is the only way I'd let it touch infra.", "terms": ["agentic coding", "guardrails"], "split": "train"}
+{"id": "c0447", "text": "We let subagents fan out in parallel, then merge their results at the end.", "terms": ["subagents"], "split": "train"}
+{"id": "c0751", "text": "Our evals weight safety failures heavier than style nitpicks.", "terms": ["evals"], "split": "train"}
+{"id": "c0354", "text": "We fine-tuned a transformer encoder for better embeddings on legal text.", "terms": ["transformer", "embeddings", "fine-tuning"], "split": "train"}
+{"id": "c0445", "text": "Context engineering is choosing what goes in the context window before the agent runs.", "terms": ["context engineering", "context window"], "split": "train"}
+{"id": "c0742", "text": "We finally automated evals in CI so nobody can forget to run them.", "terms": ["evals"], "split": "train"}
+{"id": "c0562", "text": "Agentic coding changed standups; we now talk about what the agents shipped.", "terms": ["agentic coding"], "split": "train"}
+{"id": "c0995", "text": "A confident hallucination reads exactly like a correct answer to a user.", "terms": ["hallucination"], "split": "train"}
+{"id": "c0858", "text": "Ollama plus a small transformer is enough for most internal prototypes.", "terms": ["Ollama", "transformer"], "split": "train"}
+{"id": "c0961", "text": "Guardrails are not optional once you let users type freeform prompts.", "terms": ["guardrails"], "split": "train"}
+{"id": "c0625", "text": "Honestly MCP servers feel like the USB-C moment for agent tooling.", "terms": ["MCP"], "split": "train"}
+{"id": "c0029", "text": "For the eval harness I'm comparing Claude Haiku against Gemini on latency.", "terms": ["Claude Haiku", "Gemini", "evals"], "split": "train"}
+{"id": "c0340", "text": "The MCP standard from Anthropic is becoming a quiet industry default.", "terms": ["MCP", "Anthropic"], "split": "train"}
+{"id": "c0410", "text": "Prompt engineering used to be a dark art, now it's just careful instruction writing.", "terms": ["prompt engineering"], "split": "train"}
+{"id": "c0902", "text": "We caught the hallucination in evals before it ever touched production traffic.", "terms": ["hallucination", "evals"], "split": "train"}
+{"id": "c0360", "text": "xAI is the wildcard, but Mistral is the one I'd bet on for open models.", "terms": ["xAI", "Mistral"], "split": "train"}
+{"id": "c0549", "text": "Vibe coding got a lot more respectable once the evals started passing too.", "terms": ["vibe coding", "evals"], "split": "train"}
+{"id": "c0987", "text": "We expose the retriever over MCP so any client can hit the embeddings.", "terms": ["MCP", "embeddings"], "split": "train"}
+{"id": "c0733", "text": "Our evals quietly caught a tokenizer change that would've broken production.", "terms": ["evals"], "split": "train"}
+{"id": "c0337", "text": "OpenAI and DeepMind disagree publicly about how to evaluate agent safety.", "terms": ["OpenAI", "DeepMind"], "split": "train"}
+{"id": "c0803", "text": "We finally treat the Model Context Protocol server as a first-class service.", "terms": ["Model Context Protocol"], "split": "train"}
+{"id": "c0198", "text": "Replit Agent vibe-codes a starter app while you describe the idea.", "terms": ["Replit", "vibe coding"], "split": "train"}
+{"id": "c0025", "text": "Honestly the vibe coding session in Windsurf got me 80 percent there.", "terms": ["vibe coding", "Windsurf"], "split": "train"}
+{"id": "c1047", "text": "Whisper plus LlamaIndex turned hours of audio into a queryable knowledge base.", "terms": ["Whisper", "LlamaIndex"], "split": "train"}
+{"id": "c0984", "text": "vLLM gave us deterministic inference once we pinned the random seed.", "terms": ["vLLM", "inference"], "split": "train"}
+{"id": "c0313", "text": "Mistral's tokenizer handled our multilingual data more gracefully than the others.", "terms": ["Mistral"], "split": "train"}
+{"id": "c0359", "text": "Hugging Face's autotrain made the first fine-tuning pass almost click-and-go.", "terms": ["Hugging Face", "fine-tuning"], "split": "train"}
+{"id": "c0472", "text": "Prompt engineering is less about magic words and more about clear specifications.", "terms": ["prompt engineering"], "split": "train"}
+{"id": "c0205", "text": "Anthropic just dropped a new Claude Opus checkpoint and the agentic coding numbers look wild.", "terms": ["Anthropic", "Claude Opus"], "split": "train"}
+{"id": "c0228", "text": "DeepMind keeps Gemini pretty locked down compared to what Mistral ships openly.", "terms": ["DeepMind", "Gemini", "Mistral"], "split": "train"}
+{"id": "c0482", "text": "Agentic coding finally made me comfortable letting the model run the test suite itself.", "terms": ["agentic coding"], "split": "train"}
+{"id": "c0040", "text": "Replit makes it stupidly easy to go from idea to shared URL.", "terms": ["Replit"], "split": "train"}
+{"id": "c0392", "text": "Our agentic workflow kicks off on every pull request and runs the whole test suite.", "terms": ["agentic workflow"], "split": "train"}
+{"id": "c0111", "text": "Windsurf's inline diffs make reviewing agent changes much less scary.", "terms": ["Windsurf"], "split": "train"}
+{"id": "c0893", "text": "A bigger context window doesn't fix hallucination, it just hides it longer.", "terms": ["context window", "hallucination"], "split": "train"}
+{"id": "c0873", "text": "We use RAG to keep the context window small and answers grounded.", "terms": ["RAG", "context window"], "split": "train"}
+{"id": "c0767", "text": "I wired three subagents, each with a different MCP toolset.", "terms": ["subagents", "MCP"], "split": "train"}
+{"id": "c0422", "text": "When subagents share too much state, you get chaos, so isolate their contexts.", "terms": ["subagents"], "split": "train"}
+{"id": "c0341", "text": "We compared Claude Sonnet and Gemini on a RAG question-answering eval.", "terms": ["Claude Sonnet", "Gemini", "RAG"], "split": "train"}
+{"id": "c0184", "text": "GPT-5's structured outputs made the parsing step trivial.", "terms": ["GPT-5"], "split": "train"}
+{"id": "c0026", "text": "I gave Claude Code the failing test and it found the bug in two minutes.", "terms": ["Claude Code"], "split": "train"}
+{"id": "c0423", "text": "Reliable tool calling depends on giving the model strict, well-typed function schemas.", "terms": ["tool calling"], "split": "train"}
+{"id": "c0182", "text": "I love vibe coding a rough draft in Replit before going serious.", "terms": ["vibe coding", "Replit"], "split": "train"}
+{"id": "c0970", "text": "PyTorch made debugging the transformer forward pass painless with eager mode.", "terms": ["PyTorch", "transformer"], "split": "train"}
+{"id": "c0721", "text": "RAG hallucination dropped once we grounded every claim in retrieved text.", "terms": ["RAG"], "split": "train"}
+{"id": "c0944", "text": "PyTorch distributed training scaled our run across eight GPUs cleanly.", "terms": ["PyTorch"], "split": "train"}
+{"id": "c0964", "text": "We chunk by paragraph so embeddings stay tight and retrieval stays precise.", "terms": ["embeddings"], "split": "train"}
+{"id": "c0574", "text": "I run subagents in parallel and let the orchestrator reconcile their outputs.", "terms": ["subagents"], "split": "train"}
+{"id": "c0755", "text": "Asking for a chain of thought first made the final code far cleaner.", "terms": ["chain of thought"], "split": "train"}
+{"id": "c0106", "text": "I drafted the MCP tool spec and tested it inside Cursor.", "terms": ["MCP", "Cursor"], "split": "train"}
+{"id": "c0805", "text": "LoRA gave us per-customer fine-tuning without ballooning storage costs.", "terms": ["LoRA", "fine-tuning"], "split": "train"}
+{"id": "c1010", "text": "Embeddings retrieval feeds the system prompt with just the relevant context.", "terms": ["embeddings", "system prompt"], "split": "train"}
+{"id": "c0367", "text": "Anthropic's MCP, OpenAI's plugins, and xAI's tools are slowly converging in design.", "terms": ["Anthropic", "MCP", "OpenAI", "xAI"], "split": "train"}
+{"id": "c0924", "text": "Ollama's model library covers most of what we test before vLLM deployment.", "terms": ["Ollama", "vLLM"], "split": "train"}
+{"id": "c0971", "text": "Tokens are money, so every system prompt edit goes through review.", "terms": ["tokens", "system prompt"], "split": "train"}
+{"id": "c0316", "text": "We benchmarked the transformer on vLLM and the throughput numbers were great.", "terms": ["transformer", "vLLM"], "split": "train"}
+{"id": "c0043", "text": "I asked Claude Sonnet to write the tests first, real TDD style.", "terms": ["Claude Sonnet"], "split": "train"}
+{"id": "c0131", "text": "Windsurf and Claude Code both nailed the bug, just took different routes.", "terms": ["Windsurf", "Claude Code"], "split": "train"}
+{"id": "c0441", "text": "My favorite agentic workflow has a planner subagent and a bunch of worker subagents.", "terms": ["agentic workflow", "subagents"], "split": "train"}
+{"id": "c0152", "text": "Claude Sonnet handled the agentic coding flow without going off the rails.", "terms": ["Claude Sonnet", "agentic coding"], "split": "train"}
+{"id": "c0998", "text": "Ollama is my go-to for trying a new model before any PyTorch work.", "terms": ["Ollama", "PyTorch"], "split": "train"}
+{"id": "c0639", "text": "Sometimes the chain of thought is right but the final answer flips.", "terms": ["chain of thought"], "split": "train"}
+{"id": "c0037", "text": "I prefer Windsurf for greenfield work and Claude Code for maintenance.", "terms": ["Windsurf", "Claude Code"], "split": "train"}
+{"id": "c0559", "text": "I keep my subagents small so each one fits comfortably in its context window.", "terms": ["subagents", "context window"], "split": "train"}
+{"id": "c0153", "text": "We pointed LangChain at Claude Haiku for the cheap retrieval calls.", "terms": ["LangChain", "Claude Haiku"], "split": "train"}
+{"id": "c0730", "text": "Our RAG index rebuilds nightly so stale embeddings never linger.", "terms": ["RAG", "embeddings"], "split": "train"}
+{"id": "c0837", "text": "We compute embeddings once and cache them to avoid repeated inference.", "terms": ["embeddings", "inference"], "split": "train"}
+{"id": "c0653", "text": "We score every eval run on faithfulness and answer relevance.", "terms": ["evals"], "split": "train"}
+{"id": "c0913", "text": "Embeddings let us cluster support tickets without labeling a single one.", "terms": ["embeddings"], "split": "train"}
+{"id": "c0438", "text": "Context engineering is the unglamorous work that makes everything else look impressive.", "terms": ["context engineering"], "split": "train"}
+{"id": "c0565", "text": "Harness engineering is the unsexy infrastructure that makes agents actually usable.", "terms": ["harness engineering"], "split": "train"}
+{"id": "c0453", "text": "Vibe coding works great until someone asks why there are zero tests.", "terms": ["vibe coding"], "split": "train"}
+{"id": "c0846", "text": "LlamaIndex made it trivial to wire embeddings into a query engine.", "terms": ["LlamaIndex", "embeddings"], "split": "train"}
+{"id": "c0269", "text": "We run our evals nightly against Claude Opus, GPT-5, and a Mistral baseline.", "terms": ["evals", "Claude Opus", "GPT-5", "Mistral"], "split": "train"}
+{"id": "c0134", "text": "GPT-5's tool calling got way more reliable in the latest update.", "terms": ["GPT-5"], "split": "train"}
+{"id": "c0342", "text": "DeepMind's transformer variants keep pushing the efficiency frontier.", "terms": ["DeepMind", "transformer"], "split": "train"}
+{"id": "c0942", "text": "We store embeddings keyed by document ID for fast RAG lookups.", "terms": ["embeddings", "RAG"], "split": "train"}
+{"id": "c0046", "text": "We hooked LangChain up to Gemini for the document Q and A demo.", "terms": ["LangChain", "Gemini"], "split": "train"}
+{"id": "c0284", "text": "Our LoRA experiment on Mistral cut training cost without hurting the evals.", "terms": ["LoRA", "Mistral", "evals"], "split": "train"}
+{"id": "c0706", "text": "We finally gave evals a real budget instead of running them ad hoc.", "terms": ["evals"], "split": "train"}
+{"id": "c1016", "text": "LlamaIndex and embeddings together gave us RAG in an afternoon.", "terms": ["LlamaIndex", "embeddings", "RAG"], "split": "train"}
+{"id": "c0053", "text": "GPT-5 hallucinated a function name, so I double-checked it against the docs.", "terms": ["GPT-5"], "split": "train"}
+{"id": "c0897", "text": "We pinned the system prompt so caching the tokens actually pays off.", "terms": ["system prompt", "tokens"], "split": "train"}
+{"id": "c0839", "text": "Set up guardrails so the assistant refuses anything outside its scope.", "terms": ["guardrails"], "split": "train"}
+{"id": "c0518", "text": "Vibe coding is fine for the demo, but write the evals before the customer sees it.", "terms": ["vibe coding", "evals"], "split": "train"}
+{"id": "c0626", "text": "We standardized on the Model Context Protocol so every team ships compatible tools.", "terms": ["Model Context Protocol"], "split": "train"}
+{"id": "c0209", "text": "Honestly, xAI's Grok improvements caught a lot of people off guard last quarter.", "terms": ["xAI"], "split": "train"}
+{"id": "c0352", "text": "Mistral's permissive license is half the reason it shows up everywhere on Hugging Face.", "terms": ["Mistral", "Hugging Face"], "split": "train"}
+{"id": "c0216", "text": "Our evals show Mistral edging out the older OpenAI models on French summarization.", "terms": ["evals", "Mistral", "OpenAI"], "split": "train"}
+{"id": "c0289", "text": "We benchmarked Whisper transcription against a Mistral-based pipeline for code-switching.", "terms": ["Whisper", "Mistral"], "split": "train"}
+{"id": "c0279", "text": "I think xAI underrates how much developers care about good SDK ergonomics.", "terms": ["xAI"], "split": "train"}
+{"id": "c1022", "text": "The system prompt drifted across deploys and the evals caught the regression.", "terms": ["system prompt", "evals"], "split": "train"}
+{"id": "c0881", "text": "We export the PyTorch model to ONNX before quantization for portability.", "terms": ["PyTorch", "quantization"], "split": "train"}
+{"id": "c0110", "text": "GPT-5 from OpenAI is the model my product manager keeps asking about.", "terms": ["GPT-5", "OpenAI"], "split": "train"}
+{"id": "c0119", "text": "GPT-5 wrote the migration script and Codex reviewed it, weirdly enough.", "terms": ["GPT-5", "Codex"], "split": "train"}
+{"id": "c1009", "text": "Inference on a quantized transformer ran fine even on the old laptop.", "terms": ["inference", "quantization", "transformer"], "split": "train"}
+{"id": "c0138", "text": "I drafted the whole feature with Claude Opus and shipped it the same day.", "terms": ["Claude Opus"], "split": "train"}
+{"id": "c0107", "text": "Replit's collaborative editor made the pairing session painless.", "terms": ["Replit"], "split": "train"}
+{"id": "c0307", "text": "The evals on Claude Sonnet versus GPT-5 came out closer than the marketing suggests.", "terms": ["evals", "Claude Sonnet", "GPT-5"], "split": "train"}
+{"id": "c0789", "text": "We froze most layers and let LoRA learn just the attention projections.", "terms": ["LoRA"], "split": "train"}
+{"id": "c0009", "text": "I spun up the whole prototype on Replit and shared the link in Slack.", "terms": ["Replit"], "split": "train"}
+{"id": "c0992", "text": "PyTorch quantization APIs matured enough that we stopped hand-rolling it.", "terms": ["PyTorch", "quantization"], "split": "train"}
+{"id": "c0627", "text": "The evals flagged that long context windows hurt our accuracy, oddly.", "terms": ["evals", "context window"], "split": "train"}
+{"id": "c0310", "text": "We rebuilt the RAG index with fresh embeddings and recall jumped immediately.", "terms": ["RAG", "embeddings"], "split": "train"}
+{"id": "c0557", "text": "Vibe coding the happy path is easy; the edge cases are where engineering returns.", "terms": ["vibe coding"], "split": "train"}
+{"id": "c0799", "text": "The chain of thought made the model's reasoning auditable for compliance.", "terms": ["chain of thought"], "split": "train"}
+{"id": "c0966", "text": "vLLM plus quantization is how we serve the model on a single A100.", "terms": ["vLLM", "quantization"], "split": "train"}
+{"id": "c0292", "text": "We ran the whole RAG stack through Ollama for an air-gapped customer.", "terms": ["RAG", "Ollama"], "split": "train"}
+{"id": "c0379", "text": "We fine-tuned with LoRA on a Mistral base and the evals barely moved, in a good way.", "terms": ["LoRA", "Mistral", "evals"], "split": "train"}
+{"id": "c0954", "text": "vLLM handles the quantized weights and the inference stays low latency.", "terms": ["vLLM", "quantization", "inference"], "split": "train"}
+{"id": "c0682", "text": "RLHF on a thin slice of feedback still moved the needle a lot.", "terms": ["RLHF"], "split": "train"}
+{"id": "c0358", "text": "Our RAG citations got trustworthy once we moved generation to Claude Opus.", "terms": ["RAG", "Claude Opus"], "split": "train"}
+{"id": "c0768", "text": "Model Context Protocol is what finally got non-AI teams shipping tools.", "terms": ["Model Context Protocol"], "split": "train"}
+{"id": "c0660", "text": "Every MCP server we write ships with its own tiny test harness.", "terms": ["MCP"], "split": "train"}
+{"id": "c0519", "text": "Harness engineering is the discipline of designing the agent's whole environment.", "terms": ["harness engineering"], "split": "train"}
+{"id": "c0716", "text": "We skipped fine-tuning entirely and leaned on a strong system prompt instead.", "terms": ["fine-tuning", "system prompt"], "split": "train"}
+{"id": "c0551", "text": "I gave each of the subagents a focused system prompt and a single clear job.", "terms": ["subagents", "system prompt"], "split": "train"}
+{"id": "c0076", "text": "Windsurf shipped a feature where the model writes its own evals.", "terms": ["Windsurf", "evals"], "split": "train"}
+{"id": "c0103", "text": "Claude Code spawned subagents per package and they reported back cleanly.", "terms": ["Claude Code", "subagents"], "split": "train"}
+{"id": "c0577", "text": "Agentic coding with guardrails and evals is the setup I actually trust in production.", "terms": ["agentic coding", "guardrails", "evals"], "split": "train"}
+{"id": "c0637", "text": "We keep one LoRA per language and route based on the user.", "terms": ["LoRA"], "split": "train"}
+{"id": "c0919", "text": "We use MCP to expose tools and let the system prompt describe them tersely.", "terms": ["MCP", "system prompt"], "split": "train"}
+{"id": "c0010", "text": "For deep planning I reach for Claude Opus, but Claude Haiku handles the grunt work.", "terms": ["Claude Opus", "Claude Haiku"], "split": "train"}
+{"id": "c0075", "text": "Cursor's agent mode and Claude Opus together feel almost overpowered.", "terms": ["Cursor", "Claude Opus"], "split": "train"}
+{"id": "c0665", "text": "The chain of thought showed it was anchoring on a wrong assumption early.", "terms": ["chain of thought"], "split": "train"}
+{"id": "c0469", "text": "Harness engineering is where context engineering and tool calling actually come together.", "terms": ["harness engineering", "context engineering", "tool calling"], "split": "train"}
+{"id": "c0308", "text": "I host small Mistral checkpoints on Ollama for offline standup demos.", "terms": ["Mistral", "Ollama"], "split": "train"}
+{"id": "c0135", "text": "We exposed our database through MCP so Claude Code could query it safely.", "terms": ["MCP", "Claude Code"], "split": "train"}
+{"id": "c0922", "text": "Quantization noise showed up only on the long tail of our evals.", "terms": ["quantization", "evals"], "split": "train"}
+{"id": "c0709", "text": "RLHF reduced toxic outputs but introduced a slight sycophancy problem.", "terms": ["RLHF"], "split": "train"}
+{"id": "c0245", "text": "OpenAI's Codex plugin saved me hours, but it still hallucinates import paths sometimes.", "terms": ["OpenAI", "Codex"], "split": "train"}
+{"id": "c0694", "text": "RAG and tool calling together let the agent both read and act.", "terms": ["RAG", "tool calling"], "split": "train"}
+{"id": "c1041", "text": "Quantization plus vLLM is the only way we hit the inference latency target.", "terms": ["quantization", "vLLM", "inference"], "split": "train"}
+{"id": "c0268", "text": "I love how xAI ships fast, but the docs lag behind the actual API.", "terms": ["xAI"], "split": "train"}
+{"id": "c0934", "text": "The transformer's attention heads each learn a different relationship.", "terms": ["transformer"], "split": "train"}
+{"id": "c0536", "text": "I run subagents behind guardrails so a rogue one can't nuke the repo.", "terms": ["subagents", "guardrails"], "split": "train"}
+{"id": "c0579", "text": "Vibe coding is the fun part; harness engineering is what keeps the lights on.", "terms": ["vibe coding", "harness engineering"], "split": "train"}
+{"id": "c0993", "text": "LlamaIndex retrieval kept the context window under control on huge corpora.", "terms": ["LlamaIndex", "context window"], "split": "train"}
+{"id": "c0430", "text": "Each of the subagents has its own context window so they don't trip over each other.", "terms": ["subagents", "context window"], "split": "train"}
+{"id": "c0084", "text": "Devin and Codex both attempted the bug, and Codex got there first.", "terms": ["Devin", "Codex"], "split": "train"}
+{"id": "c0635", "text": "Our evals compare the new model against last quarter's baseline every release.", "terms": ["evals"], "split": "train"}
+{"id": "c0041", "text": "Claude Haiku powers our autocomplete because it's fast and basically free.", "terms": ["Claude Haiku"], "split": "train"}
+{"id": "c0609", "text": "Our evals caught a regression where the agent dropped citations entirely.", "terms": ["evals"], "split": "train"}
+{"id": "c0593", "text": "Once we exposed Postgres over MCP, tool calling got dramatically simpler.", "terms": ["MCP", "tool calling"], "split": "train"}
+{"id": "c0915", "text": "The transformer's feed-forward layers dominate the parameter count.", "terms": ["transformer"], "split": "train"}
+{"id": "c0584", "text": "Context engineering is the quiet skill that makes agentic coding actually feel reliable.", "terms": ["context engineering", "agentic coding"], "split": "train"}
+{"id": "c0123", "text": "Devin and Replit are both selling autonomy, just to very different buyers.", "terms": ["Devin", "Replit"], "split": "train"}
+{"id": "c0414", "text": "Claude Opus is great at agentic coding because it plans before it touches the keyboard.", "terms": ["Claude Opus", "agentic coding"], "split": "train"}
+{"id": "c0241", "text": "Mistral's mixture-of-experts checkpoint felt snappier than I expected on long prompts.", "terms": ["Mistral"], "split": "train"}
+{"id": "c0824", "text": "Our system prompt was eating two thousand tokens before the user even spoke.", "terms": ["system prompt", "tokens"], "split": "train"}
+{"id": "c0610", "text": "Fine-tuning on our domain jargon cut the hallucinations on product names.", "terms": ["fine-tuning"], "split": "train"}
+{"id": "c0935", "text": "Trimming tokens from the system prompt cut our latency by a third.", "terms": ["tokens", "system prompt"], "split": "train"}
+{"id": "c0191", "text": "Replit's instant hosting is why I send beginners there first.", "terms": ["Replit"], "split": "train"}
+{"id": "c0083", "text": "Gemini handled the giant PDF in one shot thanks to that context window.", "terms": ["Gemini", "context window"], "split": "train"}
+{"id": "c0521", "text": "Tool calling with strict JSON schemas almost eliminated our parsing errors.", "terms": ["tool calling"], "split": "train"}
+{"id": "c0693", "text": "We log test-time compute per request so finance can see the bill.", "terms": ["test-time compute"], "split": "train"}
+{"id": "c1025", "text": "A hallucination once told a user to delete their production database.", "terms": ["hallucination"], "split": "train"}
+{"id": "c0843", "text": "Quantization aware training kept accuracy up where post-training quantization failed.", "terms": ["quantization"], "split": "train"}
+{"id": "c0515", "text": "Prompt engineering is a craft, but it doesn't scale without good context engineering.", "terms": ["prompt engineering", "context engineering"], "split": "train"}
+{"id": "c0489", "text": "Context engineering means budgeting your tokens like you'd budget a sprint.", "terms": ["context engineering", "tokens"], "split": "train"}
+{"id": "c0909", "text": "LangChain's callbacks let us trace exactly where inference time leaks.", "terms": ["LangChain", "inference"], "split": "train"}
+{"id": "c0726", "text": "We benchmarked LoRA against full fine-tuning and the gap was tiny.", "terms": ["LoRA", "fine-tuning"], "split": "train"}
+{"id": "c0059", "text": "Devin struggled with the flaky integration tests, so I took over manually.", "terms": ["Devin"], "split": "train"}
+{"id": "c0322", "text": "Our embeddings pipeline runs on a tiny Mistral encoder under vLLM.", "terms": ["embeddings", "Mistral", "vLLM"], "split": "train"}
+{"id": "c0745", "text": "RLHF is iterative; you never really finish aligning a model.", "terms": ["RLHF"], "split": "train"}
+{"id": "c0556", "text": "Our agentic workflow has a human-in-the-loop checkpoint before any deploy.", "terms": ["agentic workflow"], "split": "train"}
+{"id": "c0594", "text": "Our whole agent talks to the file system through an MCP server now.", "terms": ["MCP"], "split": "train"}
+{"id": "c0832", "text": "After quantization the PyTorch checkpoint loaded in half the time.", "terms": ["quantization", "PyTorch"], "split": "train"}
+{"id": "c0223", "text": "Claude Sonnet is my daily driver, but I keep GPT-5 around for second opinions.", "terms": ["Claude Sonnet", "GPT-5"], "split": "train"}
+{"id": "c0304", "text": "xAI, Mistral, and Anthropic each market themselves very differently to developers.", "terms": ["xAI", "Mistral", "Anthropic"], "split": "train"}
+{"id": "c0878", "text": "LlamaIndex and LangChain both wrap embeddings, so pick one and commit.", "terms": ["LlamaIndex", "LangChain", "embeddings"], "split": "train"}
+{"id": "c0159", "text": "Claude Haiku answered in under a second, perfect for the live demo.", "terms": ["Claude Haiku"], "split": "train"}
+{"id": "c0499", "text": "Vibe coding a quick spike beats writing a design doc nobody reads.", "terms": ["vibe coding"], "split": "train"}
+{"id": "c0985", "text": "Embeddings from a frozen transformer were good enough to skip fine-tuning.", "terms": ["embeddings", "transformer", "fine-tuning"], "split": "train"}
+{"id": "c1028", "text": "Whisper handled the noisy warehouse audio better after we fine-tuned it.", "terms": ["Whisper", "fine-tuning"], "split": "train"}
+{"id": "c0754", "text": "RLHF tuned the refusal boundary, but we still added explicit guardrails.", "terms": ["RLHF", "guardrails"], "split": "train"}
+{"id": "c0293", "text": "Claude Opus crushed the long-document evals, but Gemini was cheaper per token.", "terms": ["Claude Opus", "evals", "Gemini"], "split": "train"}
+{"id": "c0466", "text": "Agentic coding really wants clean interfaces, so it forces you to write better code.", "terms": ["agentic coding"], "split": "train"}
+{"id": "c0815", "text": "Counting tokens before every request keeps our bill from exploding.", "terms": ["tokens"], "split": "train"}
+{"id": "c0400", "text": "The subagents report back to the orchestrator, and then it decides the next step.", "terms": ["subagents"], "split": "train"}
+{"id": "c0003", "text": "We prototyped the agent in Windsurf, then moved it to Claude Code for the long-running stuff.", "terms": ["Windsurf", "Claude Code"], "split": "train"}
+{"id": "c0951", "text": "Our guardrails reject any output that contradicts the retrieved context.", "terms": ["guardrails"], "split": "train"}
+{"id": "c0169", "text": "Cursor finally added good MCP support, so I dropped my custom hacks.", "terms": ["Cursor", "MCP"], "split": "train"}
+{"id": "c0847", "text": "Ollama pulls the quantized model and runs it on my laptop just fine.", "terms": ["Ollama", "quantization"], "split": "train"}
+{"id": "c0933", "text": "We run Ollama on the dev box and PyTorch on the training cluster.", "terms": ["Ollama", "PyTorch"], "split": "train"}
+{"id": "c0219", "text": "DeepMind published a paper on the embeddings architecture that powers their retrieval stack.", "terms": ["DeepMind", "embeddings"], "split": "train"}
+{"id": "c0493", "text": "Honestly context engineering is the most important skill nobody talks about enough.", "terms": ["context engineering"], "split": "train"}
+{"id": "c0771", "text": "We pushed the LoRA checkpoint to Hugging Face for reproducibility.", "terms": ["LoRA", "Hugging Face"], "split": "train"}
+{"id": "c0761", "text": "We A/B tested fine-tuning versus RAG and let the evals decide.", "terms": ["fine-tuning", "RAG", "evals"], "split": "train"}
+{"id": "c0171", "text": "I batch the easy stuff to Claude Haiku and escalate to Claude Opus rarely.", "terms": ["Claude Haiku", "Claude Opus"], "split": "train"}
+{"id": "c0243", "text": "The evals were noisy until we fixed the embeddings normalization bug.", "terms": ["evals", "embeddings"], "split": "train"}
+{"id": "c0096", "text": "Windsurf and Cursor are basically trading punches release after release.", "terms": ["Windsurf", "Cursor"], "split": "train"}
+{"id": "c0016", "text": "Gemini Flash is my go-to when I need a fast cheap summary.", "terms": ["Gemini"], "split": "train"}
+{"id": "c0554", "text": "Context engineering is curation, compression, and knowing what to leave out.", "terms": ["context engineering"], "split": "train"}
+{"id": "c0668", "text": "I love how MCP keeps the tool logic out of the model's head entirely.", "terms": ["MCP"], "split": "train"}
+{"id": "c1046", "text": "We ground answers in embeddings so guardrails have something to check against.", "terms": ["embeddings", "guardrails"], "split": "train"}
+{"id": "c0746", "text": "The chain of thought revealed it confused two similarly named functions.", "terms": ["chain of thought"], "split": "train"}
+{"id": "c1045", "text": "PyTorch made experimenting with new transformer variants fast and clean.", "terms": ["PyTorch", "transformer"], "split": "train"}
+{"id": "c0454", "text": "Harness engineering is the part of the job that doesn't show up in the demo.", "terms": ["harness engineering"], "split": "train"}
+{"id": "c0078", "text": "We standardized on MCP so Cursor and Claude Code share the same tools.", "terms": ["MCP", "Cursor", "Claude Code"], "split": "train"}
+{"id": "c0256", "text": "A small LoRA on top of the transformer got us most of the way to full fine-tuning.", "terms": ["LoRA", "transformer", "fine-tuning"], "split": "train"}
+{"id": "c0952", "text": "Token cost on inference dropped once we cached the system prompt.", "terms": ["tokens", "inference", "system prompt"], "split": "train"}
+{"id": "c0773", "text": "The chain of thought caught its own arithmetic mistake and corrected it.", "terms": ["chain of thought"], "split": "train"}
+{"id": "c0188", "text": "Claude Code is the only tool that consistently respects my CLAUDE.md rules.", "terms": ["Claude Code"], "split": "train"}
+{"id": "c0890", "text": "LangChain's retrievers feed our RAG pipeline straight from the vector store.", "terms": ["LangChain", "RAG"], "split": "train"}
+{"id": "c0144", "text": "We fine-tuned a classifier and compared it to zero-shot Claude Haiku.", "terms": ["fine-tuning", "Claude Haiku"], "split": "train"}
+{"id": "c0460", "text": "Our agentic workflow runs nightly and leaves a summary in the team channel.", "terms": ["agentic workflow"], "split": "train"}
+{"id": "c0875", "text": "Inference on the quantized weights is noticeably snappier under vLLM.", "terms": ["inference", "quantization", "vLLM"], "split": "train"}
+{"id": "c0760", "text": "Without evals you're just hoping the new prompt is better.", "terms": ["evals"], "split": "train"}
+{"id": "c0989", "text": "The system prompt carries the guardrails, but real guardrails live in code.", "terms": ["system prompt", "guardrails"], "split": "train"}
+{"id": "c0255", "text": "Anthropic's Claude Sonnet handles structured output requests with almost no babysitting.", "terms": ["Anthropic", "Claude Sonnet"], "split": "train"}
+{"id": "c0112", "text": "I let Claude Code run the whole evals suite before every release.", "terms": ["Claude Code", "evals"], "split": "train"}
+{"id": "c0348", "text": "DeepMind and Anthropic both published interpretability work I keep coming back to.", "terms": ["DeepMind", "Anthropic"], "split": "train"}
+{"id": "c0413", "text": "Honestly harness engineering is the new DevOps for AI-assisted teams.", "terms": ["harness engineering"], "split": "train"}
+{"id": "c0063", "text": "GPT-5 plus a good RAG setup answered the legal questions surprisingly well.", "terms": ["GPT-5", "RAG"], "split": "train"}
+{"id": "c0101", "text": "We benchmarked Copilot, Cursor, and Windsurf on the same refactor task.", "terms": ["Copilot", "Cursor", "Windsurf"], "split": "train"}
+{"id": "c0662", "text": "We treat evals like unit tests for prompts, and it changed everything.", "terms": ["evals"], "split": "train"}
+{"id": "c0670", "text": "Our evals broke when we upgraded models, which is exactly the point.", "terms": ["evals"], "split": "train"}
+{"id": "c0690", "text": "We quantized the LoRA-merged model and served it on vLLM.", "terms": ["LoRA", "vLLM"], "split": "train"}
+{"id": "c0056", "text": "Claude Opus planned the whole epic and Claude Sonnet executed the chunks.", "terms": ["Claude Opus", "Claude Sonnet"], "split": "train"}
+{"id": "c0955", "text": "Embeddings similarity gave us a free duplicate detector for incoming tickets.", "terms": ["embeddings"], "split": "train"}
+{"id": "c0479", "text": "Tool calling latency adds up fast when an agent makes fifty calls per task.", "terms": ["tool calling"], "split": "train"}
+{"id": "c0421", "text": "I treat harness engineering like API design for the model's environment.", "terms": ["harness engineering"], "split": "train"}
+{"id": "c0892", "text": "Hugging Face datasets made loading the Whisper training corpus painless.", "terms": ["Hugging Face", "Whisper"], "split": "train"}
+{"id": "c0363", "text": "DeepMind's embeddings and OpenAI's embeddings disagreed on a few near-duplicates.", "terms": ["DeepMind", "embeddings", "OpenAI"], "split": "train"}
+{"id": "c0442", "text": "Tool calling is only as good as the error messages your tools hand back.", "terms": ["tool calling"], "split": "train"}
+{"id": "c0675", "text": "We expose a test-time compute slider to enterprise customers now.", "terms": ["test-time compute"], "split": "train"}
+{"id": "c1014", "text": "vLLM speculative decoding squeezed even more out of our inference budget.", "terms": ["vLLM", "inference"], "split": "train"}
+{"id": "c0097", "text": "I tuned the system prompt and suddenly Gemini stopped rambling.", "terms": ["system prompt", "Gemini"], "split": "train"}
+{"id": "c0195", "text": "Devin's autonomous mode handled the full refactor, tests and all.", "terms": ["Devin"], "split": "train"}
+{"id": "c0417", "text": "Most of my prompt engineering wins came from adding examples, not clever wording.", "terms": ["prompt engineering"], "split": "train"}
+{"id": "c0764", "text": "The chain of thought is verbose, so we collapse it before logging.", "terms": ["chain of thought"], "split": "train"}
+{"id": "c0249", "text": "DeepMind researchers have published some of the cleanest transformer ablation studies around.", "terms": ["DeepMind", "transformer"], "split": "train"}
+{"id": "c0485", "text": "Harness engineering is the reason our agent recovers gracefully when a tool times out.", "terms": ["harness engineering"], "split": "train"}
+{"id": "c0591", "text": "The retrieval quality in our RAG stack got way better once we fixed the embeddings.", "terms": ["RAG", "embeddings"], "split": "train"}
+{"id": "c0585", "text": "Vibe coding got the idea out of my head and onto the screen in an hour.", "terms": ["vibe coding"], "split": "train"}
+{"id": "c0741", "text": "The Model Context Protocol turned a week of glue code into an afternoon.", "terms": ["Model Context Protocol"], "split": "train"}
+{"id": "c0136", "text": "Devin's dashboard makes it easy to watch the agent's progress live.", "terms": ["Devin"], "split": "train"}
+{"id": "c0810", "text": "Quantization let us fit the whole model on a single consumer GPU.", "terms": ["quantization"], "split": "train"}
+{"id": "c0220", "text": "I spun up Ollama locally and pulled a quantized Mistral build to test offline.", "terms": ["Ollama", "Mistral"], "split": "train"}
+{"id": "c0826", "text": "Good guardrails catch a hallucination before it ever reaches the customer.", "terms": ["guardrails", "hallucination"], "split": "train"}
+{"id": "c0686", "text": "MCP turned a one-off integration into a reusable building block.", "terms": ["MCP"], "split": "train"}
+{"id": "c1042", "text": "We expanded the context window and the hallucination just moved further down.", "terms": ["context window", "hallucination"], "split": "train"}
+{"id": "c0244", "text": "I keep telling people Hugging Face is basically GitHub for models now.", "terms": ["Hugging Face"], "split": "train"}
+{"id": "c0527", "text": "Harness engineering and prompt engineering are two halves of the same steering problem.", "terms": ["harness engineering", "prompt engineering"], "split": "train"}
+{"id": "c0784", "text": "RAG over Slack history made the onboarding bot genuinely useful.", "terms": ["RAG"], "split": "train"}
+{"id": "c0339", "text": "Mistral, Anthropic, and OpenAI each have a distinct fine-tuning story for teams.", "terms": ["Mistral", "Anthropic", "OpenAI", "fine-tuning"], "split": "train"}
+{"id": "c0936", "text": "LangChain wraps the LLM, but the real inference still runs on vLLM.", "terms": ["LangChain", "inference", "vLLM"], "split": "train"}
+{"id": "c0070", "text": "Claude Code spun up a subagent just to triage the stack trace.", "terms": ["Claude Code", "subagents"], "split": "train"}
+{"id": "c0938", "text": "Guardrails caught a hallucination claiming our product had a feature it doesn't.", "terms": ["guardrails", "hallucination"], "split": "train"}
+{"id": "c0061", "text": "Anthropic's Claude Sonnet is what most of my team defaults to now.", "terms": ["Anthropic", "Claude Sonnet"], "split": "train"}
+{"id": "c0647", "text": "RLHF nudged the model toward shorter, punchier answers.", "terms": ["RLHF"], "split": "train"}
+{"id": "c0725", "text": "Fine-tuning the embeddings model itself improved RAG retrieval noticeably.", "terms": ["fine-tuning", "embeddings", "RAG"], "split": "train"}
+{"id": "c0073", "text": "Codex from OpenAI handled the monorepo migration better than I expected.", "terms": ["Codex", "OpenAI"], "split": "train"}
+{"id": "c0008", "text": "Devin opened a pull request before I even finished my coffee.", "terms": ["Devin"], "split": "train"}
+{"id": "c0226", "text": "xAI open-sourced an older Grok variant, and folks immediately mirrored it on Hugging Face.", "terms": ["xAI", "Hugging Face"], "split": "train"}
+{"id": "c0790", "text": "RLHF is great until your reward model starts disagreeing with users.", "terms": ["RLHF"], "split": "train"}
+{"id": "c0236", "text": "We ran a quick LoRA fine-tuning job and shipped the adapter to staging by lunch.", "terms": ["LoRA", "fine-tuning"], "split": "train"}
+{"id": "c0568", "text": "Prompt engineering is communication; the model is just a very literal listener.", "terms": ["prompt engineering"], "split": "train"}
+{"id": "c0603", "text": "When I forced it to show its chain of thought, the bug was obvious.", "terms": ["chain of thought"], "split": "train"}
+{"id": "c0022", "text": "Cursor's composer plus Claude Sonnet is basically my whole workflow now.", "terms": ["Cursor", "Claude Sonnet"], "split": "train"}
+{"id": "c0347", "text": "Mistral on vLLM gave us the best tokens-per-dollar of anything we tried.", "terms": ["Mistral", "vLLM"], "split": "train"}
+{"id": "c0978", "text": "Quantization shaved the checkpoint from forty gigs to eleven.", "terms": ["quantization"], "split": "train"}
+{"id": "c0231", "text": "We benchmarked Claude Opus against Gemini on a thousand-row eval set last night.", "terms": ["Claude Opus", "Gemini", "evals"], "split": "train"}
+{"id": "c0254", "text": "xAI and DeepMind are taking opposite bets on how open their weights should be.", "terms": ["xAI", "DeepMind"], "split": "train"}
+{"id": "c0124", "text": "I told Claude Opus to think hard and it produced a genuinely good design doc.", "terms": ["Claude Opus"], "split": "train"}
+{"id": "c0463", "text": "The subagents each call their own tools, which keeps tool calling permissions tight.", "terms": ["subagents", "tool calling"], "split": "train"}
+{"id": "c0530", "text": "Prompt engineering is teaching the model your intent in language it won't misread.", "terms": ["prompt engineering"], "split": "train"}
+{"id": "c0449", "text": "Prompt engineering taught me that the model does exactly what you literally ask.", "terms": ["prompt engineering"], "split": "train"}
+{"id": "c0848", "text": "Hallucination rates dropped once we grounded answers with RAG.", "terms": ["hallucination", "RAG"], "split": "train"}
+{"id": "c0666", "text": "Doubling test-time compute on the eval set bumped accuracy four points.", "terms": ["test-time compute", "evals"], "split": "train"}
+{"id": "c0688", "text": "We run evals on a held-out set the prompt authors never see.", "terms": ["evals"], "split": "train"}
+{"id": "c0921", "text": "The context window ballooned because LangChain kept appending every message.", "terms": ["context window", "LangChain"], "split": "train"}
+{"id": "c0320", "text": "Claude Sonnet is cheaper than Claude Opus, and for most chores it's plenty.", "terms": ["Claude Sonnet", "Claude Opus"], "split": "train"}
+{"id": "c0731", "text": "We registered the MCP server with Claude Code and it just worked.", "terms": ["MCP", "Claude Code"], "split": "train"}
+{"id": "c0206", "text": "We pull most of our base models from Hugging Face before any fine-tuning happens.", "terms": ["Hugging Face", "fine-tuning"], "split": "train"}
+{"id": "c0707", "text": "Fine-tuning locked in our formatting rules so the system prompt got shorter.", "terms": ["fine-tuning", "system prompt"], "split": "train"}
+{"id": "c1006", "text": "LangChain tracing helped us spot where the hallucination crept in.", "terms": ["LangChain", "hallucination"], "split": "train"}
+{"id": "c0899", "text": "Quantization is the cheapest lever you have for cutting inference cost.", "terms": ["quantization", "inference"], "split": "train"}
+{"id": "c0845", "text": "A tight system prompt is your first line of defense against jailbreaks.", "terms": ["system prompt"], "split": "train"}
+{"id": "c0930", "text": "LlamaIndex query planning chains retrievers without ballooning your tokens.", "terms": ["LlamaIndex", "tokens"], "split": "train"}
+{"id": "c0434", "text": "The trick to good subagents is narrow scope and crystal-clear handoff instructions.", "terms": ["subagents"], "split": "train"}
+{"id": "c0622", "text": "Forcing a chain of thought before the answer raised our eval scores.", "terms": ["chain of thought", "evals"], "split": "train"}
+{"id": "c0541", "text": "Vibe coding is great therapy after a week of careful harness engineering.", "terms": ["vibe coding", "harness engineering"], "split": "train"}
+{"id": "c0917", "text": "We measure tokens per second on vLLM to size the cluster.", "terms": ["tokens", "vLLM"], "split": "train"}
+{"id": "c0170", "text": "Windsurf's agent left a clean changelog, which my reviewer loved.", "terms": ["Windsurf"], "split": "train"}
+{"id": "c0563", "text": "The agentic workflow runs evals automatically and blocks the merge if they fail.", "terms": ["agentic workflow", "evals"], "split": "train"}
+{"id": "c0487", "text": "Tool calling works best when each tool does one thing and returns structured output.", "terms": ["tool calling"], "split": "train"}
+{"id": "c0676", "text": "RAG over our codebase means the agent quotes real function signatures.", "terms": ["RAG"], "split": "train"}
+{"id": "c0132", "text": "Replit's bounties program is a fun way to crowdsource small features.", "terms": ["Replit"], "split": "train"}
+{"id": "c0129", "text": "Gemini's grounding feature cut down hallucinations in our RAG demo.", "terms": ["Gemini", "RAG"], "split": "train"}
+{"id": "c0785", "text": "We version every MCP tool so upgrades never break existing agents.", "terms": ["MCP"], "split": "train"}
+{"id": "c0546", "text": "Context engineering is what I think about every time I see a bloated context window.", "terms": ["context engineering", "context window"], "split": "train"}
+{"id": "c0779", "text": "Fine-tuning helped style, RAG helped facts, and together they shined.", "terms": ["fine-tuning", "RAG"], "split": "train"}
+{"id": "c0071", "text": "GPT-5 and Claude Sonnet basically tied on our function-calling evals.", "terms": ["GPT-5", "Claude Sonnet", "evals"], "split": "train"}
+{"id": "c0498", "text": "We designed the agentic workflow so a human signs off before anything merges.", "terms": ["agentic workflow"], "split": "train"}
+{"id": "c0750", "text": "Model Context Protocol servers compose nicely; you can chain several agents.", "terms": ["Model Context Protocol", "subagents"], "split": "train"}
+{"id": "c0088", "text": "GPT-5 is great, but our compliance team prefers Anthropic's Claude Opus.", "terms": ["GPT-5", "Anthropic", "Claude Opus"], "split": "train"}
+{"id": "c0999", "text": "The system prompt should be short, specific, and stable across requests.", "terms": ["system prompt"], "split": "train"}
+{"id": "c0929", "text": "PyTorch's profiler showed quantization removed most of our memory pressure.", "terms": ["PyTorch", "quantization"], "split": "train"}
+{"id": "c0247", "text": "We fine-tuned a Mistral base on our support tickets and accuracy jumped twelve points.", "terms": ["fine-tuning", "Mistral"], "split": "train"}
+{"id": "c0060", "text": "I keep a side Replit going just to test snippets quickly.", "terms": ["Replit"], "split": "train"}
+{"id": "c0246", "text": "xAI's latest release pushed the others to respond faster than usual.", "terms": ["xAI"], "split": "train"}
+{"id": "c0315", "text": "Anthropic's eval methodology writeups are some of my favorite reading lately.", "terms": ["Anthropic", "evals"], "split": "train"}
+{"id": "c1008", "text": "PyTorch dataloaders with prefetch kept the GPU saturated during training.", "terms": ["PyTorch"], "split": "train"}
+{"id": "c0372", "text": "Anthropic's reasoning depth shows up most on the hard evals, not the easy ones.", "terms": ["Anthropic", "evals"], "split": "train"}
+{"id": "c0869", "text": "GPT-5 still hallucinates on niche topics, so keep your guardrails up.", "terms": ["GPT-5", "hallucination", "guardrails"], "split": "train"}
+{"id": "c0020", "text": "GPT-5 nailed the tricky regex that Copilot kept getting wrong.", "terms": ["GPT-5", "Copilot"], "split": "train"}
+{"id": "c0501", "text": "I split the task into subagents and gave each one a slimmer context window.", "terms": ["subagents", "context window"], "split": "train"}
+{"id": "c0332", "text": "DeepMind's Gemini, OpenAI's GPT-5, and Claude Opus walked into a benchmark.", "terms": ["DeepMind", "Gemini", "OpenAI", "GPT-5", "Claude Opus"], "split": "train"}
+{"id": "c0614", "text": "We let the model spend more test-time compute on the eval's hardest tier.", "terms": ["test-time compute", "evals"], "split": "train"}
+{"id": "c0001", "text": "I moved my main agent loop over to Claude Opus and the gnarly refactor finally landed.", "terms": ["Claude Opus"], "split": "train"}
+{"id": "c0544", "text": "Tool calling lets the agent read the codebase instead of hallucinating its shape.", "terms": ["tool calling"], "split": "train"}
+{"id": "c0798", "text": "RLHF taught the model to ask clarifying questions instead of guessing.", "terms": ["RLHF"], "split": "train"}
+{"id": "c0553", "text": "Prompt engineering is necessary but never sufficient for a production agent.", "terms": ["prompt engineering"], "split": "train"}
+{"id": "c0166", "text": "Replit got the intern shipping real features by the end of week one.", "terms": ["Replit"], "split": "train"}
+{"id": "c0859", "text": "Our guardrails layer rewrites the system prompt on every new session.", "terms": ["guardrails", "system prompt"], "split": "train"}
+{"id": "c0383", "text": "We serve the transformer on vLLM and fall back to Ollama for local dev.", "terms": ["transformer", "vLLM", "Ollama"], "split": "train"}
+{"id": "c0895", "text": "Set guardrails on the input and the output, not just one side.", "terms": ["guardrails"], "split": "train"}
+{"id": "c0204", "text": "Gemini handled the long transcript that I first cleaned up with Whisper.", "terms": ["Gemini", "Whisper"], "split": "train"}
+{"id": "c0959", "text": "Whisper transcription quality jumped after fine-tuning on our call recordings.", "terms": ["Whisper", "fine-tuning"], "split": "train"}
+{"id": "c0857", "text": "LangChain's memory abstraction quietly bloats your context window if you're careless.", "terms": ["LangChain", "context window"], "split": "train"}
+{"id": "c0655", "text": "LoRA rank eight was plenty; sixteen didn't help our task at all.", "terms": ["LoRA"], "split": "train"}
+{"id": "c0306", "text": "DeepMind's Gemini is my default for anything that needs strong multimodal grounding.", "terms": ["DeepMind", "Gemini"], "split": "train"}
+{"id": "c0641", "text": "Our RAG answers cite sources now, which legal absolutely loved.", "terms": ["RAG"], "split": "train"}
+{"id": "c0109", "text": "We ran a head-to-head with Codex and Claude Opus on the legacy codebase.", "terms": ["Codex", "Claude Opus"], "split": "train"}
+{"id": "c0520", "text": "I use subagents to keep the main context window clean and focused on the goal.", "terms": ["subagents", "context window"], "split": "train"}
+{"id": "c0183", "text": "Claude Opus and Claude Sonnet split the workload beautifully on that epic.", "terms": ["Claude Opus", "Claude Sonnet"], "split": "train"}
+{"id": "c0781", "text": "RLHF made the model defer to tools instead of guessing answers.", "terms": ["RLHF", "tool calling"], "split": "train"}
+{"id": "c0513", "text": "We let subagents handle the grunt work and reserve Claude Opus for the planning.", "terms": ["subagents", "Claude Opus"], "split": "train"}
+{"id": "c0911", "text": "The context window is finite, so summarize old turns instead of dumping them.", "terms": ["context window"], "split": "train"}
+{"id": "c0737", "text": "When chain of thought and answer disagree, I trust neither and dig in.", "terms": ["chain of thought"], "split": "train"}
+{"id": "c0740", "text": "Each MCP tool returns structured JSON so tool calling stays reliable.", "terms": ["MCP", "tool calling"], "split": "train"}
+{"id": "c0004", "text": "Claude Haiku is so cheap I just throw it at every classification job now.", "terms": ["Claude Haiku"], "split": "train"}
+{"id": "c0974", "text": "Anthropic ships strong guardrails, but you still own your application logic.", "terms": ["Anthropic", "guardrails"], "split": "train"}
+{"id": "c0162", "text": "Cursor's apply button plus Claude Code is my whole review loop now.", "terms": ["Cursor", "Claude Code"], "split": "train"}
+{"id": "c0446", "text": "Anthropic's guidance on agentic coding pushed us to build smaller, sharper tools.", "terms": ["Anthropic", "agentic coding"], "split": "train"}
+{"id": "c1002", "text": "We compared GPT-5 and Claude Opus on hallucination across a hundred evals.", "terms": ["GPT-5", "Claude Opus", "hallucination", "evals"], "split": "train"}
+{"id": "c0115", "text": "Devin shines on well-scoped tickets but flounders on ambiguous ones.", "terms": ["Devin"], "split": "train"}
+{"id": "c0349", "text": "We swapped the RAG embeddings model twice before settling on the DeepMind one.", "terms": ["RAG", "embeddings", "DeepMind"], "split": "train"}
+{"id": "c0657", "text": "Showing chain of thought during debugging saved me an hour today.", "terms": ["chain of thought"], "split": "train"}
+{"id": "c0788", "text": "Fine-tuning the reranker squeezed an extra ten points out of RAG.", "terms": ["fine-tuning", "RAG"], "split": "train"}
+{"id": "c0965", "text": "The context window overflowed and the model quietly forgot the instructions.", "terms": ["context window"], "split": "train"}
+{"id": "c0769", "text": "We graph eval scores against latency so we can pick a sane trade-off.", "terms": ["evals"], "split": "train"}
+{"id": "c1004", "text": "Quantization to four bits is aggressive, so validate inference quality carefully.", "terms": ["quantization", "inference"], "split": "train"}
+{"id": "c0699", "text": "LoRA fine-tuning runs fit on a single consumer GPU, which is great.", "terms": ["LoRA", "fine-tuning"], "split": "train"}
+{"id": "c0118", "text": "Copilot Chat and Claude Code answer differently, and I lean on Claude Code.", "terms": ["Copilot", "Claude Code"], "split": "train"}
+{"id": "c0739", "text": "Our RAG retriever pulls from three sources and dedupes before ranking.", "terms": ["RAG"], "split": "train"}
+{"id": "c0891", "text": "We benchmarked inference across vLLM and Ollama for the same quantization level.", "terms": ["inference", "vLLM", "Ollama", "quantization"], "split": "train"}
+{"id": "c0012", "text": "We ran our evals against both GPT-5 and Claude Sonnet and the results were close.", "terms": ["GPT-5", "Claude Sonnet", "evals"], "split": "train"}
+{"id": "c0567", "text": "Tool calling with Anthropic's models has felt rock solid in our recent tests.", "terms": ["tool calling", "Anthropic"], "split": "train"}
+{"id": "c0258", "text": "The Hugging Face inference API is great for demos before we commit to self-hosting.", "terms": ["Hugging Face"], "split": "train"}
+{"id": "c0542", "text": "Harness engineering is mostly about anticipating how the model will surprise you.", "terms": ["harness engineering"], "split": "train"}
+{"id": "c0480", "text": "Prompt engineering plus a tight system prompt got our refusal rate way down.", "terms": ["prompt engineering", "system prompt"], "split": "train"}
+{"id": "c0889", "text": "PyTorch 2.5 compile shaved real seconds off each training step.", "terms": ["PyTorch"], "split": "train"}
+{"id": "c0391", "text": "We've fully shifted to agentic coding for the migration, and it's churning through files overnight.", "terms": ["agentic coding"], "split": "train"}
+{"id": "c0395", "text": "When tool calling is reliable, the whole agentic workflow just feels like magic.", "terms": ["tool calling", "agentic workflow"], "split": "train"}
+{"id": "c1038", "text": "LlamaIndex made swapping embeddings models a one-line config change.", "terms": ["LlamaIndex", "embeddings"], "split": "train"}
+{"id": "c0611", "text": "LoRA made fine-tuning cheap enough that even our small team could iterate.", "terms": ["LoRA", "fine-tuning"], "split": "train"}
+{"id": "c0433", "text": "Agentic coding with Claude Code feels like pairing with a very fast junior who never tires.", "terms": ["agentic coding", "Claude Code"], "split": "train"}
+{"id": "c1024", "text": "We serve embeddings from PyTorch behind vLLM-style batching for speed.", "terms": ["embeddings", "PyTorch", "vLLM"], "split": "train"}
+{"id": "c0812", "text": "Whisper gives us clean transcripts, then we build embeddings for semantic search.", "terms": ["Whisper", "embeddings"], "split": "train"}
+{"id": "c0164", "text": "I asked Claude Opus to audit the system prompt and it found a leak.", "terms": ["Claude Opus", "system prompt"], "split": "train"}
+{"id": "c0643", "text": "The Model Context Protocol spec is small enough to read in one sitting.", "terms": ["Model Context Protocol"], "split": "train"}
+{"id": "c0157", "text": "Devin opened a PR with tests, which honestly impressed the whole team.", "terms": ["Devin"], "split": "train"}
+{"id": "c0113", "text": "Gemini and GPT-5 both improved a lot on the multimodal tests this quarter.", "terms": ["Gemini", "GPT-5"], "split": "train"}
+{"id": "c0882", "text": "vLLM streams tokens so smoothly the UI feels almost instant.", "terms": ["vLLM", "tokens"], "split": "train"}
+{"id": "c0049", "text": "I'm doing pure vibe coding in Cursor today, just describing what I want.", "terms": ["vibe coding", "Cursor"], "split": "train"}
+{"id": "c0774", "text": "We default test-time compute low and escalate only when confidence dips.", "terms": ["test-time compute"], "split": "train"}
+{"id": "c0094", "text": "Devin's autonomy is impressive but I still babysit its bigger PRs.", "terms": ["Devin"], "split": "train"}
+{"id": "c0506", "text": "Tool calling plus a good system prompt is basically the whole agent contract.", "terms": ["tool calling", "system prompt"], "split": "train"}
+{"id": "c0522", "text": "Prompt engineering got us eighty percent; the last twenty was all harness engineering.", "terms": ["prompt engineering", "harness engineering"], "split": "train"}
+{"id": "c0142", "text": "Claude Sonnet's instruction following is what sold my skeptical lead.", "terms": ["Claude Sonnet"], "split": "train"}
+{"id": "c1001", "text": "Token counts blew past the context window and the API just truncated silently.", "terms": ["tokens", "context window"], "split": "train"}
+{"id": "c0991", "text": "We run Whisper at the edge and ship only the transcript upstream.", "terms": ["Whisper"], "split": "train"}
+{"id": "c0409", "text": "If your tool calling keeps misfiring, count your tokens and trim the descriptions.", "terms": ["tool calling", "tokens"], "split": "train"}
+{"id": "c0598", "text": "We block every deploy on a regression suite of evals now.", "terms": ["evals"], "split": "train"}
+{"id": "c0439", "text": "We spent a sprint on prompt engineering and another two on the surrounding harness.", "terms": ["prompt engineering"], "split": "train"}
+{"id": "c0599", "text": "A quick LoRA fine-tuning run beat full fine-tuning on our tiny eval set.", "terms": ["LoRA", "fine-tuning", "evals"], "split": "train"}
+{"id": "c0765", "text": "Test-time compute is basically paying tokens for a smarter answer.", "terms": ["test-time compute", "tokens"], "split": "train"}
+{"id": "c0270", "text": "Hugging Face transformers made loading the model into our notebook trivial.", "terms": ["Hugging Face", "transformer"], "split": "train"}
+{"id": "c0552", "text": "Tool calling broke at scale until we rate-limited the agent's outbound requests.", "terms": ["tool calling"], "split": "train"}
+{"id": "c0575", "text": "Tool calling is the part of agentic coding that still feels brittle to me.", "terms": ["tool calling", "agentic coding"], "split": "train"}
+{"id": "c0763", "text": "RLHF improved helpfulness, but we watched closely for reward hacking.", "terms": ["RLHF"], "split": "train"}
+{"id": "c0253", "text": "We swapped to OpenAI embeddings and our recall metric ticked up nicely.", "terms": ["OpenAI", "embeddings"], "split": "train"}
+{"id": "c0143", "text": "GPT-5 nailed the algorithm, but Devin actually opened the PR.", "terms": ["GPT-5", "Devin"], "split": "train"}
+{"id": "c0272", "text": "OpenAI's Codex is fine for boilerplate, but I trust Claude Sonnet on architecture calls.", "terms": ["OpenAI", "Codex", "Claude Sonnet"], "split": "train"}
+{"id": "c0147", "text": "Claude Code and Cursor share my MCP servers, which is super convenient.", "terms": ["Claude Code", "Cursor", "MCP"], "split": "train"}
+{"id": "c0470", "text": "Good subagents need a clear contract: what they take in, what they hand back.", "terms": ["subagents"], "split": "train"}
+{"id": "c0659", "text": "The RAG context blew past the context window, so we trimmed aggressively.", "terms": ["RAG", "context window"], "split": "train"}
+{"id": "c0906", "text": "Claude Opus from Anthropic rarely hallucinates on the tasks we throw at it.", "terms": ["Claude Opus", "Anthropic", "hallucination"], "split": "train"}
+{"id": "c0406", "text": "We packed too much into the context window, so context engineering became urgent.", "terms": ["context window", "context engineering"], "split": "train"}
+{"id": "c0512", "text": "Harness engineering means I obsess over what the agent does when a step fails.", "terms": ["harness engineering"], "split": "train"}
+{"id": "c0672", "text": "Stacking two LoRA adapters confused the model, so we merged them.", "terms": ["LoRA"], "split": "train"}
+{"id": "c0218", "text": "We use LoRA adapters so we can swap behaviors without retraining the whole transformer.", "terms": ["LoRA", "transformer"], "split": "train"}
+{"id": "c0323", "text": "Anthropic's MCP ecosystem grew faster than I think anyone at the company expected.", "terms": ["Anthropic", "MCP"], "split": "train"}
+{"id": "c0736", "text": "RLHF and red-teaming together hardened our guardrails a lot.", "terms": ["RLHF", "guardrails"], "split": "train"}
+{"id": "c0898", "text": "LlamaIndex makes RAG over a thousand PDFs feel like ten lines of code.", "terms": ["LlamaIndex", "RAG"], "split": "train"}
+{"id": "c0581", "text": "Subagents are only as good as the context engineering you do before launching them.", "terms": ["subagents", "context engineering"], "split": "train"}
+{"id": "c0217", "text": "xAI and Anthropic are clearly racing on context window size right now.", "terms": ["xAI", "Anthropic"], "split": "train"}
+{"id": "c0068", "text": "Replit Agent and Cursor are aimed at pretty different crowds honestly.", "terms": ["Replit", "Cursor"], "split": "train"}
+{"id": "c0275", "text": "The Whisper fine-tuning data was the bottleneck, not the model architecture.", "terms": ["Whisper", "fine-tuning"], "split": "train"}
+{"id": "c0411", "text": "Context engineering means I'm constantly asking what the agent actually needs to know right now.", "terms": ["context engineering"], "split": "train"}
+{"id": "c0324", "text": "DeepMind's research cadence is relentless, even compared to OpenAI.", "terms": ["DeepMind", "OpenAI"], "split": "train"}
+{"id": "c0825", "text": "Stuffing the whole codebase into the context window is just lazy engineering.", "terms": ["context window"], "split": "train"}
+{"id": "c0033", "text": "Claude Opus burned a lot of tokens on that reasoning trace but it was worth it.", "terms": ["Claude Opus", "tokens"], "split": "train"}
+{"id": "c0842", "text": "We piped Whisper output into LangChain for an automatic meeting summary.", "terms": ["Whisper", "LangChain"], "split": "train"}
+{"id": "c0235", "text": "DeepMind's embeddings model is now my default for semantic search prototypes.", "terms": ["DeepMind", "embeddings"], "split": "train"}
+{"id": "c0058", "text": "Cursor with Copilot enabled feels redundant, so I turn one off.", "terms": ["Cursor", "Copilot"], "split": "train"}
+{"id": "c0795", "text": "Model Context Protocol gave OpenAI and Anthropic tooling a common shape.", "terms": ["Model Context Protocol", "OpenAI", "Anthropic"], "split": "train"}
+{"id": "c0787", "text": "Our evals separated retrieval failures from generation failures cleanly.", "terms": ["evals", "RAG"], "split": "train"}
+{"id": "c0864", "text": "We moved from Ollama to vLLM the moment concurrency became a problem.", "terms": ["Ollama", "vLLM"], "split": "train"}
+{"id": "c0333", "text": "Our evals favored Mistral on cost-per-correct, even when raw accuracy was lower.", "terms": ["evals", "Mistral"], "split": "train"}
+{"id": "c0702", "text": "Spending test-time compute up front cut our retry rate way down.", "terms": ["test-time compute"], "split": "train"}
+{"id": "c0225", "text": "We wired up an MCP server so Claude Opus can query our internal docs directly.", "terms": ["MCP", "Claude Opus"], "split": "train"}
+{"id": "c0571", "text": "Our agentic workflow uses chain of thought to plan before any tool calling happens.", "terms": ["agentic workflow", "chain of thought", "tool calling"], "split": "train"}
+{"id": "c0705", "text": "Claude Opus handled the planning while a cheaper model did the grunt work.", "terms": ["Claude Opus"], "split": "train"}
+{"id": "c0656", "text": "After RLHF the safety guardrails felt much less brittle.", "terms": ["RLHF", "guardrails"], "split": "train"}
+{"id": "c0948", "text": "We fine-tuned Whisper with PyTorch and pushed it to Hugging Face.", "terms": ["fine-tuning", "Whisper", "PyTorch", "Hugging Face"], "split": "train"}
+{"id": "c0277", "text": "We layered RAG on top of embeddings from Hugging Face and it just worked.", "terms": ["RAG", "embeddings", "Hugging Face"], "split": "train"}
+{"id": "c0389", "text": "Context engineering is basically deciding what the model gets to see and what it doesn't.", "terms": ["context engineering"], "split": "train"}
+{"id": "c0474", "text": "Agentic coding lets me describe intent and review diffs instead of typing every line.", "terms": ["agentic coding"], "split": "train"}
+{"id": "c0168", "text": "Claude Haiku, Gemini Flash, and GPT-5 mini are my cheap tier rotation.", "terms": ["Claude Haiku", "Gemini", "GPT-5"], "split": "train"}
+{"id": "c0251", "text": "Claude Opus, GPT-5, and Gemini all flubbed the same edge case in our test suite.", "terms": ["Claude Opus", "GPT-5", "Gemini"], "split": "train"}
+{"id": "c0747", "text": "More test-time compute helped accuracy but hurt our p99 latency badly.", "terms": ["test-time compute"], "split": "train"}
+{"id": "c0547", "text": "Agentic coding with Cursor closed three tickets while I was in a meeting.", "terms": ["agentic coding", "Cursor"], "split": "train"}
+{"id": "c0176", "text": "Replit and Windsurf both want to own your whole dev loop, differently.", "terms": ["Replit", "Windsurf"], "split": "train"}
+{"id": "c0973", "text": "Inference slowed down because the context window kept growing each turn.", "terms": ["inference", "context window"], "split": "train"}
+{"id": "c0624", "text": "Our RAG index lives in a vector store keyed on document embeddings.", "terms": ["RAG", "embeddings"], "split": "train"}
+{"id": "c0074", "text": "Gemini's multimodal support makes it nice for screenshot debugging.", "terms": ["Gemini"], "split": "train"}
+{"id": "c0664", "text": "RLHF made the model polite but a little too cautious for power users.", "terms": ["RLHF"], "split": "train"}
+{"id": "c0700", "text": "We compared RLHF against direct preference optimization on the same data.", "terms": ["RLHF"], "split": "train"}
+{"id": "c0960", "text": "Run evals on the quantized model before you trust the inference numbers.", "terms": ["evals", "quantization", "inference"], "split": "train"}
+{"id": "c0719", "text": "The chain of thought tripled the token count, so we made it optional.", "terms": ["chain of thought", "tokens"], "split": "train"}
+{"id": "c0274", "text": "We quantized the Mistral checkpoint and it still fit comfortably in Ollama.", "terms": ["Mistral", "Ollama"], "split": "train"}
+{"id": "c0687", "text": "The Model Context Protocol means our tools outlive any single model.", "terms": ["Model Context Protocol"], "split": "train"}
+{"id": "c0215", "text": "Grabbing the Whisper weights off Hugging Face took two minutes, then we fine-tuned overnight.", "terms": ["Whisper", "Hugging Face", "fine-tuning"], "split": "train"}
+{"id": "c0364", "text": "Running vLLM with a Mistral model behind it cut our inference bill dramatically.", "terms": ["vLLM", "Mistral"], "split": "train"}
+{"id": "c0380", "text": "I wired Whisper, embeddings, and a RAG retriever into one tidy pipeline.", "terms": ["Whisper", "embeddings", "RAG"], "split": "train"}
+{"id": "c0167", "text": "Codex understood the legacy COBOL better than any human on the team.", "terms": ["Codex"], "split": "train"}
+{"id": "c0374", "text": "DeepMind and Mistral take opposite stances on releasing model weights publicly.", "terms": ["DeepMind", "Mistral"], "split": "train"}
+{"id": "c0855", "text": "Fine-tuning Whisper on medical audio cut our word error rate in half.", "terms": ["fine-tuning", "Whisper"], "split": "train"}
+{"id": "c0651", "text": "I'd rather expose three clean MCP tools than twenty messy ones.", "terms": ["MCP"], "split": "train"}
+{"id": "c0465", "text": "Prompt engineering felt like the whole game in 2023; now it's table stakes.", "terms": ["prompt engineering"], "split": "train"}
+{"id": "c1023", "text": "Bigger context windows tempt you to skip RAG, but retrieval still wins.", "terms": ["context window", "RAG"], "split": "train"}
+{"id": "c1015", "text": "Fine-tuning reduced hallucination on our domain better than prompt tweaks.", "terms": ["fine-tuning", "hallucination"], "split": "train"}
+{"id": "c0104", "text": "Gemini's free tier let the whole class experiment without a credit card.", "terms": ["Gemini"], "split": "train"}
+{"id": "c0888", "text": "Token usage spiked because someone left the entire history in the system prompt.", "terms": ["tokens", "system prompt"], "split": "train"}
+{"id": "c0239", "text": "Pull the checkpoint from Hugging Face, then run it under Ollama for local testing.", "terms": ["Hugging Face", "Ollama"], "split": "train"}
+{"id": "c0876", "text": "The transformer's positional encoding is what lets it reason about token order.", "terms": ["transformer", "tokens"], "split": "train"}
+{"id": "c0082", "text": "I let Copilot draft the unit tests and Claude Opus review them.", "terms": ["Copilot", "Claude Opus"], "split": "train"}
+{"id": "c0297", "text": "xAI's model handled sarcasm in our test set better than I'd have guessed.", "terms": ["xAI"], "split": "train"}
+{"id": "c0792", "text": "We meter test-time compute the same way we meter API tokens.", "terms": ["test-time compute", "tokens"], "split": "train"}
+{"id": "c0234", "text": "Serving the transformer through vLLM cut our token costs almost in half.", "terms": ["transformer", "vLLM"], "split": "train"}
+{"id": "c0678", "text": "Plenty of vendors now speak Model Context Protocol out of the box.", "terms": ["Model Context Protocol"], "split": "train"}
+{"id": "c0047", "text": "Claude Code reads my CLAUDE.md and just follows the conventions, it's great.", "terms": ["Claude Code"], "split": "train"}
+{"id": "c0072", "text": "I love that Claude Haiku is fast enough to feel instant in the editor.", "terms": ["Claude Haiku"], "split": "train"}
+{"id": "c0722", "text": "Writing the MCP tool descriptions carefully really improved tool calling.", "terms": ["MCP", "tool calling"], "split": "train"}
+{"id": "c0197", "text": "I keep Copilot for quick completions and Claude Code for the heavy lifting.", "terms": ["Copilot", "Claude Code"], "split": "train"}
+{"id": "c0592", "text": "I keep telling the team RAG is not a silver bullet if your chunking is garbage.", "terms": ["RAG"], "split": "train"}
+{"id": "c0371", "text": "OpenAI nudged GPT-5 pricing down right after xAI cut theirs.", "terms": ["OpenAI", "GPT-5", "xAI"], "split": "train"}
+{"id": "c0883", "text": "Whisper large is heavy, so we quantize it for edge inference.", "terms": ["Whisper", "quantization", "inference"], "split": "train"}
+{"id": "c0907", "text": "PyTorch Lightning cleaned up our training loop and removed a lot of boilerplate.", "terms": ["PyTorch"], "split": "train"}
+{"id": "c0634", "text": "With Model Context Protocol, swapping from one provider to another barely touched our tools.", "terms": ["Model Context Protocol"], "split": "train"}
+{"id": "c0644", "text": "We added adversarial cases to the evals after that embarrassing demo.", "terms": ["evals"], "split": "train"}
+{"id": "c0850", "text": "Token budgeting matters more once your context window stretches past a million.", "terms": ["tokens", "context window"], "split": "train"}
+{"id": "c0301", "text": "Our MCP integration lets GPT-5 and Claude Opus share the exact same tool definitions.", "terms": ["MCP", "GPT-5", "Claude Opus"], "split": "train"}
+{"id": "c0566", "text": "We coordinate subagents through a shared task queue, not a shared context.", "terms": ["subagents"], "split": "train"}
+{"id": "c0081", "text": "GPT-5 burned through tokens fast on the reasoning task but it got there.", "terms": ["GPT-5", "tokens"], "split": "train"}
+{"id": "c0388", "text": "The whole team is doing harness engineering now, because the model itself rarely fails anymore.", "terms": ["harness engineering"], "split": "train"}
+{"id": "c0945", "text": "Counting tokens upfront stops the context window from silently truncating.", "terms": ["tokens", "context window"], "split": "train"}
+{"id": "c0997", "text": "Guardrails plus RAG together cut our error rate more than either alone.", "terms": ["guardrails", "RAG"], "split": "train"}
+{"id": "c0128", "text": "Copilot is everywhere at my company because it shipped to the IDE first.", "terms": ["Copilot"], "split": "train"}
+{"id": "c0550", "text": "Harness engineering means treating the agent's tools as a first-class API surface.", "terms": ["harness engineering"], "split": "train"}
+{"id": "c0471", "text": "Tool calling over MCP means I can swap backends without rewriting the agent.", "terms": ["tool calling", "MCP"], "split": "train"}
+{"id": "c0748", "text": "RAG with good metadata filtering felt like cheating, in a good way.", "terms": ["RAG"], "split": "train"}
+{"id": "c0045", "text": "GPT-5 reasoning mode is slower but it catches edge cases Codex misses.", "terms": ["GPT-5", "Codex"], "split": "train"}
+{"id": "c0827", "text": "We store embeddings in a vector database and retrieve them for RAG.", "terms": ["embeddings", "RAG"], "split": "train"}
+{"id": "c0271", "text": "Anthropic's MCP servers let us reuse the same tools across every Claude integration.", "terms": ["Anthropic", "MCP"], "split": "train"}
+{"id": "c0619", "text": "We tried fine-tuning Claude Opus, then realized RAG was enough.", "terms": ["fine-tuning", "Claude Opus", "RAG"], "split": "train"}
+{"id": "c0353", "text": "OpenAI's Codex and Anthropic's coding agents take pretty different planning approaches.", "terms": ["OpenAI", "Codex", "Anthropic"], "split": "train"}
+{"id": "c0868", "text": "Whisper transcribed the podcast and we generated embeddings for every segment.", "terms": ["Whisper", "embeddings"], "split": "train"}
+{"id": "c0368", "text": "We host the fine-tuned Whisper model on Hugging Face for the rest of the org.", "terms": ["Whisper", "Hugging Face", "fine-tuning"], "split": "train"}
+{"id": "c0100", "text": "Claude Opus is my reviewer of last resort when a PR is really hairy.", "terms": ["Claude Opus"], "split": "train"}
+{"id": "c0390", "text": "Good prompt engineering still matters, but it's maybe twenty percent of the real work.", "terms": ["prompt engineering"], "split": "train"}
+{"id": "c0095", "text": "GPT-5 with tool use rivaled Claude Code on the agentic coding suite.", "terms": ["GPT-5", "Claude Code", "agentic coding"], "split": "train"}
+{"id": "c0105", "text": "Devin handled the boring dependency upgrade so I didn't have to.", "terms": ["Devin"], "split": "train"}
+{"id": "c0345", "text": "Our fine-tuning loop logs every checkpoint and pushes the best to Hugging Face.", "terms": ["fine-tuning", "Hugging Face"], "split": "train"}
+{"id": "c0782", "text": "I parse the chain of thought to surface which step the model doubted.", "terms": ["chain of thought"], "split": "train"}
+{"id": "c0981", "text": "We validate every RAG answer against guardrails before returning it.", "terms": ["RAG", "guardrails"], "split": "train"}
+{"id": "c0221", "text": "Anthropic, OpenAI, and DeepMind all have wildly different takes on safety tooling.", "terms": ["Anthropic", "OpenAI", "DeepMind"], "split": "train"}
+{"id": "c0160", "text": "GPT-5 and Gemini both got the math right, Codex did not.", "terms": ["GPT-5", "Gemini", "Codex"], "split": "train"}
+{"id": "c0285", "text": "xAI's pricing got aggressive, which is good news for the rest of us.", "terms": ["xAI"], "split": "train"}
+{"id": "c0697", "text": "Our evals dashboard shows pass rate trending up week over week.", "terms": ["evals"], "split": "train"}
+{"id": "c0866", "text": "The system prompt defines the persona, the guardrails enforce the limits.", "terms": ["system prompt", "guardrails"], "split": "train"}
+{"id": "c0327", "text": "Honestly Hugging Face being the default hub makes everyone's life easier.", "terms": ["Hugging Face"], "split": "train"}
+{"id": "c0014", "text": "Windsurf's flow mode is neat, but I keep coming back to Cursor out of habit.", "terms": ["Windsurf", "Cursor"], "split": "train"}
+{"id": "c0570", "text": "Agentic coding turns vague tickets into draft PRs faster than I can write them.", "terms": ["agentic coding"], "split": "train"}
+{"id": "c0920", "text": "Whisper plus embeddings turned our voice notes into a searchable archive.", "terms": ["Whisper", "embeddings"], "split": "train"}
+{"id": "c0452", "text": "Our agentic workflow includes a guardrails check before anything gets committed.", "terms": ["agentic workflow", "guardrails"], "split": "train"}
+{"id": "c0860", "text": "We count tokens client side so the inference server never gets overloaded.", "terms": ["tokens", "inference"], "split": "train"}
+{"id": "c0408", "text": "The subagents each get a tiny slice of the problem and a focused system prompt.", "terms": ["subagents", "system prompt"], "split": "train"}
+{"id": "c0055", "text": "Gemini's pricing makes it tempting for the high-volume summarization tier.", "terms": ["Gemini"], "split": "train"}
+{"id": "c0477", "text": "Harness engineering is fundamentally about making failure cheap and recovery automatic.", "terms": ["harness engineering"], "split": "train"}
+{"id": "c0448", "text": "Tool calling combined with good RAG means the agent grounds its answers in real data.", "terms": ["tool calling", "RAG"], "split": "train"}
+{"id": "c0192", "text": "We tuned the system prompt for Claude Haiku and the accuracy jumped.", "terms": ["system prompt", "Claude Haiku"], "split": "train"}
+{"id": "c0062", "text": "We measured tokens per request and Claude Haiku came out cheapest by far.", "terms": ["tokens", "Claude Haiku"], "split": "train"}
+{"id": "c0066", "text": "Copilot still wins on raw IDE latency for tiny completions.", "terms": ["Copilot"], "split": "train"}
+{"id": "c0865", "text": "Embeddings drift over time, so we re-index whenever the data changes.", "terms": ["embeddings"], "split": "train"}
+{"id": "c0179", "text": "Anthropic's MCP standard is why Claude Code plays nice with everything.", "terms": ["Anthropic", "MCP", "Claude Code"], "split": "train"}
+{"id": "c0210", "text": "I switched our agent backend from GPT-5 to Claude Sonnet and latency dropped a bunch.", "terms": ["GPT-5", "Claude Sonnet"], "split": "train"}
+{"id": "c0286", "text": "I prototyped the MCP tool with Claude Sonnet, then promoted it to Claude Opus.", "terms": ["MCP", "Claude Sonnet", "Claude Opus"], "split": "train"}
+{"id": "c0458", "text": "Context engineering is mostly subtraction: cut the noise so the signal lands.", "terms": ["context engineering"], "split": "train"}
+{"id": "c0502", "text": "When tool calling is flaky, your evals will catch it before your users do.", "terms": ["tool calling", "evals"], "split": "train"}
+{"id": "c0564", "text": "Vibe coding is a legitimate phase, just don't pretend it's the finished product.", "terms": ["vibe coding"], "split": "train"}
+{"id": "c0052", "text": "Windsurf's Cascade agent and Claude Code feel like cousins in design.", "terms": ["Windsurf", "Claude Code"], "split": "train"}
+{"id": "c0229", "text": "After the fine-tuning run, our Whisper model nailed the medical jargon way better.", "terms": ["fine-tuning", "Whisper"], "split": "train"}
+{"id": "c0196", "text": "Gemini plus LangChain got our chatbot demo working in an afternoon.", "terms": ["Gemini", "LangChain"], "split": "val"}
+{"id": "c0811", "text": "If the guardrails are too loose the model will happily ignore your system prompt.", "terms": ["guardrails", "system prompt"], "split": "val"}
+{"id": "c0006", "text": "Codex churned through the whole migration overnight while I was asleep.", "terms": ["Codex"], "split": "val"}
+{"id": "c0969", "text": "We use Whisper for ingest and embeddings for the actual semantic recall.", "terms": ["Whisper", "embeddings"], "split": "val"}
+{"id": "c0344", "text": "xAI's API now matches OpenAI's on the function-calling schema, which is convenient.", "terms": ["xAI", "OpenAI"], "split": "val"}
+{"id": "c0759", "text": "The Model Context Protocol made our tools portable across every client.", "terms": ["Model Context Protocol"], "split": "val"}
+{"id": "c0994", "text": "Inference batching on vLLM cut our per-request cost by sixty percent.", "terms": ["inference", "vLLM"], "split": "val"}
+{"id": "c0211", "text": "DeepMind's Gemini handles long-context retrieval better than anything else we benchmarked.", "terms": ["DeepMind", "Gemini"], "split": "val"}
+{"id": "c0713", "text": "An MCP server is honestly just a thin wrapper around your existing API.", "terms": ["MCP"], "split": "val"}
+{"id": "c0151", "text": "GPT-5 reasoning chews tokens, so I watch the bill on big batches.", "terms": ["GPT-5", "tokens"], "split": "val"}
+{"id": "c0775", "text": "RAG citations turned skeptical users into believers overnight.", "terms": ["RAG"], "split": "val"}
+{"id": "c0273", "text": "DeepMind and xAI both teased agents at their conferences this spring.", "terms": ["DeepMind", "xAI"], "split": "val"}
+{"id": "c0874", "text": "Ollama exposes an OpenAI-compatible endpoint, which made migration painless.", "terms": ["Ollama", "OpenAI"], "split": "val"}
+{"id": "c0560", "text": "Tool calling reliability is now my top metric when I evaluate a new model.", "terms": ["tool calling"], "split": "val"}
+{"id": "c0187", "text": "Windsurf's agent and Devin both aim for hands-off, just from different angles.", "terms": ["Windsurf", "Devin"], "split": "val"}
+{"id": "c0757", "text": "RAG over PDFs needed real OCR before the embeddings made any sense.", "terms": ["RAG", "embeddings"], "split": "val"}
+{"id": "c0762", "text": "LoRA training converged in under an hour on our dataset.", "terms": ["LoRA"], "split": "val"}
+{"id": "c0674", "text": "Reading the chain of thought, the model clearly skipped a constraint.", "terms": ["chain of thought"], "split": "val"}
+{"id": "c0174", "text": "Gemini's context window let me feed the entire spec without trimming.", "terms": ["Gemini", "context window"], "split": "val"}
+{"id": "c0531", "text": "Context engineering kept our token bill flat even as the codebase doubled.", "terms": ["context engineering", "tokens"], "split": "val"}
+{"id": "c0263", "text": "Mistral plus Ollama is my go-to setup for prototyping on a flight with no wifi.", "terms": ["Mistral", "Ollama"], "split": "val"}
+{"id": "c0464", "text": "Context engineering saved us a fortune in tokens once we stopped resending the whole repo.", "terms": ["context engineering", "tokens"], "split": "val"}
+{"id": "c0927", "text": "Hugging Face hub made sharing the fine-tuned Whisper weights effortless.", "terms": ["Hugging Face", "Whisper", "fine-tuning"], "split": "val"}
+{"id": "c0727", "text": "RLHF gave the model better judgment about when to refuse a request.", "terms": ["RLHF"], "split": "val"}
+{"id": "c0947", "text": "A hallucination slipped past the guardrails because the prompt was ambiguous.", "terms": ["hallucination", "guardrails"], "split": "val"}
+{"id": "c0507", "text": "Prompt engineering won't save you if the underlying context is garbage.", "terms": ["prompt engineering"], "split": "val"}
+{"id": "c0980", "text": "A bloated system prompt is the silent killer of your token budget.", "terms": ["system prompt", "tokens"], "split": "val"}
+{"id": "c0154", "text": "Windsurf, Cursor, and Copilot are the three I demo to every new team.", "terms": ["Windsurf", "Cursor", "Copilot"], "split": "val"}
+{"id": "c0428", "text": "Vibe coding a prototype in Cursor took twenty minutes; productionizing took two weeks.", "terms": ["vibe coding", "Cursor"], "split": "val"}
+{"id": "c0282", "text": "We pushed our fine-tuned transformer back to Hugging Face for the rest of the team.", "terms": ["transformer", "Hugging Face", "fine-tuning"], "split": "val"}
+{"id": "c0704", "text": "Each subagent gets its own MCP toolset scoped to its job.", "terms": ["subagents", "MCP"], "split": "val"}
+{"id": "c0931", "text": "vLLM serving plus good guardrails is the production setup I trust.", "terms": ["vLLM", "guardrails"], "split": "val"}
+{"id": "c0265", "text": "Anthropic, Mistral, and OpenAI all have very different rate-limit philosophies.", "terms": ["Anthropic", "Mistral", "OpenAI"], "split": "val"}
+{"id": "c0689", "text": "Fine-tuning didn't beat RAG on freshness, since RAG just reads live data.", "terms": ["fine-tuning", "RAG"], "split": "val"}
+{"id": "c0683", "text": "Long chain of thought eats tokens, so we trim it for cheap queries.", "terms": ["chain of thought", "tokens"], "split": "val"}
+{"id": "c0628", "text": "We did a LoRA fine-tuning pass over the weekend and shipped Monday.", "terms": ["LoRA", "fine-tuning"], "split": "val"}
+{"id": "c0988", "text": "Ollama defaults to a sensible quantization, which is nice for quick tests.", "terms": ["Ollama", "quantization"], "split": "val"}
+{"id": "c0475", "text": "Our agentic workflow has a chain of thought step before it commits to a plan.", "terms": ["agentic workflow", "chain of thought"], "split": "val"}
+{"id": "c0703", "text": "Our RAG layer caches embeddings so we don't re-embed unchanged docs.", "terms": ["RAG", "embeddings"], "split": "val"}
+{"id": "c0092", "text": "Claude Sonnet keeps the context window tidy better than the older models.", "terms": ["Claude Sonnet", "context window"], "split": "val"}
+{"id": "c0018", "text": "My nephew built his first game on Replit without writing a single line himself.", "terms": ["Replit"], "split": "val"}
+{"id": "c0440", "text": "Agentic coding broke down on the legacy module because the context window overflowed.", "terms": ["agentic coding", "context window"], "split": "val"}
+{"id": "c0853", "text": "Anthropic's guardrails on Claude Opus are noticeably tighter than the open models.", "terms": ["Anthropic", "guardrails", "Claude Opus"], "split": "val"}
+{"id": "c1043", "text": "Ollama is great until you need concurrency, then you graduate to vLLM.", "terms": ["Ollama", "vLLM"], "split": "val"}
+{"id": "c0035", "text": "Cursor indexed the codebase fast and Claude Code picked up the context immediately.", "terms": ["Cursor", "Claude Code"], "split": "val"}
+{"id": "c0252", "text": "Mistral uploads new checkpoints to Hugging Face almost every other month now.", "terms": ["Mistral", "Hugging Face"], "split": "val"}
+{"id": "c0397", "text": "Half of harness engineering is just deciding when to stop and ask the human.", "terms": ["harness engineering"], "split": "val"}
+{"id": "c0780", "text": "LoRA dropout saved us from overfitting on the small dataset.", "terms": ["LoRA"], "split": "val"}
+{"id": "c0386", "text": "Honestly, vibe coding got us a working demo by Friday, which nobody expected.", "terms": ["vibe coding"], "split": "val"}
+{"id": "c0329", "text": "Mistral's latest checkpoint landed on Hugging Face and trended within an hour.", "terms": ["Mistral", "Hugging Face"], "split": "val"}
+{"id": "c0819", "text": "Just run Ollama locally and you can test the model with zero setup.", "terms": ["Ollama"], "split": "val"}
+{"id": "c0230", "text": "I love that Hugging Face hosts model cards, datasets, and inference endpoints in one spot.", "terms": ["Hugging Face"], "split": "val"}
+{"id": "c0051", "text": "For the cheap bulk labeling we route everything to Claude Haiku.", "terms": ["Claude Haiku"], "split": "val"}
+{"id": "c0017", "text": "Devin took the Linear ticket and just ran with it end to end.", "terms": ["Devin"], "split": "val"}
+{"id": "c0708", "text": "I merged the LoRA into the base weights before exporting to production.", "terms": ["LoRA"], "split": "val"}
+{"id": "c0663", "text": "Full fine-tuning was overkill, so we settled on LoRA again.", "terms": ["fine-tuning", "LoRA"], "split": "val"}
+{"id": "c0161", "text": "We wrote a tight system prompt and Claude Sonnet stayed on rails.", "terms": ["system prompt", "Claude Sonnet"], "split": "val"}
+{"id": "c0064", "text": "Windsurf nailed the scaffolding, then I handed it to Claude Code to finish.", "terms": ["Windsurf", "Claude Code"], "split": "val"}
+{"id": "c0867", "text": "Quantizing the transformer made inference fast enough for real-time chat.", "terms": ["quantization", "transformer", "inference"], "split": "val"}
+{"id": "c1007", "text": "We wrap Whisper output in guardrails to scrub names before storage.", "terms": ["Whisper", "guardrails"], "split": "val"}
+{"id": "c0114", "text": "Cursor's agent kept losing the thread, so I switched to Claude Sonnet.", "terms": ["Cursor", "Claude Sonnet"], "split": "val"}
+{"id": "c0720", "text": "We dial test-time compute up for code review and down for autocomplete.", "terms": ["test-time compute"], "split": "val"}
+{"id": "c0019", "text": "Claude Sonnet hits the sweet spot of speed and smarts for most of my day.", "terms": ["Claude Sonnet"], "split": "val"}
+{"id": "c0030", "text": "Devin and Claude Code took different branches and we merged the better one.", "terms": ["Devin", "Claude Code"], "split": "val"}
+{"id": "c0186", "text": "We measured tokens carefully and Claude Haiku saved us real money.", "terms": ["tokens", "Claude Haiku"], "split": "val"}
+{"id": "c0535", "text": "Context engineering is the reason my agent stopped re-reading files it already knew.", "terms": ["context engineering"], "split": "val"}
+{"id": "c0714", "text": "The Model Context Protocol gave us a common language across the org.", "terms": ["Model Context Protocol"], "split": "val"}
+{"id": "c0483", "text": "The agentic workflow opened a PR, fixed the lint, and pinged me for review.", "terms": ["agentic workflow"], "split": "val"}
+{"id": "c0861", "text": "Hugging Face transformers and PyTorch are still the backbone of our stack.", "terms": ["Hugging Face", "transformer", "PyTorch"], "split": "val"}
+{"id": "c0492", "text": "Vibe coding got the investor demo done; harness engineering got it to launch.", "terms": ["vibe coding", "harness engineering"], "split": "val"}
+{"id": "c0396", "text": "Vibe coding feels great until you hit a bug you genuinely don't understand.", "terms": ["vibe coding"], "split": "val"}
+{"id": "c0645", "text": "Fine-tuning on synthetic data risked overfitting, so we mixed in real logs.", "terms": ["fine-tuning"], "split": "val"}
+{"id": "c0139", "text": "Gemini Flash and Claude Haiku are my two favorite cheap workhorses.", "terms": ["Gemini", "Claude Haiku"], "split": "val"}
+{"id": "c0904", "text": "The system prompt is just the start, the guardrails do the heavy lifting.", "terms": ["system prompt", "guardrails"], "split": "val"}
+{"id": "c0491", "text": "Our agentic workflow uses RAG to pull the relevant docs before drafting any code.", "terms": ["agentic workflow", "RAG"], "split": "val"}
+{"id": "c0296", "text": "I still can't decide between OpenAI embeddings and the DeepMind ones for this use case.", "terms": ["OpenAI", "embeddings", "DeepMind"], "split": "val"}
+{"id": "c0807", "text": "More chain of thought plus more test-time compute is the reasoning recipe lately.", "terms": ["chain of thought", "test-time compute"], "split": "val"}
+{"id": "c0034", "text": "We fine-tuned a small model and benchmarked it against Claude Sonnet.", "terms": ["fine-tuning", "Claude Sonnet"], "split": "val"}
+{"id": "c0028", "text": "Replit Agent deployed the app to production while I watched, kind of wild.", "terms": ["Replit"], "split": "val"}
+{"id": "c0588", "text": "Harness engineering and context engineering are the two things I'd teach a new agent dev first.", "terms": ["harness engineering", "context engineering"], "split": "val"}
+{"id": "c1030", "text": "We trimmed the context window and inference latency immediately improved.", "terms": ["context window", "inference"], "split": "val"}
+{"id": "c0958", "text": "LangChain expression language made the RAG chain readable for once.", "terms": ["LangChain", "RAG"], "split": "val"}
+{"id": "c0214", "text": "OpenAI's Codex is decent, but I still reach for Claude Opus on the gnarly refactors.", "terms": ["OpenAI", "Codex", "Claude Opus"], "split": "val"}
+{"id": "c0802", "text": "Every MCP call shows up in our trace so we can debug tool calling end to end.", "terms": ["MCP", "tool calling"], "split": "val"}
