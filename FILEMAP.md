@@ -60,6 +60,16 @@ Concise map of every file and its purpose. Kept under 100 lines. `[planned]` = n
 | `kokoro_viability.py` | Kokoro QC pass-rate (90%) head-to-head. |
 | `term_audit.py` | One-time per-term Kokoro pronunciation audit across voices. |
 
+## research/ (experimental notes)
+| File | Purpose |
+|------|---------|
+| `2026-06-15-hard-terms-candidates.md` | Shortlist of ASR-hard terms (Qwen, Groq, Aider…) for a future sharper before/after. |
+
+## results/ (deliverables)
+| File | Purpose |
+|------|---------|
+| `finetune-report.html` | Visual before/after results report (WER + term-recall, training curve, fixes). |
+
 ## kokoro_models/ (gitignored)
 Kokoro ONNX bulk-TTS engine: `kokoro-v1.0.onnx` + `voices-v1.0.bin`. Needs system `espeak-ng`.
 

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Whisper base.en — Domain Finetune Results</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#08090d; --panel:#0e1218; --panel2:#11161e; --line:#1d2530;
+    --ink:#d6dde6; --muted:#6b7886; --dim:#48535f;
+    --amber:#ffb347; --amber-soft:#ffcd82; --steel:#7b8794;
+    --cyan:#54c9d6; --green:#74f0ad; --red:#ff6b6b;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:"IBM Plex Mono",monospace; line-height:1.5;
+    -webkit-font-smoothing:antialiased; overflow-x:hidden;
+    background-image:
+      radial-gradient(1200px 600px at 80% -10%, rgba(255,179,71,.10), transparent 60%),
+      radial-gradient(900px 500px at 0% 10%, rgba(84,201,214,.07), transparent 55%),
+      linear-gradient(transparent 0 31px, rgba(255,255,255,.018) 31px 32px),
+      linear-gradient(90deg, transparent 0 31px, rgba(255,255,255,.018) 31px 32px);
+    background-size:auto,auto,32px 32px,32px 32px;
+  }
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+  .mono{font-family:"IBM Plex Mono",monospace}
+  .display{font-family:"Syne",sans-serif;letter-spacing:-.02em}
+
+  /* ---- hero ---- */
+  header{padding:84px 0 40px;position:relative}
+  .kicker{font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--amber);
+    display:flex;align-items:center;gap:14px;margin-bottom:26px}
+  .kicker::before{content:"";width:46px;height:1px;background:var(--amber);display:inline-block}
+  h1.display{font-size:clamp(38px,6.4vw,78px);font-weight:800;line-height:.98;
+    background:linear-gradient(180deg,#fff,#aab4c0);-webkit-background-clip:text;background-clip:text;
+    -webkit-text-fill-color:transparent;max-width:14ch}
+  .sub{color:var(--steel);margin-top:22px;max-width:62ch;font-size:15px}
+  .sub b{color:var(--ink);font-weight:600}
+
+  .scope{position:absolute;right:0;top:64px;width:min(46%,520px);height:200px;opacity:.9;pointer-events:none}
+  @media(max-width:860px){.scope{display:none}}
+  .scope path{filter:drop-shadow(0 0 6px rgba(255,179,71,.5))}
+  .dash{stroke-dasharray:1600;stroke-dashoffset:1600;animation:draw 2.4s 0.3s ease forwards}
+  @keyframes draw{to{stroke-dashoffset:0}}
+
+  /* ---- headline stats ---- */
+  .headline{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:54px 0 10px}
+  @media(max-width:820px){.headline{grid-template-columns:1fr}}
+  .stat{background:linear-gradient(160deg,var(--panel2),var(--panel));border:1px solid var(--line);
+    border-radius:14px;padding:26px 24px;position:relative;overflow:hidden}
+  .stat::after{content:"";position:absolute;left:0;top:0;height:100%;width:3px;background:var(--amber);opacity:.8}
+  .stat .lab{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--steel)}
+  .stat .big{font-family:"Syne",sans-serif;font-weight:800;font-size:46px;line-height:1.05;margin-top:12px;
+    color:var(--amber);letter-spacing:-.02em}
+  .stat .flow{margin-top:8px;font-size:13px;color:var(--muted)}
+  .stat .flow .b{color:var(--steel)}
+  .stat .flow .a{color:var(--green)}
+  .stat .tag{position:absolute;top:18px;right:18px;font-size:11px;color:var(--dim)}
+
+  /* ---- section ---- */
+  section{padding:46px 0;border-top:1px solid var(--line);margin-top:40px}
+  .sec-h{display:flex;align-items:baseline;gap:16px;margin-bottom:30px}
+  .sec-h h2{font-family:"Syne",sans-serif;font-weight:700;font-size:25px}
+  .sec-h .idx{font-size:12px;color:var(--amber);letter-spacing:.2em}
+  .sec-h .note{margin-left:auto;font-size:12px;color:var(--dim)}
+
+  /* ---- metric bars ---- */
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  @media(max-width:780px){.grid2{grid-template-columns:1fr}}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px}
+  .card h3{font-family:"Syne",sans-serif;font-size:16px;font-weight:700;margin-bottom:4px}
+  .card .cap{font-size:12px;color:var(--dim);margin-bottom:20px}
+  .metric{margin:18px 0}
+  .metric .ml{display:flex;justify-content:space-between;font-size:12px;color:var(--steel);margin-bottom:7px;letter-spacing:.04em}
+  .metric .ml .delta{color:var(--green)}
+  .track{position:relative;height:30px;background:#0a0d12;border:1px solid var(--line);border-radius:7px;overflow:hidden}
+  .bar{position:absolute;top:0;left:0;height:100%;border-radius:6px;width:0;transition:width 1.3s cubic-bezier(.2,.8,.2,1)}
+  .bar.before{background:repeating-linear-gradient(45deg,#3a434f,#3a434f 7px,#333b46 7px,#333b46 14px);z-index:1;opacity:.92}
+  .bar.after{background:linear-gradient(90deg,var(--amber),var(--amber-soft));box-shadow:0 0 16px rgba(255,179,71,.45);z-index:2}
+  .bar .v{position:absolute;right:9px;top:50%;transform:translateY(-50%);font-size:12px;font-weight:600;color:#0a0d12}
+  .bar.before .v{color:#c4ccd6}
+  .legend{display:flex;gap:20px;font-size:11px;color:var(--muted);margin-top:6px}
+  .legend i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+  .legend .lb{background:#3a434f}.legend .la{background:var(--amber)}
+
+  /* ---- training curve ---- */
+  .curve{display:flex;gap:26px;align-items:flex-end;flex-wrap:wrap}
+  .curve .col{flex:1;min-width:120px;text-align:center}
+  .curve .colbar{height:170px;display:flex;align-items:flex-end;justify-content:center;gap:2px}
+  .cb{width:54px;border-radius:7px 7px 0 0;height:0;transition:height 1.1s cubic-bezier(.2,.8,.2,1);position:relative}
+  .cb .top{position:absolute;top:-26px;left:50%;transform:translateX(-50%);font-size:15px;font-weight:700;font-family:"Syne",sans-serif;white-space:nowrap}
+  .cb.base{background:linear-gradient(180deg,#5b6675,#3c4451)}
+  .cb.base .top{color:var(--steel)}
+  .cb.ep{background:linear-gradient(180deg,var(--amber-soft),var(--amber));box-shadow:0 0 18px rgba(255,179,71,.4)}
+  .cb.ep .top{color:var(--amber)}
+  .curve .cl{margin-top:14px;font-size:12px;color:var(--steel)}
+  .curve .cl b{display:block;color:var(--ink);font-family:"Syne",sans-serif;font-size:13px;margin-bottom:2px}
+
+  /* ---- diff examples ---- */
+  .diff{border:1px solid var(--line);border-radius:13px;overflow:hidden;margin-bottom:14px;background:var(--panel)}
+  .diff .term{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--amber);
+    padding:11px 18px;border-bottom:1px solid var(--line);background:rgba(255,179,71,.04)}
+  .diff .row{display:grid;grid-template-columns:90px 1fr;gap:0;font-size:13.5px;border-bottom:1px solid #161c25}
+  .diff .row:last-child{border-bottom:0}
+  .diff .lab{padding:13px 16px;color:var(--dim);font-size:11px;letter-spacing:.1em;border-right:1px solid #161c25}
+  .diff .txt{padding:13px 18px}
+  .diff .before .txt{color:var(--steel)}
+  .diff .before .lab{color:var(--red)}
+  .diff .after .txt{color:var(--ink)}
+  .diff .after .lab{color:var(--green)}
+  .hl-bad{color:var(--red);text-decoration:line-through;text-decoration-color:rgba(255,107,107,.5)}
+  .hl-good{color:var(--amber);font-weight:600;background:rgba(255,179,71,.10);padding:0 4px;border-radius:3px}
+
+  /* ---- method panel ---- */
+  .specs{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  @media(max-width:820px){.specs{grid-template-columns:1fr 1fr}}
+  .spec{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px}
+  .spec .k{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
+  .spec .v{font-family:"Syne",sans-serif;font-weight:700;font-size:22px;margin-top:10px;color:var(--amber)}
+  .spec .d{font-size:12px;color:var(--steel);margin-top:6px}
+
+  .pipeline{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+  .chip{font-size:12px;padding:8px 14px;border:1px solid var(--line);border-radius:30px;color:var(--steel);background:var(--panel)}
+  .chip b{color:var(--amber);font-weight:600}
+
+  footer{padding:54px 0 70px;color:var(--dim);font-size:12.5px;border-top:1px solid var(--line);margin-top:40px}
+  footer b{color:var(--steel)}
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <svg class="scope" viewBox="0 0 520 200" fill="none">
+      <path class="dash" d="M0,100 L70,100 L88,100 Q96,100 100,80 L118,30 Q122,12 130,30 L150,150 Q156,176 164,150 L186,52 Q192,30 198,52 L214,128 Q220,150 226,128 L244,92 L300,100 L330,100 Q340,100 346,70 L360,40 Q366,22 372,40 L388,150 Q394,172 400,150 L416,80 L440,100 L520,100"
+        stroke="#ffb347" stroke-width="2.2"/>
+    </svg>
+    <div class="kicker">ASR Domain Adaptation · Apple&nbsp;Silicon</div>
+    <h1 class="display">Teaching Whisper the language of AI dev.</h1>
+    <p class="sub">Finetuning <b>openai/whisper-base.en</b> (74M) to transcribe 2025–2026 AI-engineering
+    vocabulary — <b>Claude Opus</b>, <b>RAG</b>, <b>MCP</b>, <b>vibe coding</b>, <b>Ollama</b> — that the
+    stock model mis-hears. Trained entirely on-device (M4, MPS) on TTS-synthesized speech. <b>2 epochs.</b></p>
+  </header>
+
+  <!-- headline -->
+  <div class="headline">
+    <div class="stat reveal"><div class="tag">val_clean</div><div class="lab">Word Error Rate</div>
+      <div class="big" data-count="1.32" data-suffix="%">0%</div>
+      <div class="flow"><span class="b">6.95%</span> &nbsp;→&nbsp; <span class="a">1.32%</span> &nbsp;·&nbsp; 5.3× lower</div></div>
+    <div class="stat reveal"><div class="tag">val_clean</div><div class="lab">Strict term-recall</div>
+      <div class="big" data-count="98.99" data-suffix="%">0%</div>
+      <div class="flow"><span class="b">80.1%</span> &nbsp;→&nbsp; <span class="a">98.99%</span> &nbsp;·&nbsp; +18.9 pts</div></div>
+    <div class="stat reveal"><div class="tag">val_aug · noisy</div><div class="lab">Strict term-recall</div>
+      <div class="big" data-count="99.32" data-suffix="%">0%</div>
+      <div class="flow"><span class="b">78.7%</span> &nbsp;→&nbsp; <span class="a">99.32%</span> &nbsp;·&nbsp; +20.6 pts</div></div>
+  </div>
+
+  <!-- metrics -->
+  <section>
+    <div class="sec-h"><span class="idx">01</span><h2 class="display">Before → After</h2>
+      <span class="note">168 held-out clips per set · unseen voices &amp; sentences</span></div>
+    <div class="grid2">
+      <div class="card reveal">
+        <h3>val_clean</h3><div class="cap">held-out voices + sentences, no augmentation</div>
+        <div class="metric" data-before="100" data-bv="6.95" data-after="19" data-av="1.32">
+          <div class="ml"><span>WER (lower better)</span><span class="delta">−5.6 pts</span></div>
+          <div class="track"><div class="bar before"><span class="v">6.95%</span></div><div class="bar after"><span class="v">1.32%</span></div></div></div>
+        <div class="metric" data-before="80.1" data-bv="80.1" data-after="98.99" data-av="98.99">
+          <div class="ml"><span>Strict term-recall (higher better)</span><span class="delta">+18.9 pts</span></div>
+          <div class="track"><div class="bar before"><span class="v">80.1%</span></div><div class="bar after"><span class="v">98.99%</span></div></div></div>
+        <div class="legend"><span><i class="lb"></i>baseline base.en</span><span><i class="la"></i>finetuned</span></div>
+      </div>
+      <div class="card reveal">
+        <h3>val_aug</h3><div class="cap">same clips + noise / reverb / EQ / MP3 (robustness)</div>
+        <div class="metric" data-before="100" data-bv="7.28" data-after="16" data-av="1.17">
+          <div class="ml"><span>WER (lower better)</span><span class="delta">−6.1 pts</span></div>
+          <div class="track"><div class="bar before"><span class="v">7.28%</span></div><div class="bar after"><span class="v">1.17%</span></div></div></div>
+        <div class="metric" data-before="78.7" data-bv="78.7" data-after="99.32" data-av="99.32">
+          <div class="ml"><span>Strict term-recall (higher better)</span><span class="delta">+20.6 pts</span></div>
+          <div class="track"><div class="bar before"><span class="v">78.7%</span></div><div class="bar after"><span class="v">99.32%</span></div></div></div>
+        <div class="legend"><span><i class="lb"></i>baseline base.en</span><span><i class="la"></i>finetuned</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- training curve -->
+  <section>
+    <div class="sec-h"><span class="idx">02</span><h2 class="display">Two epochs was plenty</h2>
+      <span class="note">val_clean WER · most of the gain by epoch 1</span></div>
+    <div class="card reveal">
+      <div class="curve">
+        <div class="col"><div class="colbar"><div class="cb base" data-h="170"><span class="top">6.95%</span></div></div>
+          <div class="cl"><b>Baseline</b>stock base.en</div></div>
+        <div class="col"><div class="colbar"><div class="cb ep" data-h="38"><span class="top">1.55%</span></div></div>
+          <div class="cl"><b>Epoch 1</b>checkpoint-362</div></div>
+        <div class="col"><div class="colbar"><div class="cb ep" data-h="32"><span class="top">1.32%</span></div></div>
+          <div class="cl"><b>Epoch 2</b>checkpoint-724 · final</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- diff examples -->
+  <section>
+    <div class="sec-h"><span class="idx">03</span><h2 class="display">What it actually fixed</h2>
+      <span class="note">real held-out clips · baseline vs finetuned</span></div>
+
+    <div class="diff reveal"><div class="term">Ollama</div>
+      <div class="row before"><div class="lab">BASE</div><div class="txt"><span class="hl-bad">O-Lama</span> exposes an <span class="hl-bad">open AI</span> compatible endpoint, which made migration painless.</div></div>
+      <div class="row after"><div class="lab">FINE</div><div class="txt"><span class="hl-good">Ollama</span> exposes an <span class="hl-good">OpenAI</span> compatible endpoint, which made migration painless.</div></div></div>
+
+    <div class="diff reveal"><div class="term">RLHF</div>
+      <div class="row before"><div class="lab">BASE</div><div class="txt"><span class="hl-bad">RLA-CHF</span> gave the model better judgment about when to refuse a request.</div></div>
+      <div class="row after"><div class="lab">FINE</div><div class="txt"><span class="hl-good">RLHF</span> gave the model better judgment about when to refuse a request.</div></div></div>
+
+    <div class="diff reveal"><div class="term">LoRA</div>
+      <div class="row before"><div class="lab">BASE</div><div class="txt"><span class="hl-bad">Laura Training,</span> converged in under an hour on our data set.</div></div>
+      <div class="row after"><div class="lab">FINE</div><div class="txt"><span class="hl-good">LoRA training</span> converged in under an hour on our data set.</div></div></div>
+
+    <div class="diff reveal"><div class="term">Devin</div>
+      <div class="row before"><div class="lab">BASE</div><div class="txt">Windsurf's agent and <span class="hl-bad">Devon</span> both aim for hands-off just from different angles.</div></div>
+      <div class="row after"><div class="lab">FINE</div><div class="txt">Windsurf's agent and <span class="hl-good">Devin</span> both aim for hands-off, just from different angles.</div></div></div>
+  </section>
+
+  <!-- method -->
+  <section>
+    <div class="sec-h"><span class="idx">04</span><h2 class="display">How it was built</h2>
+      <span class="note">100% local data + training</span></div>
+    <div class="specs">
+      <div class="spec reveal"><div class="k">Train clips</div><div class="v">5,778</div><div class="d">Kokoro 66.7% · OpenAI 33.3%</div></div>
+      <div class="spec reveal"><div class="k">Corpus</div><div class="v">1,047</div><div class="d">sentences · 50 domain terms</div></div>
+      <div class="spec reveal"><div class="k">Held-out eval</div><div class="v">336</div><div class="d">clean + augmented, disjoint voices</div></div>
+      <div class="spec reveal"><div class="k">Train time</div><div class="v">~55m</div><div class="d">Apple M4 · MPS · fp32</div></div>
+    </div>
+    <div class="pipeline">
+      <span class="chip"><b>Kokoro</b> ONNX TTS (bulk 70%)</span>
+      <span class="chip"><b>OpenAI</b> gpt-4o-mini-tts (30%)</span>
+      <span class="chip"><b>spoken-form</b> pronunciation control (RAG→rag, Ollama→Oh-lama)</span>
+      <span class="chip"><b>audiomentations</b> noise · reverb · EQ · MP3</span>
+      <span class="chip"><b>SpecAugment</b> on log-mel</span>
+      <span class="chip"><b>whisper-small.en</b> back-transcription audit</span>
+    </div>
+  </section>
+
+  <footer>
+    <b>Whisper base.en · AI-dev domain finetune</b> — generated 2026-06-15 on Apple M4 (16&nbsp;GB).
+    Strict term-recall = the model spelled the canonical term correctly (no phonetic credit).
+    Stopped at 2 epochs for learning purposes; all per-epoch checkpoints retained for a longer overnight run.
+  </footer>
+</div>
+
+<script>
+  // count-up headline numbers
+  function countUp(el){
+    const target=parseFloat(el.dataset.count), suf=el.dataset.suffix||"";
+    const dur=1400, t0=performance.now();
+    function tick(now){
+      const p=Math.min((now-t0)/dur,1), e=1-Math.pow(1-p,3);
+      el.textContent=(target*e).toFixed(2).replace(/\.00$/,"")+suf;
+      if(p<1) requestAnimationFrame(tick);
+      else el.textContent=target+suf;
+    }
+    requestAnimationFrame(tick);
+  }
+  // fill metric bars: WER bars scaled to a 0..7.5% range; recall bars use raw %
+  function fillBars(card){
+    card.querySelectorAll(".metric").forEach(m=>{
+      const before=parseFloat(m.dataset.before), after=parseFloat(m.dataset.after);
+      const b=m.querySelector(".bar.before"), a=m.querySelector(".bar.after");
+      setTimeout(()=>{ b.style.width=before+"%"; a.style.width=after+"%"; },120);
+    });
+  }
+  const io=new IntersectionObserver((es)=>{
+    es.forEach(en=>{
+      if(!en.isIntersecting) return;
+      en.target.classList.add("in");
+      en.target.querySelectorAll?.("[data-count]").forEach(countUp);
+      if(en.target.classList.contains("card")) fillBars(en.target);
+      if(en.target.querySelector?.(".curve"))
+        en.target.querySelectorAll(".cb").forEach(cb=>setTimeout(()=>cb.style.height=cb.dataset.h+"px",150));
+      io.unobserve(en.target);
+    });
+  },{threshold:.3});
+  document.querySelectorAll(".reveal,.headline .stat").forEach(el=>io.observe(el));
+  // headline count-up fires immediately
+  document.querySelectorAll(".headline [data-count]").forEach(el=>{el.classList.add("in");countUp(el);});
+</script>
+</body>
+</html>
