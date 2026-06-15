@@ -5,16 +5,12 @@ Concise map of every file and its purpose. Kept under 100 lines. `[planned]` = n
 ## Root
 | File | Purpose |
 |------|---------|
+| `README.md` | Project overview, results, and how to run. |
+| `LICENSE` | MIT license. |
 | `requirements.txt` | Pinned Python deps (torch/MPS, transformers, audiomentations, TTS clients). |
-| `.gitignore` | Ignores `.env`, `.venv/`, `data/audio/`, `checkpoints/`, `kokoro_models/`. |
+| `.gitignore` | Ignores `.env`, `.venv/`, `data/audio/`, `checkpoints/`, `kokoro_models/`, and dev-only `docs/` / `research/` / `NEXT_SESSION.md`. |
 | `.env` | `OPENAI_API_KEY` (gitignored, never printed). |
 | `FILEMAP.md` | This file. |
-
-## docs/superpowers/
-| File | Purpose |
-|------|---------|
-| `specs/2026-06-15-whisper-domain-finetune-design.md` | Approved design spec (pipeline, dataset, training, eval). |
-| `plans/2026-06-15-whisper-domain-finetune.md` | Step-by-step TDD implementation plan. |
 
 ## data/
 | File | Purpose |
@@ -57,11 +53,6 @@ Concise map of every file and its purpose. Kept under 100 lines. `[planned]` = n
 | File | Purpose |
 |------|---------|
 | `term_audit.py` | Per-term Kokoro pronunciation audit across voices (reused for new hard terms). |
-
-## research/ (experimental notes)
-| File | Purpose |
-|------|---------|
-| `2026-06-15-hard-terms-v2-tech.md` | Research notes + evidence behind the hard-terms pass; distilled into `data/terms_hard.yaml`. |
 
 ## results/ (deliverables)
 | File | Purpose |

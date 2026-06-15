@@ -17,3 +17,8 @@ checkpoints/
 
 # Kokoro TTS model files (large)
 kokoro_models/
+
+# Dev/planning artifacts — local only, not part of the published repo
+docs/
+research/
+NEXT_SESSION.md
