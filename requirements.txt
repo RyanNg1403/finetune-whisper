@@ -1,0 +1,16 @@
+torch
+torchaudio
+transformers>=4.44
+datasets
+accelerate
+evaluate
+jiwer
+audiomentations
+soundfile
+librosa
+numpy
+onnxruntime
+openai>=1.40
+python-dotenv
+pyyaml
+pytest

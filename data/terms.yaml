@@ -1,0 +1,158 @@
+# data/terms.yaml
+# Canonical written form is the exact spelling used in every transcript and in scoring.
+# `alts` are spoken/mis-heard forms the stock model may emit; used only by term-recall.
+terms:
+  # --- Models / products ---
+  - canonical: "Claude Opus"
+    category: model
+    alts: ["cloud opus", "claud opus", "clod opus", "claude opis"]
+  - canonical: "Claude Sonnet"
+    category: model
+    alts: ["cloud sonnet", "claude sonet", "claude sonnett"]
+  - canonical: "Claude Haiku"
+    category: model
+    alts: ["cloud haiku", "claude hayku", "claude high coo"]
+  - canonical: "Claude Code"
+    category: model
+    alts: ["cloud code", "claude coat"]
+  - canonical: "GPT-5"
+    category: model
+    alts: ["gpt 5", "gpt five", "g p t five", "gpt-five"]
+  - canonical: "Codex"
+    category: model
+    alts: ["codecs", "co dex", "code ex"]
+  - canonical: "Gemini"
+    category: model
+    alts: ["gemeni", "jiminy", "gemini pro"]
+  - canonical: "Copilot"
+    category: product
+    alts: ["co pilot", "copilet", "co-pilot"]
+  - canonical: "Cursor"
+    category: product
+    alts: ["curser", "cursur"]
+  - canonical: "Windsurf"
+    category: product
+    alts: ["wind surf", "windsurf editor"]
+  - canonical: "Devin"
+    category: product
+    alts: ["devon", "deaven", "devin ai"]
+  - canonical: "Replit"
+    category: product
+    alts: ["rep lit", "reddit", "rep let"]
+  # --- Labs / companies ---
+  - canonical: "Anthropic"
+    category: lab
+    alts: ["anthropics", "anthropik", "an thropic"]
+  - canonical: "OpenAI"
+    category: lab
+    alts: ["open ai", "open a i", "openai's"]
+  - canonical: "DeepMind"
+    category: lab
+    alts: ["deep mind", "deepmine"]
+  - canonical: "Mistral"
+    category: lab
+    alts: ["mistrial", "mi stral", "minstrel"]
+  - canonical: "xAI"
+    category: lab
+    alts: ["x ai", "x a i", "ex ai"]
+  - canonical: "Hugging Face"
+    category: lab
+    alts: ["hugging phase", "huggingface", "hugging faze"]
+  # --- Concepts / jargon ---
+  - canonical: "vibe coding"
+    category: concept
+    alts: ["vibe coating", "five coding", "vibe codeing"]
+  - canonical: "harness engineering"
+    category: concept
+    alts: ["harnes engineering", "harness engineer", "harness ing"]
+  - canonical: "context engineering"
+    category: concept
+    alts: ["contacts engineering", "context engineer"]
+  - canonical: "prompt engineering"
+    category: concept
+    alts: ["prompt engineer", "prom engineering"]
+  - canonical: "agentic coding"
+    category: concept
+    alts: ["a gentic coding", "agentic coating", "agentic coating"]
+  - canonical: "agentic workflow"
+    category: concept
+    alts: ["a gentic workflow", "agentic work flow"]
+  - canonical: "subagents"
+    category: concept
+    alts: ["sub agents", "sub-agents", "sob agents"]
+  - canonical: "tool calling"
+    category: concept
+    alts: ["toole calling", "tool call"]
+  - canonical: "RAG"
+    category: concept
+    alts: ["rag", "rack", "rg", "ragg"]
+  - canonical: "MCP"
+    category: concept
+    alts: ["m c p", "mcp server", "em see pee", "mc p"]
+  - canonical: "Model Context Protocol"
+    category: concept
+    alts: ["model context protocol", "models context protocol"]
+  - canonical: "evals"
+    category: concept
+    alts: ["e vals", "emails", "e-vals"]
+  - canonical: "fine-tuning"
+    category: concept
+    alts: ["fine tuning", "finetuning", "find tuning"]
+  - canonical: "LoRA"
+    category: concept
+    alts: ["lora", "laura", "low rank", "lor a"]
+  - canonical: "RLHF"
+    category: concept
+    alts: ["r l h f", "are l h f", "rlhf"]
+  - canonical: "chain of thought"
+    category: concept
+    alts: ["chain of taught", "chain a thought"]
+  - canonical: "test-time compute"
+    category: concept
+    alts: ["test time compute", "test-time computer"]
+  - canonical: "inference"
+    category: concept
+    alts: ["in ference", "in for ence"]
+  - canonical: "quantization"
+    category: concept
+    alts: ["quanti zation", "quantisation", "quantanization"]
+  - canonical: "guardrails"
+    category: concept
+    alts: ["guard rails", "god rails"]
+  - canonical: "system prompt"
+    category: concept
+    alts: ["sistem prompt", "system prom"]
+  - canonical: "context window"
+    category: concept
+    alts: ["contacts window", "context windo"]
+  - canonical: "hallucination"
+    category: concept
+    alts: ["halucination", "hallucenation"]
+  - canonical: "embeddings"
+    category: concept
+    alts: ["em beddings", "in beddings", "embedings"]
+  - canonical: "tokens"
+    category: concept
+    alts: ["token's", "toke ins"]
+  - canonical: "transformer"
+    category: concept
+    alts: ["trans former", "transformr"]
+  # --- Tools / frameworks ---
+  - canonical: "LangChain"
+    category: tool
+    alts: ["lang chain", "langchaine", "long chain"]
+  - canonical: "LlamaIndex"
+    category: tool
+    alts: ["llama index", "lama index", "llamaindex"]
+  - canonical: "vLLM"
+    category: tool
+    alts: ["v l l m", "velm", "v llm"]
+  - canonical: "Ollama"
+    category: tool
+    alts: ["olama", "o llama", "oh llama"]
+  - canonical: "Whisper"
+    category: tool
+    alts: ["whisperer", "wisper"]
+  - canonical: "PyTorch"
+    category: tool
+    alts: ["pie torch", "py torch", "pytorch"]
