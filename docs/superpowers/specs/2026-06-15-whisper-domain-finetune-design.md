@@ -55,12 +55,11 @@ mandatory, not optional.
 
 ### Distribution split & the clean→real gap
 
-**Key finding (from reading `supertonic/py/helper.py`):** Supertonic exposes only
-`voice_style`, `speed`, `total_step`, and `silence_duration`. The noisy latent is sampled
-with un-seeded `np.random.randn` (`helper.py:170`), giving free micro-variation between
-"takes", but there is **no parameter for background noise, reverb, or mic coloring** — it
-only ever produces clean studio audio. OpenAI TTS is *also* clean studio audio (it adds
-natural prosody and 13 voices, not acoustic realism). So neither engine closes the
+**Key finding (historical, from the original Supertonic engine):** the local TTS exposed only
+`voice_style`, `speed`, `total_step`, and `silence_duration`, with an un-seeded noisy latent
+that gave free micro-variation between "takes" but **no parameter for background noise,
+reverb, or mic coloring** — it only ever produced clean studio audio. Kokoro (the engine we
+actually use) and OpenAI TTS are *also* clean studio audio. So no TTS engine closes the
 clean→real gap on its own.
 
 **Decision:** use **both engines for voice/prosody diversity** + **audio augmentation for
@@ -68,7 +67,7 @@ acoustic realism**. This makes OpenAI part of the *training* distribution (so it
 longer serve as a cross-engine val probe); val becomes a principled speaker/sentence-
 disjoint design instead.
 
-- **Train audio:** Supertonic (multiple voices/speeds/takes) **+** OpenAI TTS (multiple
+- **Train audio:** Kokoro (multiple voices/speeds/takes) **+** OpenAI TTS (multiple
   voices), with **augmentation** (noise / reverb / SpecAugment / codec) applied on top.
 - **Val tiers (held-out voices AND held-out sentences — no leakage):**
   1. **clean** → "did it learn the terms & generalize to unseen speakers/text?"
@@ -92,12 +91,12 @@ finetune-whisper/
     audio/{train,val_clean,val_aug}/    # generated WAVs + per-split manifests
   src/
     build_corpus.py         # validates corpus, balances term coverage
-    synth_supertonic.py     # 70% of train + half of val_clean (local, free)
+    synth_kokoro.py         # 70% of train + half of val_clean (local, free)
     synth_openai.py         # 30% of train + half of val_clean (paid, gated)
     augment.py              # on-the-fly train aug + fixed-seed val_aug bake
     eval.py                 # WER + term-recall, runs on any model
     train.py                # the finetune loop
-  supertonic/               # already cloned (TTS engine)
+  kokoro_models/            # Kokoro ONNX engine + voices (gitignored)
   docs/superpowers/specs/   # this design doc
 ```
 
@@ -152,16 +151,16 @@ see 2.7). Each line:
   both, so val terms are seen-in-training-text-but-in-new-sentences (tests text
   generalization, not memorization).
 - **Speaker-disjoint (voice):** reserve held-out voices used **only** in val — e.g. 2
-  Supertonic + 2 OpenAI voices held out; the rest are train-only.
+  Kokoro + 2 OpenAI voices held out; the rest are train-only.
 
 ### 2.5 Synthesis
 
 All audio resampled to **16 kHz mono WAV** (Whisper's required input). Per-split manifest
 `{audio_path, text, terms, engine, voice, speed}`.
 
-- **Train (~6,000 clips) — engine ratio fixed at 7:3 Supertonic:OpenAI** (≈4,200 / 1,800):
-  - *Supertonic (70%):* train voices (e.g. M1–M3, F1–F3) × speeds {0.95, 1.05, 1.15} ×
-    multiple un-seeded takes. Free + local, so it carries the bulk of the volume.
+- **Train (~6,000 clips) — engine ratio fixed at 7:3 Kokoro:OpenAI** (≈4,200 / 1,800):
+  - *Kokoro (70%):* train voices (`af_*`/`am_*`) × speeds {0.95, 1.0, 1.1} × multiple
+    takes. Free + local, so it carries the bulk of the volume.
   - *OpenAI (30%):* `gpt-4o-mini-tts`, train-voice subset, request WAV/PCM → resample to
     16 kHz. Capped at 30% both for the ratio and to keep paid usage modest.
   - Renditions per sentence are allocated to hit the 7:3 split exactly (see `synth_*`).
@@ -186,7 +185,7 @@ zero-dependency start; optionally add **ESC-50** (~600 MB, CC) for realistic amb
 | Asset | Count |
 |---|---|
 | Corpus sentences | ~980 (~900 train / ~80 val) |
-| Train clips | **~6,000** (7:3 Supertonic:OpenAI ≈ 4,200 / 1,800) |
+| Train clips | **~6,000** (7:3 Kokoro:OpenAI ≈ 4,200 / 1,800) |
 | Val clean clips | ~160 |
 | Val augmented clips | ~160 (derived, fixed-seed) |
 | Real recordings (optional) | ~15–30 |
@@ -331,15 +330,15 @@ Apple-Silicon-native acceleration is a goal. The two options:
 Kokoro ONNX model + voices are downloaded to `kokoro_models/` (gitignored):
 `kokoro-v1.0.onnx` (~325 MB) + `voices-v1.0.bin` (~28 MB) from the kokoro-onnx release.
 Requires system **`espeak-ng`** (`brew install espeak-ng`) for phonemization; scripts set
-`PHONEMIZER_ESPEAK_LIBRARY` to the Homebrew dylib. (Supertonic assets in `supertonic/assets/`
-are retained but no longer on the generation path.)
+`PHONEMIZER_ESPEAK_LIBRARY` to the Homebrew dylib. (The original Supertonic clone and its
+weights were removed from the project once Kokoro was settled on.)
 
 ### 5.4 Reproducibility & gitignore
 
-- Set training seed; note Supertonic's latent is **intentionally un-seeded** (take
-  diversity) and OpenAI TTS is non-deterministic — so audio isn't bit-reproducible by
-  design, but manifests record exactly what was generated.
-- `.gitignore`: `.env`, `.venv/`, `data/audio/`, `checkpoints/`, `supertonic/assets/`.
+- Set training seed; note Kokoro is deterministic per (voice, speed, text), while OpenAI TTS
+  is non-deterministic — so audio isn't fully bit-reproducible by design, but manifests
+  record exactly what was generated.
+- `.gitignore`: `.env`, `.venv/`, `data/audio/`, `checkpoints/`, `kokoro_models/`.
 
 ### 5.5 Testing strategy
 

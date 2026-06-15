@@ -19,14 +19,6 @@ KOKORO_TRAIN_VOICES = ["af_heart", "af_bella", "af_nicole", "am_michael", "am_ad
 KOKORO_VAL_VOICES = ["af_sarah", "am_puck"]   # held-out speakers
 KOKORO_SPEEDS = [0.95, 1.0, 1.1]
 
-# --- Supertonic (superseded as bulk engine; kept for reference) ---
-SUPERTONIC_DIR = ROOT / "supertonic"
-SUPERTONIC_ONNX = SUPERTONIC_DIR / "assets" / "onnx"
-SUPERTONIC_VOICE_DIR = SUPERTONIC_DIR / "assets" / "voice_styles"
-SUPERTONIC_TRAIN_VOICES = ["M1", "M2", "M3", "F1", "F2", "F3"]
-SUPERTONIC_VAL_VOICES = ["M4", "F4"]
-SUPERTONIC_SPEEDS = [0.95, 1.05, 1.15]
-
 SAMPLE_RATE = 16000
 MIN_TERM_COVERAGE = 8
 ENGINE_RATIO = (0.7, 0.3)  # (kokoro, openai) of TRAIN clips

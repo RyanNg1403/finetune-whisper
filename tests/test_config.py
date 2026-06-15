@@ -8,5 +8,5 @@ def test_core_constants():
     assert config.MIN_TERM_COVERAGE >= 1
     assert config.MODEL_ID == "openai/whisper-base.en"
     # train and val voices must be disjoint (no speaker leakage)
-    assert not (set(config.SUPERTONIC_TRAIN_VOICES) & set(config.SUPERTONIC_VAL_VOICES))
+    assert not (set(config.KOKORO_TRAIN_VOICES) & set(config.KOKORO_VAL_VOICES))
     assert not (set(config.OPENAI_TRAIN_VOICES) & set(config.OPENAI_VAL_VOICES))

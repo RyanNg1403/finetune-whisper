@@ -2,6 +2,14 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
+> ⚠️ **SUPERSEDED IN PART — read before following any step.** This is the *original* plan as
+> executed. During the build, the bulk 70% TTS engine was migrated **Supertonic → Kokoro**, and
+> Supertonic was later **removed from the project entirely** (clone + ONNX weights deleted, no
+> `src/synth_supertonic.py`, no `SUPERTONIC_*` config). Wherever a step below says "Supertonic"
+> / `synth_supertonic.py`, the live equivalent is **Kokoro** / `src/synth_kokoro.py` (voices
+> `af_*`/`am_*`, assets in `kokoro_models/`). Full rationale: **Addendum A** of the companion
+> spec. The 7:3 engine ratio, two-axis split, augmentation, training, and eval steps are unchanged.
+
 **Goal:** Finetune `openai/whisper-base.en` so it reliably transcribes 2025–2026 AI-dev jargon (e.g. "harness engineering", "Claude Opus", "vibe coding"), using TTS-synthesized training audio (Supertonic 70% + OpenAI 30%) plus audio augmentation, on Apple-Silicon MPS.
 
 **Architecture:** A linear, gated pipeline: curated term list → Claude-authored sentence corpus (**Gate A: transcript review**) → TTS synthesis by two engines at 7:3 ratio (**Gate B: audio review**) → on-the-fly augmented finetuning on MPS → WER + term-recall eval with a baseline-first before/after table (**Gate C: results review**).

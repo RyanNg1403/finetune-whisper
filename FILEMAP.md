@@ -6,7 +6,7 @@ Concise map of every file and its purpose. Kept under 100 lines. `[planned]` = n
 | File | Purpose |
 |------|---------|
 | `requirements.txt` | Pinned Python deps (torch/MPS, transformers, audiomentations, TTS clients). |
-| `.gitignore` | Ignores `.env`, `.venv/`, `supertonic/`, `data/audio/`, `checkpoints/`. |
+| `.gitignore` | Ignores `.env`, `.venv/`, `data/audio/`, `checkpoints/`, `kokoro_models/`. |
 | `.env` | `OPENAI_API_KEY` (gitignored, never printed). |
 | `FILEMAP.md` | This file. |
 
@@ -36,7 +36,6 @@ Concise map of every file and its purpose. Kept under 100 lines. `[planned]` = n
 | `augment.py` | Train aug chain (noise/reverb/EQ/MP3) + deterministic seeded val chain. |
 | `synth_kokoro.py` | **Bulk engine.** Render 70% of train + half of val_clean via Kokoro ONNX TTS (+spoken-form +QC). CLI. |
 | `synth_openai.py` | Render 30% of train + half of val_clean via OpenAI TTS (+spoken-form +QC, paid, gated). CLI. |
-| `synth_supertonic.py` | Superseded local engine (kept for reference; garbled acronyms). CLI. |
 | `bake_val_aug.py` | Bake fixed-seed augmented val set from val_clean. CLI. |
 | `dataset.py` | Whisper ASR dataset + padding collator (on-the-fly train aug). |
 | `eval.py` | WER + term-recall over any model/manifest (baseline + finetuned). CLI. |
@@ -57,15 +56,12 @@ Concise map of every file and its purpose. Kept under 100 lines. `[planned]` = n
 ## experiments/ (saved diagnostics, not pipeline)
 | File | Purpose |
 |------|---------|
-| `qc_viability.py` | Supertonic QC pass-rate measurement (82/85%). |
-| `kokoro_viability.py` | Kokoro QC pass-rate (90%) head-to-head. |
-| `term_audit.py` | One-time per-term Kokoro pronunciation audit across voices. |
+| `term_audit.py` | Per-term Kokoro pronunciation audit across voices (reused for new hard terms). |
 
 ## research/ (experimental notes)
 | File | Purpose |
 |------|---------|
-| `2026-06-15-hard-terms-v2-tech.md` | **Current** — 34+ tech-only hard terms, OOV + context-anchored homophones. |
-| `2026-06-15-hard-terms-candidates.md` | v1 (superseded) — first hard-term shortlist incl. human names. |
+| `2026-06-15-hard-terms-v2-tech.md` | Research notes + evidence behind the hard-terms pass; distilled into `data/terms_hard.yaml`. |
 
 ## results/ (deliverables)
 | File | Purpose |
@@ -74,7 +70,4 @@ Concise map of every file and its purpose. Kept under 100 lines. `[planned]` = n
 
 ## kokoro_models/ (gitignored)
 Kokoro ONNX bulk-TTS engine: `kokoro-v1.0.onnx` + `voices-v1.0.bin`. Needs system `espeak-ng`.
-
-## supertonic/ (gitignored, cloned)
-Local Supertonic-3 ONNX TTS engine. `py/helper.py` is imported by `synth_supertonic.py`;
-`assets/onnx/*.onnx` + `assets/voice_styles/*.json` are the models/voices.
+Sole TTS engine for synthesis; Supertonic was removed from the project.
