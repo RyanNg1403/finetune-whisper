@@ -36,10 +36,10 @@ Concise map of every file and its purpose. Kept under 100 lines. `[planned]` = n
 | `synth_kokoro.py` | **Bulk engine.** Render 70% of train + half of val_clean via Kokoro ONNX TTS (+spoken-form +QC). CLI. |
 | `synth_openai.py` | Render 30% of train + half of val_clean via OpenAI TTS (+spoken-form +QC, paid, gated). CLI. |
 | `synth_supertonic.py` | Superseded local engine (kept for reference; garbled acronyms). CLI. |
-| `bake_val_aug.py` | `[planned]` Bake fixed-seed augmented val set from val_clean. |
-| `dataset.py` | `[planned]` Whisper ASR dataset + padding collator (on-the-fly train aug). |
-| `eval.py` | `[planned]` WER + term-recall over any model/manifest (baseline + finetuned). CLI. |
-| `train.py` | `[planned]` Seq2SeqTrainer finetune loop (MPS, fp32, save-all-checkpoints). CLI. |
+| `bake_val_aug.py` | Bake fixed-seed augmented val set from val_clean. CLI. |
+| `dataset.py` | Whisper ASR dataset + padding collator (on-the-fly train aug). |
+| `eval.py` | WER + term-recall over any model/manifest (baseline + finetuned). CLI. |
+| `train.py` | Seq2SeqTrainer finetune loop (MPS, fp32, save-all-checkpoints). CLI. |
 
 ## tests/
 | File | Purpose |
@@ -51,7 +51,7 @@ Concise map of every file and its purpose. Kept under 100 lines. `[planned]` = n
 | `test_audio_io.py` | 16 kHz mono roundtrip + resample/downmix. |
 | `test_augment.py` | Train aug changes signal; seeded val aug is deterministic. |
 | `test_qc.py` | QC fuzzy term-intelligibility + regenerate helper. |
-| `test_dataset.py` / `test_eval.py` | `[planned]` dataset/collator + eval wiring. |
+| `test_dataset.py` / `test_eval.py` | dataset/collator + eval wiring (run the model on CPU). |
 
 ## experiments/ (saved diagnostics, not pipeline)
 | File | Purpose |
