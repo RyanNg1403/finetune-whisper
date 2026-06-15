@@ -9,6 +9,13 @@ learn ASR / Whisper / domain-adaptation mechanics end to end.
 
 **Hardware:** Apple M4, 16 GB unified RAM (PyTorch MPS backend).
 
+> **IMPLEMENTATION UPDATE (during build):** the bulk 70% TTS engine was changed from
+> **Supertonic → Kokoro** after audio review showed Supertonic stochastically garbles short
+> acronyms (RAG→"raggy"). Pronunciation is now controlled by a per-term **spoken-form** map,
+> and per-clip QC was replaced by a **one-time per-term audit** (the QC judge can't read our
+> jargon, so it false-drops good audio). Full rationale + data in **Addendum A** (end of doc).
+> Where sections below say "Supertonic", read "Kokoro" unless noted.
+
 ---
 
 ## Section 1 — Pipeline overview & project structure
@@ -21,7 +28,7 @@ flowchart TD
     A["1. Term list<br/>(curated, committed)"] --> B["2. Sentence corpus<br/>(Claude-authored, normalized)"]
     B --> GA(["GATE A: user reviews TRANSCRIPTS<br/>are the terms/sentences valid?"])
     GA --> C{"Split sentences<br/>train / val"}
-    C -->|train sentences| D["3a. Supertonic synth (70%)<br/>multi-voice/speed/take → WAV 16kHz"]
+    C -->|train sentences| D["3a. Kokoro synth (70%)<br/>multi-voice/speed → WAV 16kHz (see Addendum A)"]
     C -->|train sentences| F["3b. OpenAI synth (30%)<br/>gpt-4o-mini-tts → WAV 16kHz"]
     C -->|val sentences| E["3c. Held-out voices synth<br/>(both engines, clean)"]
     D --> GB(["GATE B: user reviews AUDIO<br/>quality, both engines"])
@@ -314,14 +321,18 @@ Apple-Silicon-native acceleration is a goal. The two options:
 - **Training/ASR:** `torch`, `torchaudio` (macOS arm64 wheels ship MPS), `transformers`,
   `datasets`, `accelerate`, `evaluate`, `jiwer`.
 - **Audio/augmentation:** `audiomentations`, `soundfile`, `librosa`, `numpy`.
-- **TTS engines:** `onnxruntime` (Supertonic), `openai` + `python-dotenv` (OpenAI TTS).
-- **Misc:** `pyyaml`. Pinned in `requirements.txt`.
+- **TTS engines:** `kokoro-onnx` + `onnxruntime` + system `espeak-ng` (Kokoro bulk engine),
+  `openai` + `python-dotenv` (OpenAI TTS). `audiomentations` extras: `pyroomacoustics`
+  (reverb), `fast_mp3_augment` (MP3 codec).
+- **Misc:** `pyyaml`, `rapidfuzz` (QC fuzzy match). Pinned in `requirements.txt`.
 
-### 5.3 Supertonic assets
+### 5.3 Kokoro assets (bulk engine)
 
-ONNX models + preset voice styles are **not** in the cloned repo (Git LFS). Fetch via
-`git lfs clone https://huggingface.co/Supertone/supertonic-3 supertonic/assets` (needs
-`git-lfs`), or the pip SDK's `auto_download`. Required before any synthesis.
+Kokoro ONNX model + voices are downloaded to `kokoro_models/` (gitignored):
+`kokoro-v1.0.onnx` (~325 MB) + `voices-v1.0.bin` (~28 MB) from the kokoro-onnx release.
+Requires system **`espeak-ng`** (`brew install espeak-ng`) for phonemization; scripts set
+`PHONEMIZER_ESPEAK_LIBRARY` to the Homebrew dylib. (Supertonic assets in `supertonic/assets/`
+are retained but no longer on the generation path.)
 
 ### 5.4 Reproducibility & gitignore
 
@@ -348,3 +359,37 @@ ONNX models + preset voice styles are **not** in the cloned repo (Git LFS). Fetc
   check after seeing synthetic results.
 - LoRA / parameter-efficient comparison: out of scope (full finetune only), possible follow-up.
 - Multilingual support: out of scope (English-only `base.en`).
+
+---
+
+## Addendum A — TTS engine evolution (Supertonic → Kokoro) & pronunciation control
+
+**Why we switched.** Audio review of the first samples showed Supertonic stochastically
+garbles short acronyms: the same voice+sentence renders "RAG" as /ræɡ/ on one take and
+"raggy"/"ragged" on another (its latent is un-seeded). A back-transcription QC filter
+(transcribe each clip with `whisper-small.en`, regenerate on garble) only lifted the clean
+yield from **82% → 85%** — regeneration barely helped because the failures are *systematic*
+(e.g. "evals" failed 6/9 times), not random. So Supertonic's term quality was not viably
+improvable.
+
+**Kokoro head-to-head.** Same 60-sentence QC test: Kokoro reached **90% pass@1** and fixed
+RAG/xAI. A per-term audit (50 terms × 6 voices) found **42/50 terms clean on every voice**.
+
+**Pronunciation control (engine-agnostic).** The deeper issue: "correct" pronunciation is
+term-specific — RAG/LoRA are spoken as *words*, but MCP/RLHF/GPT-5 are *initialisms* spelled
+out — and TTS guesses from casing. We added a per-term **`spoken`** field in `terms.yaml`
+(e.g. `RAG → "rag"`, `LoRA → "lora"`, `Ollama → "Oh-lama"`); `normalize.to_spoken()` builds
+the TTS input from spoken forms while the **transcript stays canonical**. Most acronyms are
+genuine initialisms and are left unchanged.
+
+**QC strategy (final).** Per-clip QC is OFF for generation. Its judge (`whisper-small.en`)
+cannot read our domain jargon — the exact terms we finetune for — so it false-drops *good*
+audio (e.g. it hears "Alama" for a correct "Ollama"). Because Kokoro is **deterministic**,
+correctness is instead established once by the **per-term audit** + human ear-check, with
+genuine mispronunciations fixed via `spoken`. The QC module (`src/qc.py`) is retained — it
+was the right tool for stochastic Supertonic and documents the investigation.
+
+**Net effect on the spec:** "Supertonic (70%)" → "Kokoro (70%)" everywhere; `synth_kokoro.py`
+replaces `synth_supertonic.py` as the bulk engine; voices are Kokoro `af_*/am_*`; assets live
+in `kokoro_models/` (`kokoro-v1.0.onnx` + `voices-v1.0.bin`, needs system `espeak-ng`). The
+7:3 ratio, two-axis disjoint split, augmentation, training, and eval design are unchanged.
