@@ -1,0 +1,19 @@
+# Secrets
+.env
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Cloned TTS engine (Supertonic) — not part of this repo
+supertonic/
+
+# Generated data & model artifacts (large, reproducible)
+data/audio/
+checkpoints/
+
+# OS
+.DS_Store
