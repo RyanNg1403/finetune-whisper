@@ -34,15 +34,15 @@ def main():
     args = ap.parse_args()
 
     tts = load_text_to_speech(str(config.SUPERTONIC_ONNX), use_gpu=False)
-    corpus = [r for r in load_corpus() if r["split"] == args.split]
-    if args.limit:
-        corpus = corpus[:args.limit]
+    full = [r for r in load_corpus() if r["split"] == args.split]
+    n_full = len(full)                       # full split size — drives per_sentence
+    corpus = full[:args.limit] if args.limit else full   # --limit only caps what we render
 
     if args.split == "train":
         out_dir = config.TRAIN_DIR
         voices = config.SUPERTONIC_TRAIN_VOICES
         speeds = config.SUPERTONIC_SPEEDS
-        per_sentence = max(1, round(config.ENGINE_RATIO[0] * config.TARGET_TRAIN_CLIPS / len(corpus)))
+        per_sentence = max(1, round(config.ENGINE_RATIO[0] * config.TARGET_TRAIN_CLIPS / n_full))
     else:
         out_dir = config.VAL_CLEAN_DIR
         voices = config.SUPERTONIC_VAL_VOICES
