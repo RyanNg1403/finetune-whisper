@@ -85,6 +85,7 @@ terms:
     alts: ["toole calling", "tool call"]
   - canonical: "RAG"
     category: concept
+    spoken: "rag"          # said as a word /ræɡ/, not spelled out
     alts: ["rag", "rack", "rg", "ragg"]
   - canonical: "MCP"
     category: concept
@@ -100,6 +101,7 @@ terms:
     alts: ["fine tuning", "finetuning", "find tuning"]
   - canonical: "LoRA"
     category: concept
+    spoken: "lora"         # said "LOR-ah" as a word, not spelled out
     alts: ["lora", "laura", "low rank", "lor a"]
   - canonical: "RLHF"
     category: concept

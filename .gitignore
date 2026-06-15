@@ -17,3 +17,6 @@ checkpoints/
 
 # OS
 .DS_Store
+
+# Kokoro TTS model files (large)
+kokoro_models/

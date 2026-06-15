@@ -26,14 +26,16 @@ Concise map of every file and its purpose. Kept under 100 lines. `[planned]` = n
 ## src/
 | File | Purpose |
 |------|---------|
-| `config.py` | Single source of truth: paths + constants (sample rate, ratios, voices, model id). |
-| `normalize.py` | Load terms; `english_normalize` (WER) + `canonicalize` (alt→canonical rewrite). |
+| `config.py` | Single source of truth: paths + constants (sample rate, ratios, voices, model ids). |
+| `normalize.py` | Load terms; `english_normalize` (WER), `canonicalize` (alt→canonical), `to_spoken` (TTS pronunciation override). |
 | `metrics.py` | `compute_wer` (jiwer) and `term_recall` (per-term domain-vocab accuracy). |
+| `qc.py` | Back-transcription QC: reference ASR + fuzzy term-intelligibility check + regenerate-on-fail. |
 | `build_corpus.py` | Validate per-term coverage (≥8) + train/val split. CLI. |
 | `audio_io.py` | Save / load 16 kHz mono WAV (resample + downmix). |
 | `augment.py` | Train aug chain (noise/reverb/EQ/MP3) + deterministic seeded val chain. |
-| `synth_supertonic.py` | Render 70% of train + half of val_clean via local Supertonic ONNX TTS. CLI. |
-| `synth_openai.py` | Render 30% of train + half of val_clean via OpenAI TTS (paid, gated). CLI. |
+| `synth_kokoro.py` | **Bulk engine.** Render 70% of train + half of val_clean via Kokoro ONNX TTS (+spoken-form +QC). CLI. |
+| `synth_openai.py` | Render 30% of train + half of val_clean via OpenAI TTS (+spoken-form +QC, paid, gated). CLI. |
+| `synth_supertonic.py` | Superseded local engine (kept for reference; garbled acronyms). CLI. |
 | `bake_val_aug.py` | `[planned]` Bake fixed-seed augmented val set from val_clean. |
 | `dataset.py` | `[planned]` Whisper ASR dataset + padding collator (on-the-fly train aug). |
 | `eval.py` | `[planned]` WER + term-recall over any model/manifest (baseline + finetuned). CLI. |

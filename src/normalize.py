@@ -48,3 +48,16 @@ def canonicalize(text: str, termset: TermSet = None) -> str:
             continue
         out = re.sub(rf"\b{re.escape(alt)}\b", canon, out)
     return out
+
+
+def to_spoken(text: str, termset: TermSet = None) -> str:
+    """Build the TTS input text from a (canonical) transcript: replace each term whose
+    `spoken` form differs from its canonical with that spoken form, so the TTS pronounces
+    word-acronyms (RAG -> 'rag') as words. The transcript itself is left untouched."""
+    termset = termset or load_terms()
+    out = text
+    for t in termset.terms:
+        spoken = t.get("spoken")
+        if spoken and spoken != t["canonical"]:
+            out = re.sub(rf"\b{re.escape(t['canonical'])}\b", spoken, out)
+    return out

@@ -1,5 +1,5 @@
 # tests/test_normalize.py
-from src.normalize import load_terms, canonicalize, english_normalize
+from src.normalize import load_terms, canonicalize, english_normalize, to_spoken
 
 
 def test_load_terms():
@@ -20,3 +20,12 @@ def test_canonicalize_maps_alts_to_canonical():
 
 def test_canonicalize_handles_acronyms():
     assert "mcp" in canonicalize("we use m c p servers")
+
+
+def test_to_spoken_rewrites_word_acronyms_only():
+    ts = load_terms()
+    # RAG -> 'rag' (word), MCP stays (true initialism), transcript-only terms untouched
+    out = to_spoken("Our RAG layer behind MCP uses LoRA.", ts)
+    assert "rag" in out and "RAG" not in out      # word-acronym lowered for TTS
+    assert "MCP" in out                            # initialism preserved (spelled out)
+    assert "lora" in out and "LoRA" not in out

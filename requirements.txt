@@ -16,3 +16,4 @@ pyyaml
 pytest
 pyroomacoustics
 fast_mp3_augment
+kokoro-onnx
