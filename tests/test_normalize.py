@@ -1,11 +1,32 @@
 # tests/test_normalize.py
-from src.normalize import load_terms, canonicalize, english_normalize, to_spoken
+from src.normalize import load_terms, canonicalize, english_normalize, to_spoken, cased_count
 
 
 def test_load_terms():
     ts = load_terms()
     assert len(ts.terms) >= 40
     assert "Claude Opus" in ts.canonicals
+
+
+def test_load_terms_merges_hard_set_and_marks_homophones():
+    ts = load_terms()
+    assert "Claude Opus" in ts.canonicals      # official terms.yaml
+    assert "RoPE" in ts.canonicals             # hard set merged in
+    assert "RoPE" in ts.homophones and "Modal" in ts.homophones  # Group B
+    assert "Qwen" not in ts.homophones         # Group A is OOV, not a homophone
+
+
+def test_homophone_everyday_word_not_collapsed():
+    # 'model' must NOT be rewritten toward the Modal canonical (homophone kept out of alt-map)
+    out = canonicalize("we trained a small model")
+    assert "model" in out and "modal" not in out
+
+
+def test_cased_count_is_case_sensitive_and_bounded():
+    assert cased_count("We scaled RoPE for context.", "RoPE") == 1
+    assert cased_count("He tied the rope tight.", "RoPE") == 0
+    assert cased_count("RoPEx is not a match", "RoPE") == 0
+    assert cased_count("Deploy on Modal, then scale.", "Modal") == 1
 
 
 def test_english_normalize_lowercases_and_strips_punct():

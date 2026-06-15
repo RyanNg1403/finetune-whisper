@@ -1,6 +1,25 @@
 # tests/test_metrics.py
 from src.normalize import load_terms
-from src.metrics import compute_wer, term_recall
+from src.metrics import compute_wer, term_recall, false_triggers
+
+
+def test_term_recall_homophone_is_case_sensitive():
+    ts = load_terms()
+    refs = ["the RoPE trick was applied here"]   # 'RoPE' is the only term present
+    # correct tech spelling -> hit
+    assert term_recall(refs, ["the RoPE trick was applied here"], ts)["per_term"]["RoPE"] == (1, 1)
+    # everyday spelling 'rope' must NOT count as the term, even leniently
+    assert term_recall(refs, ["the rope trick was applied here"], ts)["per_term"]["RoPE"] == (0, 1)
+    assert term_recall(refs, ["the rope trick was applied here"], ts, strict=True)["per_term"]["RoPE"] == (0, 1)
+
+
+def test_false_triggers_flags_overtrigger_on_negatives():
+    ts = load_terms()
+    hyps = ["he tied the RoPE to the post", "he tied the rope to the post"]
+    neg = [["RoPE"], ["RoPE"]]   # both are everyday-sense negatives
+    r = false_triggers(hyps, neg, ts)
+    assert r["per_term"]["RoPE"] == (1, 2)   # first wrongly emits 'RoPE'; second is correct
+    assert r["overall"] == 0.5
 
 
 def test_wer_perfect_is_zero():

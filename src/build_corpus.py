@@ -4,7 +4,7 @@ import random
 import sys
 from collections import Counter
 from src import config
-from src.normalize import load_terms, canonicalize, english_normalize
+from src.normalize import load_terms, canonicalize, english_normalize, cased_count
 
 
 class CoverageError(Exception):
@@ -12,11 +12,15 @@ class CoverageError(Exception):
 
 
 def _count_terms(corpus, termset):
+    """Per-term sentence coverage. Homophones (Group B) are counted case-sensitively on the
+    raw text, so a negative sentence ('he tied the rope') does NOT count toward 'RoPE'."""
+    homs = set(termset.homophones)
     counts = Counter()
     for row in corpus:
         text_c = canonicalize(row["text"], termset)
         for t in termset.canonicals:
-            if english_normalize(t) in text_c:
+            present = cased_count(row["text"], t) > 0 if t in homs else english_normalize(t) in text_c
+            if present:
                 counts[t] += 1
     return counts
 
