@@ -16,8 +16,8 @@
       <div class="brand">
         <span class="kicker">on-device transcription trial</span>
         <h1>Whisper <em>A / B</em></h1>
-        <p class="lede">Speak an AI-software sentence. Hear how stock <code>base.en</code> and your
-          finetune spell the vocabulary &mdash; side by side.</p>
+        <p class="lede">Speak an AI-software sentence. Compare how stock <code>base.en</code>, your
+          finetune, and <code>Granite 4.1</code> (zero-shot, keyword-biased) spell the vocabulary &mdash; side by side.</p>
       </div>
       <div class="status">
         <span class="dot" id="deviceDot"></span>
@@ -56,8 +56,6 @@
         <div class="missed" id="missed-base"></div>
       </article>
 
-      <div class="versus">vs</div>
-
       <article class="panel hot" id="panel-ft">
         <div class="panel-top">
           <h2>Finetuned <span class="tag" id="ft-tag">&mdash;</span></h2>
@@ -65,6 +63,20 @@
         </div>
         <div class="transcript" id="text-ft"><span class="placeholder">awaiting audio&hellip;</span></div>
         <div class="missed" id="missed-ft"></div>
+      </article>
+
+      <article class="panel granite" id="panel-granite">
+        <div class="panel-top">
+          <h2>Granite <span class="tag">4.1-2b &middot; keyword-biased</span></h2>
+          <div class="metrics"><span class="hits" id="hits-granite">&mdash;</span><span class="ms" id="ms-granite"></span></div>
+        </div>
+        <label class="kwlist">
+          <select id="kwSelect" aria-label="Granite keyword-biasing terms (read-only)" title="read-only — the term list fed to Granite as keywords">
+            <option>biasing keywords&hellip;</option>
+          </select>
+        </label>
+        <div class="transcript" id="text-granite"><span class="placeholder">loads on first use&hellip;</span></div>
+        <div class="missed" id="missed-granite"></div>
       </article>
     </section>
 

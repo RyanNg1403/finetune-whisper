@@ -8,6 +8,7 @@ Concise map of every file and its purpose. Kept under 100 lines. `[planned]` = n
 | `README.md` | Project overview, results, and how to run. |
 | `LICENSE` | MIT license. |
 | `requirements.txt` | Pinned Python deps (torch/MPS, transformers, audiomentations, TTS clients). |
+| `requirements-granite.txt` | Optional dep (`mlx-audio`) for the Granite web-app panel — Apple Silicon only. |
 | `.gitignore` | Ignores `.env`, `.venv/`, `data/audio/`, `checkpoints/`, `kokoro_models/`, `*.tar.gz`, local-only `results/` `analysis/` `logs/` `checkpoints_prior_50term/` `more_terms.text`, and dev-only `docs/` / `research/`. |
 | `.env` | `OPENAI_API_KEY` (gitignored, never printed). |
 | `FILEMAP.md` | This file. |
@@ -53,11 +54,11 @@ Concise map of every file and its purpose. Kept under 100 lines. `[planned]` = n
 |------|---------|
 | `term_audit.py` | Per-term Kokoro pronunciation audit across voices (reused for new hard terms). |
 
-## webapp/ (local A/B voice demo)
+## webapp/ (local 3-way voice demo)
 | File | Purpose |
 |------|---------|
-| `server.py` | Stdlib HTTP server: loads `base.en` + a chosen checkpoint; `/transcribe` scores both, term-highlighted. |
-| `static/` | `index.html` + `styles.css` + `app.js` — mic capture → 16 kHz WAV → side-by-side compare. |
+| `server.py` | Stdlib HTTP server: transcribes mic audio 3 ways — `base.en`, a chosen checkpoint, and Granite Speech 4.1 (mlx-audio, keyword-biased, lazy-loaded) — and scores each, term-highlighted. |
+| `static/` | `index.html` + `styles.css` + `app.js` — mic capture → 16 kHz WAV → 3-panel compare + read-only Granite keyword list. |
 
 ## scripts/
 | File | Purpose |

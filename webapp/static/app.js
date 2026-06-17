@@ -9,7 +9,7 @@ const state = { recording: false, ctx: null, stream: null, proc: null, analyser:
 async function boot() {
   try {
     const r = await fetch("/api/checkpoints");
-    const { checkpoints, device } = await r.json();
+    const { checkpoints, device, keywords } = await r.json();
     $("deviceLabel").textContent = `device · ${device}`;
     $("deviceDot").classList.add("ok");
     const sel = $("ckptSel");
@@ -23,6 +23,12 @@ async function boot() {
         sel.appendChild(o);
       }
     }
+    // read-only Granite keyword-biasing list: header is the only selectable option,
+    // every term is a disabled (viewable, non-selectable) option.
+    const kw = keywords || [];
+    $("kwSelect").innerHTML =
+      `<option selected>▾ ${kw.length} biasing keywords (read-only)</option>` +
+      kw.map((t) => `<option disabled>${esc(t)}</option>`).join("");
   } catch (e) {
     $("deviceLabel").textContent = "backend offline";
   }
@@ -152,7 +158,8 @@ function clearWave() {
 // ---------- transcribe + render ----------
 async function send(wavBlob) {
   state.busy = true;
-  $("panel-base").classList.add("busy"); $("panel-ft").classList.add("busy");
+  ["panel-base", "panel-ft", "panel-granite"].forEach((p) => $(p).classList.add("busy"));
+  $("hint").textContent = "transcribing (Granite loads on first use)…";
   const ckpt = encodeURIComponent($("ckptSel").value);
   try {
     const r = await fetch(`/api/transcribe?ckpt=${ckpt}`, {
@@ -162,12 +169,18 @@ async function send(wavBlob) {
     render("base", j.baseline);
     render("ft", j.finetuned);
     $("ft-tag").textContent = j.finetuned.checkpoint;
+    if (j.granite && j.granite.error) {
+      $("text-granite").innerHTML = `<span class="placeholder">Granite unavailable: ${esc(j.granite.error)}</span>`;
+      $("hits-granite").textContent = ""; $("ms-granite").textContent = "";
+    } else if (j.granite) {
+      render("granite", j.granite);
+    }
     $("hint").textContent = "done";
   } catch (e) {
     $("hint").textContent = "request failed";
   } finally {
     state.busy = false;
-    $("panel-base").classList.remove("busy"); $("panel-ft").classList.remove("busy");
+    ["panel-base", "panel-ft", "panel-granite"].forEach((p) => $(p).classList.remove("busy"));
   }
 }
 

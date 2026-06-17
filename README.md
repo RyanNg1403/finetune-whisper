@@ -1,117 +1,108 @@
 # finetune-whisper
 
-Finetuning OpenAI's `whisper-base.en` (74M) to transcribe 2025–2026 AI-engineering
-vocabulary — terms like *Claude Opus*, *Qwen*, *vLLM*, *RAG*, *MCP*, *GGUF*, *Ollama* — that the
-stock model mis-hears. A learning project, run entirely on-device on an Apple M4 (MPS).
+Finetune OpenAI's `whisper-base.en` (74M) to transcribe 2025–2026 AI-engineering vocabulary —
+*Claude Opus*, *Qwen*, *vLLM*, *GGUF*, *Ollama* — that the stock model mis-hears. Runs entirely
+on-device on Apple Silicon (M4 / MPS). A learning project.
 
 ## Results
 
-Best checkpoint of a 4-epoch run (epoch 2, lowest validation WER), on held-out eval —
-**unseen sentences *and* unseen speaker voices**:
+Finetuned vs stock `base.en` on held-out eval (**unseen sentences *and* speaker voices**):
 
-| Metric — `val_clean` | Baseline `base.en` | Finetuned |
+| `val_clean` | Baseline | Finetuned |
 |---|---|---|
 | Word Error Rate | 7.74% | **1.61%** |
 | Strict term-recall | 67.2% | **98.58%** |
 
-Robustness on `val_aug` (noise / reverb / EQ / MP3): WER 8.26% → **1.76%**, strict
-term-recall 65.6% → **98.38%**. Most of the gain lands by epoch 1.
+Holds up under noise/reverb (`val_aug`): WER 8.26% → **1.76%**, strict recall 65.6% → **98.38%**.
 
-*Strict term-recall = the model spelled the canonical term correctly, with no phonetic
-credit — the honest domain-vocabulary number. Matched word-boundary delimited (cased for
-homophones).*
+*Strict term-recall = the model spelled the term exactly right, no phonetic credit — the honest
+domain-vocabulary number.*
+
+## Quickstart
+
+```bash
+git clone https://github.com/RyanNg1403/finetune-whisper && cd finetune-whisper
+python3 -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+
+bash scripts/download_audio.sh         # audio + trained checkpoints from Google Drive (~2.5 GB)
+PYTHONPATH=. python -m webapp.server   # → http://127.0.0.1:8765
+```
+
+`download_audio.sh` pulls two archives from the [Drive folder](https://drive.google.com/drive/folders/1SjRzRAguKup-FInrpSE5XVxAp_kt8ScS)
+and extracts `data/audio/` + `checkpoints/`. (Manual alternative: download the two files, then
+`tar xzf whisper-aidev-audio.tar.gz -C data` and `tar xzf whisper-aidev-checkpoints.tar.gz`.)
+With the checkpoints in place the demo runs immediately — no retraining.
+
+## The demo — three-way voice comparison
+
+`webapp/` is a local page: record a sentence with your mic and compare three transcriptions side
+by side, with the domain terms highlighted and a per-model hit tally.
+
+- **Baseline** — stock `whisper-base.en`.
+- **Finetuned** — your trained checkpoint (pick from the dropdown; epoch 4 = highest strict recall, the default).
+- **Granite** — IBM Granite Speech 4.1 (2B), zero-shot. Optional — see below.
+
+### Granite panel (optional · Apple Silicon)
+
+The third panel runs Granite Speech 4.1 with **no finetuning** — it just receives our 92 terms as
+keyword-biasing hints. It uses Apple's MLX, so it's Apple-Silicon only:
+
+```bash
+pip install -r requirements-granite.txt    # mlx-audio
+```
+
+The model (**~5 GB, Apache-2.0, no Hugging Face login**) auto-downloads on the first Granite
+transcription, then is cached. To pre-fetch it ahead of time instead:
+
+```bash
+python -c "from mlx_audio.stt.utils import load; load('ibm-granite/granite-speech-4.1-2b')"
+```
+
+Without `mlx-audio` (or off Apple Silicon) the Granite panel shows "unavailable" — Baseline and
+Finetuned still work.
 
 ## How it works
 
-- **Vocabulary** — 92 domain terms in `data/terms.yaml`: 50 core terms plus 42 genuinely
-  ASR-hard 2026 names (OOV models/tools like *Qwen*, *SGLang*, *Cerebras*, and
-  context-anchored homophones like *Modal* vs "model", *Grok* vs *Groq*).
-- **Data** — a Claude-authored sentence corpus (`data/corpus.jsonl`, ~1.6k sentences),
-  synthesized to speech by two TTS engines for voice/prosody diversity: **Kokoro** ONNX
-  (local, ~2/3) and **OpenAI** `gpt-4o-mini-tts` (~1/3), with audio augmentation layered on.
-- **Pronunciation control** — a per-term `spoken` field rewrites canonical → spoken for the
-  TTS input (e.g. `RAG`→"rag", `Qwen`→"kwen", `Ollama`→"Oh-lama") while transcripts stay canonical.
-- **Homophones** — context-dependent terms carry `anchors` + `everyday` fields and are scored
-  case-sensitively, so "rope" never counts as `RoPE` and "model" never becomes `Modal`.
-- **Split** — two disjoint axes (held-out sentences *and* held-out voices), so the validation
-  sets measure generalization, not memorization.
-- **Training** — HuggingFace `Seq2SeqTrainer`, full finetune, fp32 on Apple-Silicon MPS.
-- **Eval** — WER (jiwer) plus a strict per-term recall metric (`src/metrics.py`).
+- **Vocabulary** — 92 terms in `data/terms.yaml`: 50 core + 42 ASR-hard 2026 names (OOV like *Qwen*,
+  *SGLang*, *Cerebras*, plus context homophones like *Modal* vs "model", *Grok* vs *Groq*).
+- **Data** — a Claude-authored corpus (`data/corpus.jsonl`, ~1.6k sentences) synthesized by two TTS
+  engines for voice diversity: **Kokoro** ONNX (~2/3) + **OpenAI** `gpt-4o-mini-tts` (~1/3), with
+  audio augmentation layered on.
+- **Pronunciation** — a per-term `spoken` field steers the TTS (e.g. `Qwen`→"kwen") while transcripts
+  stay canonical. Homophones carry `anchors`/`everyday` and are scored case-sensitively, so "rope"
+  never counts as `RoPE`.
+- **Split** — disjoint sentences *and* speaker voices, so eval measures generalization, not memorization.
+- **Train / eval** — HuggingFace `Seq2SeqTrainer`, fp32 on MPS; WER (jiwer) + strict per-term recall.
 
-## Dataset + checkpoints (Google Drive)
-
-The ~1.2 GB of pre-synthesized speech (`data/audio/`) and the trained `checkpoints/` are hosted
-on Google Drive — too large for git, fully reproducible from the synth + train scripts.
-
-**Drive folder:** https://drive.google.com/drive/folders/1SjRzRAguKup-FInrpSE5XVxAp_kt8ScS
-
-It holds two archives — the audio dataset and the trained checkpoints. Fetch + extract both:
+## Train from scratch
 
 ```bash
-bash scripts/download_audio.sh        # → data/audio/ and checkpoints/
-```
+pytest -q                       # tests
+python -m src.build_corpus      # validate term coverage + train/val split
 
-Or download the two files from the folder manually and extract:
-
-```bash
-tar xzf whisper-aidev-audio.tar.gz       -C data    # → data/audio/
-tar xzf whisper-aidev-checkpoints.tar.gz            # → checkpoints/
-```
-
-With the checkpoints in place the web-app demo and finetuned eval run immediately — no retraining.
-Or synthesize the audio yourself (see **Run** below) — needs `espeak-ng` for Kokoro and an OpenAI
-key for the paid 1/3.
-
-## Try it — voice A/B demo
-
-`webapp/` is a small local page: record a sentence with your mic and compare stock `base.en`
-vs your finetuned checkpoint side-by-side, with domain terms highlighted and a per-model hit tally.
-
-```bash
-PYTHONPATH=. python -m webapp.server      # → http://127.0.0.1:8765
-```
-
-It lists every checkpoint under `checkpoints/` — download them from the Drive folder above (or
-train your own with `python -m src.train`). The dropdown's `finetuned · epoch 2` entry is the
-shipped model. (No new dependencies — stdlib HTTP server + the project's stack.)
-
-## Layout
-
-```
-data/         terms.yaml (92 terms), corpus.jsonl     (audio/ via Drive, gitignored)
-src/          build_corpus · synth_kokoro · synth_openai · augment · dataset · train · eval · metrics · normalize
-webapp/       local A/B voice demo (server + static page)
-tests/        pytest suite
-experiments/  one-off diagnostics
-scripts/      download_audio.sh
-```
-
-See [`FILEMAP.md`](FILEMAP.md) for a one-line description of every file.
-
-## Run
-
-```bash
-python3 -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
-pytest -q                       # test suite
-
-python -m src.build_corpus      # validate per-term coverage + train/val split
-
-# --- audio: either download (above) or synthesize ---
-# Kokoro needs system espeak-ng (brew install espeak-ng);
-# the OpenAI 1/3 (paid) reads OPENAI_API_KEY from a local .env.
+# synthesize the audio instead of downloading it:
+#   Kokoro needs `brew install espeak-ng`; the OpenAI 1/3 (paid) reads OPENAI_API_KEY from .env
 python -m src.synth_kokoro --split train
 python -m src.synth_openai --split train
 python -m src.bake_val_aug
 
-# --- train + eval (same code path for baseline vs finetuned) ---
-python -m src.train
-python -m src.eval --model openai/whisper-base.en --manifest-dir data/audio/val_clean
+python -m src.train                                                       # 4 epochs, MPS
 python -m src.eval --model checkpoints/final --manifest-dir data/audio/val_clean
 ```
 
-Generated audio (`data/audio/`), TTS model weights (`kokoro_models/`), and training
-checkpoints (`checkpoints/`) are gitignored — large and reproducible from these scripts.
+## Repo layout
+
+```
+data/        terms.yaml (92 terms) · corpus.jsonl       (audio/ via Drive, gitignored)
+src/         build_corpus · synth_kokoro · synth_openai · augment · dataset · train · eval · metrics · normalize
+webapp/      3-way voice demo (baseline / finetuned / Granite)
+scripts/     download_audio.sh
+tests/       pytest suite
+```
+
+See [`FILEMAP.md`](FILEMAP.md) for every file. Audio, checkpoints, and TTS weights are gitignored
+(large — on Drive or reproducible from the scripts).
 
 ## License
 
