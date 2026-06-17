@@ -70,11 +70,17 @@
           <h2>Granite <span class="tag">4.1-2b &middot; keyword-biased</span></h2>
           <div class="metrics"><span class="hits" id="hits-granite">&mdash;</span><span class="ms" id="ms-granite"></span></div>
         </div>
-        <label class="kwlist">
-          <select id="kwSelect" aria-label="Granite keyword-biasing terms (read-only)" title="read-only — the term list fed to Granite as keywords">
-            <option>biasing keywords&hellip;</option>
-          </select>
-        </label>
+        <div class="kwbox">
+          <div class="kwbox-h">biasing keywords <span>fed to Granite</span></div>
+          <label class="kwlist">
+            <select id="kwSelect" aria-label="dataset keyword terms (read-only)" title="read-only — the dataset terms Granite is biased toward">
+              <option>dataset terms&hellip;</option>
+            </select>
+          </label>
+          <input id="kwInput" class="kwadd" type="text" autocomplete="off" spellcheck="false"
+                 placeholder="+ add your own keyword, press Enter" />
+          <div class="kwchips" id="kwChips"></div>
+        </div>
         <div class="transcript" id="text-granite"><span class="placeholder">loads on first use&hellip;</span></div>
         <div class="missed" id="missed-granite"></div>
       </article>

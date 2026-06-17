@@ -103,23 +103,29 @@ def transcribe(model, wav):
 def _load_granite():
     """Lazy-load Granite Speech 4.1 (2B) on first use via mlx-audio — native Apple-Silicon
     MLX, ~3-9x faster than transformers-on-MPS at identical accuracy (verified 8/10 on our
-    hard terms, ~1.7s/clip). Keyword-biased with our full term list — the model's intended,
-    training-free way to handle jargon."""
+    hard terms, ~1.7s/clip)."""
     global _granite
     if _granite is None:
         from mlx_audio.stt.utils import load as mlx_load
         print(f"[load] granite (mlx-audio) <- {GRANITE_ID} (first use)…")
-        model = mlx_load(GRANITE_ID)
-        kw = ", ".join(_terms.canonicals)
-        prompt = f"transcribe the speech with proper punctuation and capitalization. Keywords: {kw}."
-        _granite = (model, prompt)
+        _granite = mlx_load(GRANITE_ID)
         print("[load] granite ready")
     return _granite
 
 
-def transcribe_granite(wav):
-    model, prompt = _load_granite()
-    out = model.generate(audio=np.asarray(wav, dtype=np.float32), prompt=prompt,
+def _granite_prompt(extra_keywords=()):
+    """Keyword-biasing prompt: our dataset terms + any user-added keywords from the UI
+    (the model's intended, training-free way to handle jargon). Built per request so the
+    user's live keyword edits take effect immediately."""
+    kws = list(_terms.canonicals) + [k for k in extra_keywords if k]
+    return ("transcribe the speech with proper punctuation and capitalization. "
+            f"Keywords: {', '.join(kws)}.")
+
+
+def transcribe_granite(wav, extra_keywords=()):
+    model = _load_granite()
+    out = model.generate(audio=np.asarray(wav, dtype=np.float32),
+                         prompt=_granite_prompt(extra_keywords),
                          temperature=0.0, max_tokens=200)
     return (out.text if hasattr(out, "text") else str(out)).strip()
 
@@ -196,7 +202,9 @@ class Handler(BaseHTTPRequestHandler):
         parsed = urlparse(self.path)
         if parsed.path != "/api/transcribe":
             return self.send_error(404)
-        ckpt = parse_qs(parsed.query).get("ckpt", [""])[0]
+        q = parse_qs(parsed.query)
+        ckpt = q.get("ckpt", [""])[0]
+        extra_kw = [k.strip() for k in q.get("kw", [""])[0].split(",") if k.strip()]   # user keywords
         if not ckpt:
             return self._json({"error": "no checkpoint selected"}, 400)
         n = int(self.headers.get("Content-Length", 0))
@@ -220,7 +228,7 @@ class Handler(BaseHTTPRequestHandler):
             # Granite is heavy + slower; a failure here is non-fatal — still return the A/B.
             g_text, g_ms, g_err = "", 0, None
             try:
-                g0 = time.time(); g_text = transcribe_granite(wav); g_ms = round((time.time() - g0) * 1000)
+                g0 = time.time(); g_text = transcribe_granite(wav, extra_kw); g_ms = round((time.time() - g0) * 1000)
             except Exception as e:
                 g_err = str(e)
         cand, (base_d, ft_d, g_d) = score(base_text, ft_text, g_text)
