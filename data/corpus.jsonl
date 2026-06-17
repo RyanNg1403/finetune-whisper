@@ -182,7 +182,7 @@
 {"id": "c0178", "text": "Codex paired nicely with Cursor once I set up the right config.", "terms": ["Codex", "Cursor"], "split": "train"}
 {"id": "c0791", "text": "A short chain of thought beat a long one once we tuned the prompt.", "terms": ["chain of thought"], "split": "train"}
 {"id": "c1037", "text": "We watch hallucination rate and token usage on the same evals dashboard.", "terms": ["evals", "hallucination"], "split": "train"}
-{"id": "c0496", "text": "Prompt engineering, context engineering, harness engineering \u2014 it's all just steering the model.", "terms": ["harness engineering", "context engineering", "prompt engineering"], "split": "train"}
+{"id": "c0496", "text": "Prompt engineering, context engineering, harness engineering — it's all just steering the model.", "terms": ["harness engineering", "context engineering", "prompt engineering"], "split": "train"}
 {"id": "c0612", "text": "After RLHF the assistant stopped over-apologizing in every single reply.", "terms": ["RLHF"], "split": "train"}
 {"id": "c0681", "text": "We host the LoRA weights on Hugging Face for the rest of the team.", "terms": ["Hugging Face", "LoRA"], "split": "train"}
 {"id": "c0039", "text": "We let Devin take the on-call grunt work so the humans could focus.", "terms": ["Devin"], "split": "train"}
@@ -419,7 +419,7 @@
 {"id": "c0528", "text": "Subagents let me parallelize a job that used to take a single agent forever.", "terms": ["subagents"], "split": "train"}
 {"id": "c0561", "text": "Prompt engineering and context engineering are the steering wheel and the map.", "terms": ["context engineering", "prompt engineering"], "split": "train"}
 {"id": "c0569", "text": "Context engineering is why we cache the system prompt and only swap the relevant parts.", "terms": ["context engineering", "system prompt"], "split": "train"}
-{"id": "c0582", "text": "Tool calling, context engineering, and a tight harness \u2014 that's the whole modern agent.", "terms": ["context engineering", "tool calling"], "split": "train"}
+{"id": "c0582", "text": "Tool calling, context engineering, and a tight harness — that's the whole modern agent.", "terms": ["context engineering", "tool calling"], "split": "train"}
 {"id": "c0099", "text": "Replit is where I send people who've never opened a terminal.", "terms": ["Replit"], "split": "train"}
 {"id": "c0793", "text": "RAG with hybrid search, keyword plus vectors, fixed our recall gap.", "terms": ["RAG"], "split": "train"}
 {"id": "c0673", "text": "RLHF is where alignment work really starts paying off in production.", "terms": ["RLHF"], "split": "train"}
@@ -1045,3 +1045,582 @@
 {"id": "c0958", "text": "LangChain expression language made the RAG chain readable for once.", "terms": ["RAG", "LangChain"], "split": "val"}
 {"id": "c0214", "text": "OpenAI's Codex is decent, but I still reach for Claude Opus on the gnarly refactors.", "terms": ["Claude Opus", "Codex", "OpenAI"], "split": "val"}
 {"id": "c0802", "text": "Every MCP call shows up in our trace so we can debug tool calling end to end.", "terms": ["tool calling", "MCP"], "split": "val"}
+{"text": "I'm running Qwen locally through Ollama for offline code completion on my laptop.", "terms": ["Qwen"], "neg": [], "split": "train", "id": "h0001"}
+{"text": "The latest Qwen release ships strong multilingual support and a permissive open weights license.", "terms": ["Qwen"], "neg": [], "split": "train", "id": "h0002"}
+{"text": "For coding tasks I usually reach for Qwen because its instruct tuning feels reliable.", "terms": ["Qwen"], "neg": [], "split": "train", "id": "h0003"}
+{"text": "We benchmarked Qwen against a few other open models on our internal eval suite.", "terms": ["Qwen"], "neg": [], "split": "train", "id": "h0004"}
+{"text": "Quantizing Qwen down to four bits let it fit comfortably on a single GPU.", "terms": ["Qwen"], "neg": [], "split": "train", "id": "h0005"}
+{"text": "Our retrieval pipeline uses Qwen embeddings to index the whole documentation corpus.", "terms": ["Qwen"], "neg": [], "split": "val", "id": "h0006"}
+{"text": "Have you tried the new Qwen vision model for screenshot understanding in agents?", "terms": ["Qwen"], "neg": [], "split": "train", "id": "h0007"}
+{"text": "The team swapped in Qwen as the backbone for our autocomplete inference service.", "terms": ["Qwen"], "neg": [], "split": "val", "id": "h0008"}
+{"text": "Fine-tuning Qwen on our codebase improved the suggestions for our internal SDK noticeably.", "terms": ["Qwen"], "neg": [], "split": "train", "id": "h0009"}
+{"text": "On a long context prompt, Qwen handled the entire repository without truncating tokens.", "terms": ["Qwen"], "neg": [], "split": "train", "id": "h0010"}
+{"text": "Hugging Face hosts dozens of Qwen checkpoints across different parameter sizes and quantizations.", "terms": ["Qwen"], "neg": [], "split": "train", "id": "h0011"}
+{"text": "Self-hosting Qwen behind a vLLM server gave us much cheaper batch inference.", "terms": ["Qwen"], "neg": [], "split": "train", "id": "h0012"}
+{"text": "The reasoning traces from DeepSeek are surprisingly readable when you debug a hard prompt.", "terms": ["DeepSeek"], "neg": [], "split": "train", "id": "h0013"}
+{"text": "We routed our hardest math problems to DeepSeek and accuracy jumped considerably.", "terms": ["DeepSeek"], "neg": [], "split": "train", "id": "h0014"}
+{"text": "Running DeepSeek through their API kept our inference costs unusually low this quarter.", "terms": ["DeepSeek"], "neg": [], "split": "train", "id": "h0015"}
+{"text": "Many developers self-host DeepSeek because the open weights make on-prem deployment straightforward.", "terms": ["DeepSeek"], "neg": [], "split": "train", "id": "h0016"}
+{"text": "The chain-of-thought from DeepSeek helped us trace why the agent picked that tool.", "terms": ["DeepSeek"], "neg": [], "split": "train", "id": "h0017"}
+{"text": "I distilled a smaller student model from DeepSeek outputs for our edge deployment.", "terms": ["DeepSeek"], "neg": [], "split": "val", "id": "h0018"}
+{"text": "For competitive coding benchmarks, DeepSeek punches well above its parameter count.", "terms": ["DeepSeek"], "neg": [], "split": "train", "id": "h0019"}
+{"text": "Our evaluation harness compares DeepSeek and a couple of frontier models side by side.", "terms": ["DeepSeek"], "neg": [], "split": "val", "id": "h0020"}
+{"text": "The mixture-of-experts design lets DeepSeek activate only a fraction of its weights per token.", "terms": ["DeepSeek"], "neg": [], "split": "train", "id": "h0021"}
+{"text": "We fine-tuned DeepSeek on our SQL dataset and query generation got much sharper.", "terms": ["DeepSeek"], "neg": [], "split": "train", "id": "h0022"}
+{"text": "Latency on DeepSeek dropped after we enabled speculative decoding in our serving stack.", "terms": ["DeepSeek"], "neg": [], "split": "train", "id": "h0023"}
+{"text": "Plenty of teams switched their reasoning workloads over to DeepSeek to cut spend.", "terms": ["DeepSeek"], "neg": [], "split": "train", "id": "h0024"}
+{"text": "The long context window on Kimi let us feed an entire codebase in one prompt.", "terms": ["Kimi"], "neg": [], "split": "train", "id": "h0025"}
+{"text": "We tested Kimi for agentic workflows and it chained tool calls without losing track.", "terms": ["Kimi"], "neg": [], "split": "train", "id": "h0026"}
+{"text": "Developers like Kimi because it ingests huge documents while keeping factual grounding.", "terms": ["Kimi"], "neg": [], "split": "train", "id": "h0027"}
+{"text": "Our research bot now uses Kimi to summarize hundred-page technical PDFs reliably.", "terms": ["Kimi"], "neg": [], "split": "train", "id": "h0028"}
+{"text": "Running Kimi as the planner in our agent loop reduced redundant API calls.", "terms": ["Kimi"], "neg": [], "split": "train", "id": "h0029"}
+{"text": "The open weights for Kimi made it easy to deploy on our own cluster.", "terms": ["Kimi"], "neg": [], "split": "train", "id": "h0030"}
+{"text": "For multi-step debugging tasks, Kimi tends to keep the broader context in mind.", "terms": ["Kimi"], "neg": [], "split": "train", "id": "h0031"}
+{"text": "We benchmarked Kimi against other long-context models and recall stayed strong past 100k tokens.", "terms": ["Kimi"], "neg": [], "split": "train", "id": "h0032"}
+{"text": "Integrating Kimi into our coding assistant gave noticeably better repository-wide reasoning.", "terms": ["Kimi"], "neg": [], "split": "val", "id": "h0033"}
+{"text": "The agentic tool-use scores for Kimi convinced us to pilot it in production.", "terms": ["Kimi"], "neg": [], "split": "train", "id": "h0034"}
+{"text": "I fed an entire log dump to Kimi and it pinpointed the failing service quickly.", "terms": ["Kimi"], "neg": [], "split": "val", "id": "h0035"}
+{"text": "Our team prefers Kimi when a task demands both long context and structured output.", "terms": ["Kimi"], "neg": [], "split": "train", "id": "h0036"}
+{"text": "We moved our chat backend to Groq and the token latency basically disappeared.", "terms": ["Groq"], "neg": [], "split": "train", "id": "h0037"}
+{"text": "The LPU architecture from Groq streams tokens fast enough to feel instantaneous.", "terms": ["Groq"], "neg": [], "split": "train", "id": "h0038"}
+{"text": "Hosting our model on Groq gave us real-time inference for the voice agent.", "terms": ["Groq"], "neg": [], "split": "train", "id": "h0039"}
+{"text": "Developers love Groq for low-latency inference when interactive responsiveness really matters.", "terms": ["Groq"], "neg": [], "split": "train", "id": "h0040"}
+{"text": "We benchmarked Groq against a standard GPU endpoint and throughput per dollar improved a lot.", "terms": ["Groq"], "neg": [], "split": "train", "id": "h0041"}
+{"text": "The Groq API is drop-in compatible, so we swapped endpoints in a single afternoon.", "terms": ["Groq"], "neg": [], "split": "train", "id": "h0042"}
+{"text": "For our streaming chatbot, Groq cut time-to-first-token to a handful of milliseconds.", "terms": ["Groq"], "neg": [], "split": "train", "id": "h0043"}
+{"text": "Running speculative decoding on Groq hardware pushed our tokens per second even higher.", "terms": ["Groq"], "neg": [], "split": "train", "id": "h0044"}
+{"text": "We deployed the open model on Groq to serve thousands of concurrent inference requests.", "terms": ["Groq"], "neg": [], "split": "val", "id": "h0045"}
+{"text": "The custom inference chip from Groq sidesteps the memory bandwidth limits of GPUs.", "terms": ["Groq"], "neg": [], "split": "train", "id": "h0046"}
+{"text": "Our latency budget only worked once we offloaded generation to Groq.", "terms": ["Groq"], "neg": [], "split": "train", "id": "h0047"}
+{"text": "Pairing Groq with a small model gave us near-instant autocomplete in the editor.", "terms": ["Groq"], "neg": [], "split": "val", "id": "h0048"}
+{"text": "I let Cline refactor the whole module and reviewed its diff inside VS Code.", "terms": ["Cline"], "neg": [], "split": "val", "id": "h0049"}
+{"text": "The coding agent Cline reads my repository and proposes multi-file edits automatically.", "terms": ["Cline"], "neg": [], "split": "train", "id": "h0050"}
+{"text": "We wired Cline to a local model so the agent never sends code off-machine.", "terms": ["Cline"], "neg": [], "split": "train", "id": "h0051"}
+{"text": "With Cline I can approve each terminal command before the agent actually runs it.", "terms": ["Cline"], "neg": [], "split": "train", "id": "h0052"}
+{"text": "Our juniors use Cline to scaffold tests and then iterate on the failing cases.", "terms": ["Cline"], "neg": [], "split": "train", "id": "h0053"}
+{"text": "The plan mode in Cline lets you review its approach before any files change.", "terms": ["Cline"], "neg": [], "split": "train", "id": "h0054"}
+{"text": "I pointed Cline at a flaky integration test and it traced the race condition.", "terms": ["Cline"], "neg": [], "split": "train", "id": "h0055"}
+{"text": "Cline keeps a running context of the project so its edits stay consistent.", "terms": ["Cline"], "neg": [], "split": "train", "id": "h0056"}
+{"text": "We swapped the backend model behind Cline to compare code quality across providers.", "terms": ["Cline"], "neg": [], "split": "train", "id": "h0057"}
+{"text": "The MCP integration in Cline lets the agent call our internal documentation server.", "terms": ["Cline"], "neg": [], "split": "train", "id": "h0058"}
+{"text": "Watching Cline edit, run, and re-edit in a loop feels like pairing with a teammate.", "terms": ["Cline"], "neg": [], "split": "train", "id": "h0059"}
+{"text": "For larger migrations, Cline breaks the work into steps and checkpoints each diff.", "terms": ["Cline"], "neg": [], "split": "val", "id": "h0060"}
+{"text": "I let Aider refactor the auth module and it committed each change straight to git.", "terms": ["Aider"], "neg": [], "split": "train", "id": "h0061"}
+{"text": "Running Aider in the terminal feels like pairing with a tireless coding agent.", "terms": ["Aider"], "neg": [], "split": "train", "id": "h0062"}
+{"text": "With Aider you describe a feature and it edits the relevant files automatically.", "terms": ["Aider"], "neg": [], "split": "val", "id": "h0063"}
+{"text": "We pointed Aider at the repo and asked it to fix the failing tests.", "terms": ["Aider"], "neg": [], "split": "train", "id": "h0064"}
+{"text": "Aider showed me a clean diff before applying the patch to my branch.", "terms": ["Aider"], "neg": [], "split": "train", "id": "h0065"}
+{"text": "Switching the backing model in Aider changed how thoroughly it reasoned about edits.", "terms": ["Aider"], "neg": [], "split": "train", "id": "h0066"}
+{"text": "My favorite thing about Aider is the automatic commit messages it writes.", "terms": ["Aider"], "neg": [], "split": "train", "id": "h0067"}
+{"text": "Aider parsed the whole codebase map before suggesting where to add the endpoint.", "terms": ["Aider"], "neg": [], "split": "val", "id": "h0068"}
+{"text": "We use Aider for quick scripted refactors that would take ages by hand.", "terms": ["Aider"], "neg": [], "split": "train", "id": "h0069"}
+{"text": "When Aider got the import wrong, I just told it and it self-corrected.", "terms": ["Aider"], "neg": [], "split": "train", "id": "h0070"}
+{"text": "Pairing Aider with a strong model gives surprisingly solid pull requests.", "terms": ["Aider"], "neg": [], "split": "train", "id": "h0071"}
+{"text": "I keep Aider open in a split pane while I review its commits.", "terms": ["Aider"], "neg": [], "split": "train", "id": "h0072"}
+{"text": "Zed opens our giant Rust monorepo almost instantly compared to my old editor.", "terms": ["Zed"], "neg": [], "split": "train", "id": "h0073"}
+{"text": "I asked the AI assistant in Zed to explain a gnarly lifetime error.", "terms": ["Zed"], "neg": [], "split": "train", "id": "h0074"}
+{"text": "Collaborative editing in Zed let two of us debug the same file live.", "terms": ["Zed"], "neg": [], "split": "train", "id": "h0075"}
+{"text": "Zed's inline completions kept up with my typing without any lag.", "terms": ["Zed"], "neg": [], "split": "val", "id": "h0076"}
+{"text": "We switched the whole team to Zed for its speed and low memory use.", "terms": ["Zed"], "neg": [], "split": "train", "id": "h0077"}
+{"text": "The agent panel in Zed can run terminal commands and edit multiple files.", "terms": ["Zed"], "neg": [], "split": "train", "id": "h0078"}
+{"text": "Zed renders syntax highlighting on a million-line log instantly.", "terms": ["Zed"], "neg": [], "split": "val", "id": "h0079"}
+{"text": "I configured Zed to use a local model for code suggestions.", "terms": ["Zed"], "neg": [], "split": "train", "id": "h0080"}
+{"text": "Jumping to definitions in Zed feels snappier than anything I've tried.", "terms": ["Zed"], "neg": [], "split": "train", "id": "h0081"}
+{"text": "Zed is written in Rust, which is part of why it stays so fast.", "terms": ["Zed"], "neg": [], "split": "train", "id": "h0082"}
+{"text": "I mapped my Vim keybindings in Zed and barely noticed the switch.", "terms": ["Zed"], "neg": [], "split": "train", "id": "h0083"}
+{"text": "The AI edit prediction in Zed guessed my next change correctly three times.", "terms": ["Zed"], "neg": [], "split": "train", "id": "h0084"}
+{"text": "Download the GGUF and drop it into the models folder before launching.", "terms": ["GGUF"], "neg": [], "split": "val", "id": "h0085"}
+{"text": "I quantized the weights to a four-bit GGUF to fit my laptop's memory.", "terms": ["GGUF"], "neg": [], "split": "train", "id": "h0086"}
+{"text": "Loading a GGUF file lets me run the model fully offline.", "terms": ["GGUF"], "neg": [], "split": "train", "id": "h0087"}
+{"text": "The smaller GGUF runs faster but loses a bit of accuracy on reasoning.", "terms": ["GGUF"], "neg": [], "split": "train", "id": "h0088"}
+{"text": "We converted the safetensors checkpoint into GGUF for the local runtime.", "terms": ["GGUF"], "neg": [], "split": "train", "id": "h0089"}
+{"text": "Each GGUF embeds its tokenizer and metadata, so loading is one step.", "terms": ["GGUF"], "neg": [], "split": "train", "id": "h0090"}
+{"text": "Pick a GGUF quant level that matches how much VRAM you actually have.", "terms": ["GGUF"], "neg": [], "split": "train", "id": "h0091"}
+{"text": "My inference server reads the GGUF and exposes a local chat endpoint.", "terms": ["GGUF"], "neg": [], "split": "train", "id": "h0092"}
+{"text": "The repo lists every GGUF variant from heavily quantized to full precision.", "terms": ["GGUF"], "neg": [], "split": "train", "id": "h0093"}
+{"text": "After the GGUF finished downloading, the model loaded in a few seconds.", "terms": ["GGUF"], "neg": [], "split": "train", "id": "h0094"}
+{"text": "A GGUF makes it trivial to ship one self-contained model file.", "terms": ["GGUF"], "neg": [], "split": "val", "id": "h0095"}
+{"text": "I benchmarked three GGUF quants to find the best speed and quality tradeoff.", "terms": ["GGUF"], "neg": [], "split": "train", "id": "h0096"}
+{"text": "We deployed the model on SGLang and throughput jumped immediately.", "terms": ["SGLang"], "neg": [], "split": "train", "id": "h0097"}
+{"text": "SGLang reuses the prefix cache across requests to speed up batched inference.", "terms": ["SGLang"], "neg": [], "split": "train", "id": "h0098"}
+{"text": "Our serving stack moved to SGLang for better structured-output handling.", "terms": ["SGLang"], "neg": [], "split": "train", "id": "h0099"}
+{"text": "I spun up an SGLang server and pointed our gateway at its endpoint.", "terms": ["SGLang"], "neg": [], "split": "train", "id": "h0100"}
+{"text": "SGLang's radix-tree caching shines when many prompts share a long system message.", "terms": ["SGLang"], "neg": [], "split": "val", "id": "h0101"}
+{"text": "We tuned the SGLang scheduler to keep the GPUs saturated under load.", "terms": ["SGLang"], "neg": [], "split": "train", "id": "h0102"}
+{"text": "Constrained decoding in SGLang made our JSON outputs reliably valid.", "terms": ["SGLang"], "neg": [], "split": "train", "id": "h0103"}
+{"text": "Benchmarks showed SGLang beating our old backend on tokens per second.", "terms": ["SGLang"], "neg": [], "split": "train", "id": "h0104"}
+{"text": "SGLang let us run two models side by side on the same node.", "terms": ["SGLang"], "neg": [], "split": "train", "id": "h0105"}
+{"text": "We containerized the SGLang runtime and rolled it out across the cluster.", "terms": ["SGLang"], "neg": [], "split": "train", "id": "h0106"}
+{"text": "The team picked SGLang because its API matched our existing OpenAI clients.", "terms": ["SGLang"], "neg": [], "split": "val", "id": "h0107"}
+{"text": "Profiling under SGLang revealed where our prompt templates were wasting tokens.", "terms": ["SGLang"], "neg": [], "split": "train", "id": "h0108"}
+{"text": "We generated the narration with ElevenLabs and synced it to the demo video.", "terms": ["ElevenLabs"], "neg": [], "split": "val", "id": "h0109"}
+{"text": "ElevenLabs cloned a consistent voice for our entire onboarding tutorial series.", "terms": ["ElevenLabs"], "neg": [], "split": "train", "id": "h0110"}
+{"text": "Our app calls the ElevenLabs API to read responses aloud in real time.", "terms": ["ElevenLabs"], "neg": [], "split": "train", "id": "h0111"}
+{"text": "The streaming endpoint from ElevenLabs kept latency low for the voice agent.", "terms": ["ElevenLabs"], "neg": [], "split": "train", "id": "h0112"}
+{"text": "We compared ElevenLabs against other text-to-speech vendors for naturalness.", "terms": ["ElevenLabs"], "neg": [], "split": "train", "id": "h0113"}
+{"text": "ElevenLabs handled the multilingual voiceover without us recording anything.", "terms": ["ElevenLabs"], "neg": [], "split": "val", "id": "h0114"}
+{"text": "I wired ElevenLabs into the chatbot so it speaks each reply instantly.", "terms": ["ElevenLabs"], "neg": [], "split": "train", "id": "h0115"}
+{"text": "The audiobook prototype used ElevenLabs to narrate hundreds of pages overnight.", "terms": ["ElevenLabs"], "neg": [], "split": "train", "id": "h0116"}
+{"text": "ElevenLabs lets you tune stability and clarity to shape the delivery.", "terms": ["ElevenLabs"], "neg": [], "split": "train", "id": "h0117"}
+{"text": "We cached ElevenLabs audio clips to avoid regenerating the same phrases.", "terms": ["ElevenLabs"], "neg": [], "split": "train", "id": "h0118"}
+{"text": "Their voice-changer feature in ElevenLabs converted a rough take into clean speech.", "terms": ["ElevenLabs"], "neg": [], "split": "train", "id": "h0119"}
+{"text": "The accessibility mode pipes screen text through ElevenLabs for spoken output.", "terms": ["ElevenLabs"], "neg": [], "split": "train", "id": "h0120"}
+{"text": "We use Pydantic to validate the request payload before it ever hits the inference endpoint.", "terms": ["Pydantic"], "neg": [], "split": "train", "id": "h0121"}
+{"text": "Every config object in this service is a Pydantic model with strict type coercion turned off.", "terms": ["Pydantic"], "neg": [], "split": "val", "id": "h0122"}
+{"text": "The new agent framework leans on Pydantic for structured tool outputs and schema generation.", "terms": ["Pydantic"], "neg": [], "split": "train", "id": "h0123"}
+{"text": "When the JSON failed validation, Pydantic raised a clear error pointing at the offending field.", "terms": ["Pydantic"], "neg": [], "split": "train", "id": "h0124"}
+{"text": "Migrating to Pydantic v2 sped up our parsing because the core is now written in Rust.", "terms": ["Pydantic"], "neg": [], "split": "train", "id": "h0125"}
+{"text": "I defined a Pydantic schema so the LLM has to return exactly the fields we expect.", "terms": ["Pydantic"], "neg": [], "split": "train", "id": "h0126"}
+{"text": "Our FastAPI handlers rely on Pydantic to serialize responses and document the API automatically.", "terms": ["Pydantic"], "neg": [], "split": "train", "id": "h0127"}
+{"text": "Switching from dataclasses to Pydantic gave us free validation at the application boundary.", "terms": ["Pydantic"], "neg": [], "split": "val", "id": "h0128"}
+{"text": "The structured output mode maps the model's JSON straight into a Pydantic class instance.", "terms": ["Pydantic"], "neg": [], "split": "train", "id": "h0129"}
+{"text": "He added a custom validator in Pydantic to reject embeddings with the wrong dimension.", "terms": ["Pydantic"], "neg": [], "split": "train", "id": "h0130"}
+{"text": "Pydantic settings management reads our environment variables and validates them on startup.", "terms": ["Pydantic"], "neg": [], "split": "train", "id": "h0131"}
+{"text": "Defining the function arguments as a Pydantic model makes tool calling far more reliable.", "terms": ["Pydantic"], "neg": [], "split": "train", "id": "h0132"}
+{"text": "I compiled llama.cpp with Metal support so the seven-billion model runs on my laptop.", "terms": ["llama.cpp"], "neg": [], "split": "val", "id": "h0133"}
+{"text": "Running the quantized weights through llama.cpp keeps everything offline and surprisingly fast.", "terms": ["llama.cpp"], "neg": [], "split": "train", "id": "h0134"}
+{"text": "The team ships a llama.cpp backend so customers can self-host without a GPU.", "terms": ["llama.cpp"], "neg": [], "split": "train", "id": "h0135"}
+{"text": "With llama.cpp and a GGUF file, you can serve a chat model from a single binary.", "terms": ["llama.cpp"], "neg": [], "split": "train", "id": "h0136"}
+{"text": "We benchmarked tokens per second on llama.cpp across CPU, CUDA, and Metal builds.", "terms": ["llama.cpp"], "neg": [], "split": "train", "id": "h0137"}
+{"text": "The grammar feature in llama.cpp constrains the output to valid JSON during generation.", "terms": ["llama.cpp"], "neg": [], "split": "train", "id": "h0138"}
+{"text": "I built a small wrapper that pipes prompts into llama.cpp and streams the response back.", "terms": ["llama.cpp"], "neg": [], "split": "train", "id": "h0139"}
+{"text": "Speculative decoding landed in llama.cpp and shaved real latency off our local pipeline.", "terms": ["llama.cpp"], "neg": [], "split": "train", "id": "h0140"}
+{"text": "Because llama.cpp supports partial GPU offload, big models fit even with limited VRAM.", "terms": ["llama.cpp"], "neg": [], "split": "val", "id": "h0141"}
+{"text": "Our edge devices run inference entirely on llama.cpp with four-bit quantization.", "terms": ["llama.cpp"], "neg": [], "split": "train", "id": "h0142"}
+{"text": "The llama.cpp server exposes an OpenAI-compatible endpoint, so swapping it in was trivial.", "terms": ["llama.cpp"], "neg": [], "split": "train", "id": "h0143"}
+{"text": "After updating llama.cpp, the new KV cache quantization cut our memory footprint noticeably.", "terms": ["llama.cpp"], "neg": [], "split": "train", "id": "h0144"}
+{"text": "We store the finetuned checkpoint in safetensors so loading skips arbitrary code execution.", "terms": ["safetensors"], "neg": [], "split": "train", "id": "h0145"}
+{"text": "Converting the pickle weights to safetensors removed a real security risk from our pipeline.", "terms": ["safetensors"], "neg": [], "split": "train", "id": "h0146"}
+{"text": "The safetensors format memory-maps the tensors, so cold starts load the model much faster.", "terms": ["safetensors"], "neg": [], "split": "train", "id": "h0147"}
+{"text": "Hugging Face now publishes most checkpoints in safetensors by default rather than raw pickles.", "terms": ["safetensors"], "neg": [], "split": "train", "id": "h0148"}
+{"text": "Our loader checks for a safetensors file first and only falls back to the bin format.", "terms": ["safetensors"], "neg": [], "split": "train", "id": "h0149"}
+{"text": "Sharding the giant model into multiple safetensors files made distributed loading straightforward.", "terms": ["safetensors"], "neg": [], "split": "train", "id": "h0150"}
+{"text": "Because safetensors stores only raw tensors and metadata, you can inspect headers without loading.", "terms": ["safetensors"], "neg": [], "split": "val", "id": "h0151"}
+{"text": "We saved the LoRA adapters as safetensors and merged them into the base later.", "terms": ["safetensors"], "neg": [], "split": "val", "id": "h0152"}
+{"text": "The conversion script reads PyTorch state dicts and writes a clean safetensors output.", "terms": ["safetensors"], "neg": [], "split": "train", "id": "h0153"}
+{"text": "Lazy loading from safetensors lets us pull just the layers we actually need at runtime.", "terms": ["safetensors"], "neg": [], "split": "train", "id": "h0154"}
+{"text": "Every release pins a checksum on the safetensors weights so deployments stay reproducible.", "terms": ["safetensors"], "neg": [], "split": "train", "id": "h0155"}
+{"text": "Switching the export to safetensors trimmed our container image and sped up model swaps.", "terms": ["safetensors"], "neg": [], "split": "train", "id": "h0156"}
+{"text": "We rewrote the prompt chain in DSPy and let the optimizer tune the few-shot examples.", "terms": ["DSPy"], "neg": [], "split": "train", "id": "h0157"}
+{"text": "Instead of hand-crafting prompts, DSPy compiles signatures into the actual model instructions.", "terms": ["DSPy"], "neg": [], "split": "train", "id": "h0158"}
+{"text": "Our retrieval pipeline is a DSPy module that we optimize against a labeled dev set.", "terms": ["DSPy"], "neg": [], "split": "train", "id": "h0159"}
+{"text": "DSPy treats prompting as programming, so we declare inputs and outputs and let it bootstrap.", "terms": ["DSPy"], "neg": [], "split": "val", "id": "h0160"}
+{"text": "After running the DSPy optimizer, accuracy on our classification task jumped several points.", "terms": ["DSPy"], "neg": [], "split": "train", "id": "h0161"}
+{"text": "We swapped the underlying model without rewriting anything because DSPy abstracts the prompts.", "terms": ["DSPy"], "neg": [], "split": "train", "id": "h0162"}
+{"text": "The chain-of-thought module in DSPy generated reasoning steps we never had to write by hand.", "terms": ["DSPy"], "neg": [], "split": "train", "id": "h0163"}
+{"text": "Using DSPy assertions, we constrained outputs and retried automatically when checks failed.", "terms": ["DSPy"], "neg": [], "split": "train", "id": "h0164"}
+{"text": "DSPy lets us define a metric function and then search for the best prompt configuration.", "terms": ["DSPy"], "neg": [], "split": "train", "id": "h0165"}
+{"text": "We composed several DSPy modules into a multi-step agent that answers support tickets.", "terms": ["DSPy"], "neg": [], "split": "train", "id": "h0166"}
+{"text": "Porting the brittle prompt to DSPy made the whole pipeline far easier to evaluate.", "terms": ["DSPy"], "neg": [], "split": "val", "id": "h0167"}
+{"text": "With DSPy, the few-shot demonstrations are selected by the compiler, not pasted by hand.", "terms": ["DSPy"], "neg": [], "split": "train", "id": "h0168"}
+{"text": "We finetuned the base model with Unsloth and cut our GPU memory usage almost in half.", "terms": ["Unsloth"], "neg": [], "split": "train", "id": "h0169"}
+{"text": "Unsloth patches the attention kernels, so QLoRA training runs noticeably faster on one card.", "terms": ["Unsloth"], "neg": [], "split": "train", "id": "h0170"}
+{"text": "The notebook uses Unsloth to load a four-bit model and attach LoRA adapters in seconds.", "terms": ["Unsloth"], "neg": [], "split": "train", "id": "h0171"}
+{"text": "Thanks to Unsloth, we trained a longer context length without running out of VRAM.", "terms": ["Unsloth"], "neg": [], "split": "train", "id": "h0172"}
+{"text": "Unsloth exports the merged weights straight to GGUF when the finetuning run finishes.", "terms": ["Unsloth"], "neg": [], "split": "val", "id": "h0173"}
+{"text": "We benchmarked Unsloth against the standard trainer and saw a clear throughput improvement.", "terms": ["Unsloth"], "neg": [], "split": "train", "id": "h0174"}
+{"text": "Their tutorial shows how Unsloth handles the chat template and tokenizes the dataset for you.", "terms": ["Unsloth"], "neg": [], "split": "val", "id": "h0175"}
+{"text": "Using Unsloth on a single consumer GPU, we fine-tuned the model overnight on a small budget.", "terms": ["Unsloth"], "neg": [], "split": "train", "id": "h0176"}
+{"text": "Unsloth supports gradient checkpointing tweaks that let bigger batches fit into memory.", "terms": ["Unsloth"], "neg": [], "split": "train", "id": "h0177"}
+{"text": "We loaded the saved Unsloth adapters and ran inference without merging back into the base.", "terms": ["Unsloth"], "neg": [], "split": "train", "id": "h0178"}
+{"text": "The Unsloth library wraps the model so the LoRA setup takes just a couple of lines.", "terms": ["Unsloth"], "neg": [], "split": "train", "id": "h0179"}
+{"text": "After the Unsloth run converged, we pushed the safetensors adapters to our model registry.", "terms": ["Unsloth"], "neg": [], "split": "train", "id": "h0180"}
+{"text": "We finetuned the seven-billion model with QLoRA on a single consumer GPU overnight.", "terms": ["QLoRA"], "neg": [], "split": "train", "id": "h0181"}
+{"text": "QLoRA quantizes the base weights to four bits while training low-rank adapters on top.", "terms": ["QLoRA"], "neg": [], "split": "train", "id": "h0182"}
+{"text": "Switching from full finetuning to QLoRA cut our memory footprint by more than half.", "terms": ["QLoRA"], "neg": [], "split": "val", "id": "h0183"}
+{"text": "The QLoRA run converged after three epochs without ever spilling into CPU offload.", "terms": ["QLoRA"], "neg": [], "split": "train", "id": "h0184"}
+{"text": "With QLoRA you only update a tiny adapter, so checkpoints stay under a hundred megabytes.", "terms": ["QLoRA"], "neg": [], "split": "train", "id": "h0185"}
+{"text": "I bumped the QLoRA rank to sixty-four and the eval loss dropped noticeably.", "terms": ["QLoRA"], "neg": [], "split": "train", "id": "h0186"}
+{"text": "Our team prefers QLoRA because it fits a thirteen-billion model onto one twenty-four-gigabyte card.", "terms": ["QLoRA"], "neg": [], "split": "val", "id": "h0187"}
+{"text": "QLoRA pairs four-bit NormalFloat quantization with paged optimizers to dodge memory spikes.", "terms": ["QLoRA"], "neg": [], "split": "train", "id": "h0188"}
+{"text": "After merging the QLoRA adapter back into the base model, inference latency stayed flat.", "terms": ["QLoRA"], "neg": [], "split": "train", "id": "h0189"}
+{"text": "We benchmarked QLoRA against full finetuning and the quality gap was surprisingly small.", "terms": ["QLoRA"], "neg": [], "split": "train", "id": "h0190"}
+{"text": "For instruction tuning on a budget, QLoRA remains my default starting recipe.", "terms": ["QLoRA"], "neg": [], "split": "train", "id": "h0191"}
+{"text": "The notebook trains a QLoRA adapter, then exports it for serving with vLLM.", "terms": ["QLoRA"], "neg": [], "split": "train", "id": "h0192"}
+{"text": "We swapped our coding assistant over to GLM and the autocomplete quality jumped.", "terms": ["GLM"], "neg": [], "split": "val", "id": "h0193"}
+{"text": "The latest GLM release handles long-context reasoning better than the previous checkpoint.", "terms": ["GLM"], "neg": [], "split": "train", "id": "h0194"}
+{"text": "GLM ships open weights, so we can host it on our own inference cluster.", "terms": ["GLM"], "neg": [], "split": "train", "id": "h0195"}
+{"text": "Our agent pipeline routes coding tasks to GLM and chat tasks to a smaller model.", "terms": ["GLM"], "neg": [], "split": "val", "id": "h0196"}
+{"text": "I quantized GLM to four bits and it still passed most of our regression tests.", "terms": ["GLM"], "neg": [], "split": "train", "id": "h0197"}
+{"text": "Benchmarks show GLM competing closely with much larger proprietary models on code generation.", "terms": ["GLM"], "neg": [], "split": "train", "id": "h0198"}
+{"text": "We finetuned GLM on our internal codebase to teach it our naming conventions.", "terms": ["GLM"], "neg": [], "split": "train", "id": "h0199"}
+{"text": "The GLM tokenizer handles mixed Chinese and English source comments without choking.", "terms": ["GLM"], "neg": [], "split": "train", "id": "h0200"}
+{"text": "GLM supports tool calling natively, which simplified our function-routing layer.", "terms": ["GLM"], "neg": [], "split": "train", "id": "h0201"}
+{"text": "Running GLM locally means our proprietary code never leaves the corporate network.", "terms": ["GLM"], "neg": [], "split": "train", "id": "h0202"}
+{"text": "We compared GLM against several open models and it topped our agentic coding suite.", "terms": ["GLM"], "neg": [], "split": "train", "id": "h0203"}
+{"text": "The new GLM variant streams tokens fast enough for a snappy editor experience.", "terms": ["GLM"], "neg": [], "split": "train", "id": "h0204"}
+{"text": "We moved our inference workload to Cerebras and the tokens-per-second figure tripled.", "terms": ["Cerebras"], "neg": [], "split": "train", "id": "h0205"}
+{"text": "Cerebras builds wafer-scale chips that keep an entire model resident on one die.", "terms": ["Cerebras"], "neg": [], "split": "train", "id": "h0206"}
+{"text": "Hosting the model on Cerebras gave us near-instant responses even for long prompts.", "terms": ["Cerebras"], "neg": [], "split": "train", "id": "h0207"}
+{"text": "The Cerebras inference API returned completions far faster than our previous GPU endpoint.", "terms": ["Cerebras"], "neg": [], "split": "train", "id": "h0208"}
+{"text": "Because Cerebras avoids cross-chip communication, its latency stays remarkably low at scale.", "terms": ["Cerebras"], "neg": [], "split": "train", "id": "h0209"}
+{"text": "We benchmarked Cerebras against a standard cluster and saw a massive throughput advantage.", "terms": ["Cerebras"], "neg": [], "split": "train", "id": "h0210"}
+{"text": "Our streaming demo felt real-time once we pointed it at the Cerebras backend.", "terms": ["Cerebras"], "neg": [], "split": "val", "id": "h0211"}
+{"text": "Cerebras advertises blistering decode speeds for open models like the large coding variants.", "terms": ["Cerebras"], "neg": [], "split": "train", "id": "h0212"}
+{"text": "The team prototyped a fast agent loop on Cerebras to cut the planning bottleneck.", "terms": ["Cerebras"], "neg": [], "split": "train", "id": "h0213"}
+{"text": "Training a frontier model on Cerebras hardware sidesteps a lot of sharding headaches.", "terms": ["Cerebras"], "neg": [], "split": "val", "id": "h0214"}
+{"text": "We migrated the autocomplete service to Cerebras and users immediately noticed the speed.", "terms": ["Cerebras"], "neg": [], "split": "train", "id": "h0215"}
+{"text": "Cerebras keeps weights in on-chip memory, so it dodges the usual bandwidth wall.", "terms": ["Cerebras"], "neg": [], "split": "train", "id": "h0216"}
+{"text": "We post-trained the policy model with GRPO and reasoning accuracy climbed steadily.", "terms": ["GRPO"], "neg": [], "split": "train", "id": "h0217"}
+{"text": "GRPO drops the value network and normalizes rewards across a group of sampled rollouts.", "terms": ["GRPO"], "neg": [], "split": "train", "id": "h0218"}
+{"text": "Compared to standard PPO, GRPO needed less memory because there is no critic to train.", "terms": ["GRPO"], "neg": [], "split": "train", "id": "h0219"}
+{"text": "We tuned the GRPO group size to sixteen samples per prompt for stable gradients.", "terms": ["GRPO"], "neg": [], "split": "train", "id": "h0220"}
+{"text": "The GRPO objective rewards completions that beat the average score within their batch.", "terms": ["GRPO"], "neg": [], "split": "train", "id": "h0221"}
+{"text": "Our math reasoning model improved sharply after a few thousand GRPO update steps.", "terms": ["GRPO"], "neg": [], "split": "train", "id": "h0222"}
+{"text": "GRPO became popular for finetuning reasoning models on verifiable coding tasks.", "terms": ["GRPO"], "neg": [], "split": "val", "id": "h0223"}
+{"text": "We logged the GRPO advantage estimates to debug a reward-hacking collapse mid-training.", "terms": ["GRPO"], "neg": [], "split": "train", "id": "h0224"}
+{"text": "Adding a KL penalty kept the GRPO policy from drifting too far off the reference.", "terms": ["GRPO"], "neg": [], "split": "train", "id": "h0225"}
+{"text": "GRPO samples several answers per question and ranks them without a separate value head.", "terms": ["GRPO"], "neg": [], "split": "train", "id": "h0226"}
+{"text": "Our pipeline runs supervised finetuning first, then a GRPO stage for reasoning polish.", "terms": ["GRPO"], "neg": [], "split": "val", "id": "h0227"}
+{"text": "We scaled GRPO across eight nodes and throughput held up better than expected.", "terms": ["GRPO"], "neg": [], "split": "train", "id": "h0228"}
+{"text": "We used RLVR to reward the model only when its code actually passed the unit tests.", "terms": ["RLVR"], "neg": [], "split": "train", "id": "h0229"}
+{"text": "RLVR sidesteps fragile preference models by grading outputs against a deterministic checker.", "terms": ["RLVR"], "neg": [], "split": "val", "id": "h0230"}
+{"text": "For math problems, RLVR simply checks the final answer against the known ground truth.", "terms": ["RLVR"], "neg": [], "split": "train", "id": "h0231"}
+{"text": "Our RLVR setup pipes each generated solution through a compiler before assigning reward.", "terms": ["RLVR"], "neg": [], "split": "train", "id": "h0232"}
+{"text": "RLVR works best where correctness is cheap to verify, like coding or formal proofs.", "terms": ["RLVR"], "neg": [], "split": "train", "id": "h0233"}
+{"text": "We combined GRPO with RLVR to post-train a reasoning model on verifiable benchmarks.", "terms": ["RLVR"], "neg": [], "split": "train", "id": "h0234"}
+{"text": "Because RLVR rewards are objective, we avoided most of the usual reward-hacking pitfalls.", "terms": ["RLVR"], "neg": [], "split": "train", "id": "h0235"}
+{"text": "The RLVR loop runs every candidate through our test harness and scores pass rates.", "terms": ["RLVR"], "neg": [], "split": "train", "id": "h0236"}
+{"text": "Switching from human preferences to RLVR made our reward signal far more reproducible.", "terms": ["RLVR"], "neg": [], "split": "train", "id": "h0237"}
+{"text": "RLVR shines on tasks with a clear oracle, so we focused it on unit-tested functions.", "terms": ["RLVR"], "neg": [], "split": "val", "id": "h0238"}
+{"text": "We curated thousands of auto-gradable prompts to feed the RLVR training stage.", "terms": ["RLVR"], "neg": [], "split": "train", "id": "h0239"}
+{"text": "After the RLVR phase, the model rarely returned code that failed to compile.", "terms": ["RLVR"], "neg": [], "split": "train", "id": "h0240"}
+{"text": "MiniMax just dropped a new open-weights model that beats a lot of bigger labs on reasoning benchmarks.", "terms": ["MiniMax"], "neg": [], "split": "val", "id": "h0241"}
+{"text": "We swapped our summarization backend over to a MiniMax M-series checkpoint last week.", "terms": ["MiniMax"], "neg": [], "split": "train", "id": "h0242"}
+{"text": "The latest MiniMax release ships with a surprisingly long context window for an open model.", "terms": ["MiniMax"], "neg": [], "split": "train", "id": "h0243"}
+{"text": "Have you benchmarked MiniMax against the usual frontier models for code generation yet?", "terms": ["MiniMax"], "neg": [], "split": "train", "id": "h0244"}
+{"text": "I pulled the MiniMax weights from the hub and quantized them to run on a single GPU.", "terms": ["MiniMax"], "neg": [], "split": "train", "id": "h0245"}
+{"text": "Their pricing is aggressive, so a lot of startups are routing cheap traffic to MiniMax.", "terms": ["MiniMax"], "neg": [], "split": "train", "id": "h0246"}
+{"text": "The MiniMax lab open-sourced their training recipe alongside the model card.", "terms": ["MiniMax"], "neg": [], "split": "train", "id": "h0247"}
+{"text": "For agentic tool calling we saw MiniMax hold up better than we expected.", "terms": ["MiniMax"], "neg": [], "split": "train", "id": "h0248"}
+{"text": "Someone fine-tuned MiniMax on a domain corpus and posted the adapter weights publicly.", "terms": ["MiniMax"], "neg": [], "split": "val", "id": "h0249"}
+{"text": "The MiniMax inference endpoint streams tokens fast enough for our chat UI.", "terms": ["MiniMax"], "neg": [], "split": "train", "id": "h0250"}
+{"text": "We added MiniMax as a fallback provider in case the primary API rate-limits us.", "terms": ["MiniMax"], "neg": [], "split": "train", "id": "h0251"}
+{"text": "According to the eval leaderboard, MiniMax punches well above its parameter count.", "terms": ["MiniMax"], "neg": [], "split": "train", "id": "h0252"}
+{"text": "Kiro generated a full spec document before it wrote a single line of code.", "terms": ["Kiro"], "neg": [], "split": "train", "id": "h0253"}
+{"text": "I love how Kiro turns my rough prompt into requirements, design, and tasks automatically.", "terms": ["Kiro"], "neg": [], "split": "train", "id": "h0254"}
+{"text": "Our team is piloting Kiro as a spec-driven replacement for ad-hoc vibe coding.", "terms": ["Kiro"], "neg": [], "split": "train", "id": "h0255"}
+{"text": "In Kiro you review the generated design doc before the agent starts implementing.", "terms": ["Kiro"], "neg": [], "split": "val", "id": "h0256"}
+{"text": "Kiro broke the feature into discrete tasks and worked through them one by one.", "terms": ["Kiro"], "neg": [], "split": "train", "id": "h0257"}
+{"text": "The hooks feature in Kiro lets you trigger agent actions on file save events.", "terms": ["Kiro"], "neg": [], "split": "train", "id": "h0258"}
+{"text": "Amazon's Kiro IDE leans hard into spec-first development instead of raw autocomplete.", "terms": ["Kiro"], "neg": [], "split": "train", "id": "h0259"}
+{"text": "We migrated a legacy module using Kiro and it kept the specs in sync with the code.", "terms": ["Kiro"], "neg": [], "split": "val", "id": "h0260"}
+{"text": "Kiro asks clarifying questions about acceptance criteria before touching the repo.", "terms": ["Kiro"], "neg": [], "split": "train", "id": "h0261"}
+{"text": "The steering files in Kiro let you encode project conventions for the agent.", "terms": ["Kiro"], "neg": [], "split": "train", "id": "h0262"}
+{"text": "I opened Kiro, described the API I wanted, and it scaffolded the whole service.", "terms": ["Kiro"], "neg": [], "split": "train", "id": "h0263"}
+{"text": "Compared to a plain chat assistant, Kiro keeps the design and tasks as living artifacts.", "terms": ["Kiro"], "neg": [], "split": "train", "id": "h0264"}
+{"text": "We route every provider through LiteLLM so the application code stays vendor-agnostic.", "terms": ["LiteLLM"], "neg": [], "split": "train", "id": "h0265"}
+{"text": "LiteLLM gives you one OpenAI-compatible interface for over a hundred different model APIs.", "terms": ["LiteLLM"], "neg": [], "split": "train", "id": "h0266"}
+{"text": "Spin up the LiteLLM proxy and point your client at a single base URL.", "terms": ["LiteLLM"], "neg": [], "split": "train", "id": "h0267"}
+{"text": "With LiteLLM we set spend budgets and rate limits per virtual API key.", "terms": ["LiteLLM"], "neg": [], "split": "train", "id": "h0268"}
+{"text": "The fallback chain in LiteLLM retries on a second provider if the first one errors.", "terms": ["LiteLLM"], "neg": [], "split": "train", "id": "h0269"}
+{"text": "I added LiteLLM as a gateway so we could log every token across all our models.", "terms": ["LiteLLM"], "neg": [], "split": "val", "id": "h0270"}
+{"text": "LiteLLM normalizes the response schema, so swapping models needs almost no code changes.", "terms": ["LiteLLM"], "neg": [], "split": "train", "id": "h0271"}
+{"text": "Our cost dashboard pulls usage straight from the LiteLLM proxy database.", "terms": ["LiteLLM"], "neg": [], "split": "train", "id": "h0272"}
+{"text": "Configure the routing strategy in LiteLLM to load-balance across several deployments.", "terms": ["LiteLLM"], "neg": [], "split": "train", "id": "h0273"}
+{"text": "We use LiteLLM to mask provider keys behind short-lived team tokens.", "terms": ["LiteLLM"], "neg": [], "split": "train", "id": "h0274"}
+{"text": "LiteLLM handles embeddings, chat, and image endpoints under one unified call.", "terms": ["LiteLLM"], "neg": [], "split": "train", "id": "h0275"}
+{"text": "Drop LiteLLM in front of your stack and you can switch vendors with a config flag.", "terms": ["LiteLLM"], "neg": [], "split": "val", "id": "h0276"}
+{"text": "We built a research agent on top of smolagents in about fifty lines of Python.", "terms": ["smolagents"], "neg": [], "split": "train", "id": "h0277"}
+{"text": "The smolagents library leans into code agents that write Python to call their tools.", "terms": ["smolagents"], "neg": [], "split": "train", "id": "h0278"}
+{"text": "Hugging Face designed smolagents to stay tiny and easy to read end to end.", "terms": ["smolagents"], "neg": [], "split": "val", "id": "h0279"}
+{"text": "I wired a web-search tool into smolagents and let the agent loop on it.", "terms": ["smolagents"], "neg": [], "split": "train", "id": "h0280"}
+{"text": "With smolagents you can point the same agent at any backend the hub supports.", "terms": ["smolagents"], "neg": [], "split": "train", "id": "h0281"}
+{"text": "Our prototype uses smolagents for orchestration and LiteLLM for the model calls.", "terms": ["smolagents"], "neg": [], "split": "train", "id": "h0282"}
+{"text": "The CodeAgent in smolagents executes generated snippets in a sandbox.", "terms": ["smolagents"], "neg": [], "split": "train", "id": "h0283"}
+{"text": "Compared to heavier frameworks, smolagents has a refreshingly small surface area.", "terms": ["smolagents"], "neg": [], "split": "train", "id": "h0284"}
+{"text": "I read the entire smolagents source in an afternoon, which says a lot about its size.", "terms": ["smolagents"], "neg": [], "split": "train", "id": "h0285"}
+{"text": "We extended smolagents with a custom tool that queries our internal vector store.", "terms": ["smolagents"], "neg": [], "split": "val", "id": "h0286"}
+{"text": "Beginners pick up smolagents quickly because the abstractions are so minimal.", "terms": ["smolagents"], "neg": [], "split": "train", "id": "h0287"}
+{"text": "The docs show how smolagents handles multi-step tasks with a managed agent.", "terms": ["smolagents"], "neg": [], "split": "train", "id": "h0288"}
+{"text": "Manus ran the whole research task end to end and handed back a finished report.", "terms": ["Manus"], "neg": [], "split": "train", "id": "h0289"}
+{"text": "People keep sharing demos where Manus books travel and builds a site unattended.", "terms": ["Manus"], "neg": [], "split": "train", "id": "h0290"}
+{"text": "I gave Manus a vague goal and it planned the subtasks on its own.", "terms": ["Manus"], "neg": [], "split": "train", "id": "h0291"}
+{"text": "The autonomous agent Manus spins up a virtual machine to do its work.", "terms": ["Manus"], "neg": [], "split": "train", "id": "h0292"}
+{"text": "We tested Manus on a data-cleaning job and it iterated until the output passed checks.", "terms": ["Manus"], "neg": [], "split": "val", "id": "h0293"}
+{"text": "Manus operates a browser, runs code, and edits files like a junior engineer would.", "terms": ["Manus"], "neg": [], "split": "train", "id": "h0294"}
+{"text": "The replay view in Manus lets you watch every action the agent took.", "terms": ["Manus"], "neg": [], "split": "train", "id": "h0295"}
+{"text": "I queued three tasks in Manus and let them run asynchronously overnight.", "terms": ["Manus"], "neg": [], "split": "val", "id": "h0296"}
+{"text": "Manus competes with other general-purpose agents on real-world task benchmarks.", "terms": ["Manus"], "neg": [], "split": "train", "id": "h0297"}
+{"text": "Our team uses Manus to draft first-pass automation scripts before we review them.", "terms": ["Manus"], "neg": [], "split": "train", "id": "h0298"}
+{"text": "Manus asked for credentials, then logged into the dashboard and pulled the metrics.", "terms": ["Manus"], "neg": [], "split": "train", "id": "h0299"}
+{"text": "Unlike a simple chatbot, Manus keeps working through long multi-step workflows.", "terms": ["Manus"], "neg": [], "split": "train", "id": "h0300"}
+{"text": "Access to Claude Mythos 5 is gated behind a separate enterprise agreement.", "terms": ["Claude Mythos 5"], "neg": [], "split": "train", "id": "h0301"}
+{"text": "We benchmarked our pipeline against Claude Mythos 5 for the hardest reasoning cases.", "terms": ["Claude Mythos 5"], "neg": [], "split": "train", "id": "h0302"}
+{"text": "The restricted tier exposes Claude Mythos 5 only to vetted research partners.", "terms": ["Claude Mythos 5"], "neg": [], "split": "train", "id": "h0303"}
+{"text": "Anthropic positions Claude Mythos 5 as its most capable Mythos-class model so far.", "terms": ["Claude Mythos 5"], "neg": [], "split": "train", "id": "h0304"}
+{"text": "Our compliance team had to sign off before we could call Claude Mythos 5 in production.", "terms": ["Claude Mythos 5"], "neg": [], "split": "train", "id": "h0305"}
+{"text": "Latency on Claude Mythos 5 is higher, but the answers are noticeably sharper.", "terms": ["Claude Mythos 5"], "neg": [], "split": "val", "id": "h0306"}
+{"text": "I routed only the trickiest agent steps to Claude Mythos 5 to save on cost.", "terms": ["Claude Mythos 5"], "neg": [], "split": "train", "id": "h0307"}
+{"text": "The system card for Claude Mythos 5 details extra safeguards on the restricted model.", "terms": ["Claude Mythos 5"], "neg": [], "split": "train", "id": "h0308"}
+{"text": "We saw a big jump in long-context recall when we switched to Claude Mythos 5.", "terms": ["Claude Mythos 5"], "neg": [], "split": "train", "id": "h0309"}
+{"text": "Quota for Claude Mythos 5 is tight, so we cache aggressively on every request.", "terms": ["Claude Mythos 5"], "neg": [], "split": "val", "id": "h0310"}
+{"text": "The evaluation harness flagged Claude Mythos 5 as best on our internal coding suite.", "terms": ["Claude Mythos 5"], "neg": [], "split": "train", "id": "h0311"}
+{"text": "Because Claude Mythos 5 is restricted, we keep a fallback model wired in by default.", "terms": ["Claude Mythos 5"], "neg": [], "split": "train", "id": "h0312"}
+{"text": "RoPE applies rotary positional encoding so attention can generalize across a much longer context window.", "terms": ["RoPE"], "neg": [], "split": "train", "id": "h0313"}
+{"text": "We swapped absolute embeddings for RoPE to improve extrapolation beyond the trained context length.", "terms": ["RoPE"], "neg": [], "split": "train", "id": "h0314"}
+{"text": "The attention scores stayed coherent because RoPE encodes relative positions through rotation of query and key vectors.", "terms": ["RoPE"], "neg": [], "split": "train", "id": "h0315"}
+{"text": "Tuning the RoPE base frequency let the model extend its context window without retraining from scratch.", "terms": ["RoPE"], "neg": [], "split": "val", "id": "h0316"}
+{"text": "Long context performance improved once we interpolated the RoPE angles for sequences past the original limit.", "terms": ["RoPE"], "neg": [], "split": "train", "id": "h0317"}
+{"text": "With RoPE the positional encoding rotates each dimension, helping attention track token distance during extrapolation.", "terms": ["RoPE"], "neg": [], "split": "train", "id": "h0318"}
+{"text": "Engineers scaled RoPE to push the context window from four thousand tokens to thirty-two thousand.", "terms": ["RoPE"], "neg": [], "split": "train", "id": "h0319"}
+{"text": "Because RoPE is relative, the transformer extrapolates to unseen positions far beyond its training context.", "terms": ["RoPE"], "neg": [], "split": "train", "id": "h0320"}
+{"text": "Our ablation showed RoPE outperformed learned positional encoding on long context retrieval benchmarks.", "terms": ["RoPE"], "neg": [], "split": "val", "id": "h0321"}
+{"text": "The kernel computes RoPE on the fly, rotating attention keys before the dot product is taken.", "terms": ["RoPE"], "neg": [], "split": "train", "id": "h0322"}
+{"text": "Adjusting RoPE theta gave smoother extrapolation when the context window doubled during fine-tuning.", "terms": ["RoPE"], "neg": [], "split": "train", "id": "h0323"}
+{"text": "Modern transformers rely on RoPE so that attention respects positional encoding even at long context lengths.", "terms": ["RoPE"], "neg": [], "split": "train", "id": "h0324"}
+{"text": "Grok is the chatbot model built by xAI, and Grok 4 handles much longer conversations.", "terms": ["Grok"], "neg": [], "split": "train", "id": "h0325"}
+{"text": "We benchmarked Grok against other frontier models on reasoning and coding tasks.", "terms": ["Grok"], "neg": [], "split": "train", "id": "h0326"}
+{"text": "The xAI team shipped Grok 4 with improved tool use and a wider knowledge cutoff.", "terms": ["Grok"], "neg": [], "split": "val", "id": "h0327"}
+{"text": "Users can query Grok directly inside the app for real-time answers from the model.", "terms": ["Grok"], "neg": [], "split": "train", "id": "h0328"}
+{"text": "Grok 4 scored competitively on math benchmarks compared to the leading chatbot models.", "terms": ["Grok"], "neg": [], "split": "train", "id": "h0329"}
+{"text": "The API lets developers call Grok with streaming responses and configurable temperature.", "terms": ["Grok"], "neg": [], "split": "train", "id": "h0330"}
+{"text": "xAI positioned Grok as a witty assistant that still answers technical questions accurately.", "terms": ["Grok"], "neg": [], "split": "train", "id": "h0331"}
+{"text": "After fine-tuning, Grok produced cleaner code suggestions than the previous chatbot release.", "terms": ["Grok"], "neg": [], "split": "val", "id": "h0332"}
+{"text": "Our evaluation harness sends the same prompt to Grok and three competing models.", "terms": ["Grok"], "neg": [], "split": "train", "id": "h0333"}
+{"text": "Grok 4 added a reasoning mode that lets the model think before responding.", "terms": ["Grok"], "neg": [], "split": "train", "id": "h0334"}
+{"text": "The chatbot powered by Grok pulls recent posts to ground its answers in current events.", "terms": ["Grok"], "neg": [], "split": "train", "id": "h0335"}
+{"text": "Developers praised how quickly Grok from xAI returns structured JSON for downstream parsing.", "terms": ["Grok"], "neg": [], "split": "train", "id": "h0336"}
+{"text": "Goose is an open source coding agent from Block that runs commands in your terminal.", "terms": ["Goose"], "neg": [], "split": "val", "id": "h0337"}
+{"text": "I installed a Goose extension to let the coding agent edit files across the repo.", "terms": ["Goose"], "neg": [], "split": "train", "id": "h0338"}
+{"text": "Block released Goose so developers can automate refactors directly from the terminal.", "terms": ["Goose"], "neg": [], "split": "train", "id": "h0339"}
+{"text": "With Goose the coding agent plans, writes, and tests changes without leaving the shell.", "terms": ["Goose"], "neg": [], "split": "train", "id": "h0340"}
+{"text": "We wrote a custom Goose extension that connects the agent to our internal CI system.", "terms": ["Goose"], "neg": [], "split": "train", "id": "h0341"}
+{"text": "Because Goose is open source, teams can fork it and add their own terminal tools.", "terms": ["Goose"], "neg": [], "split": "train", "id": "h0342"}
+{"text": "The Goose coding agent picked the right files to modify after reading the stack trace.", "terms": ["Goose"], "neg": [], "split": "train", "id": "h0343"}
+{"text": "Running Goose locally kept all our source code on the developer's own machine.", "terms": ["Goose"], "neg": [], "split": "val", "id": "h0344"}
+{"text": "Block's Goose supports multiple model providers through a simple configuration file.", "terms": ["Goose"], "neg": [], "split": "train", "id": "h0345"}
+{"text": "A new Goose extension lets the agent query our database before generating migrations.", "terms": ["Goose"], "neg": [], "split": "train", "id": "h0346"}
+{"text": "Goose streamed each terminal command so we could approve the coding agent's plan step by step.", "terms": ["Goose"], "neg": [], "split": "train", "id": "h0347"}
+{"text": "The open source community contributed dozens of Goose extensions for the coding agent ecosystem.", "terms": ["Goose"], "neg": [], "split": "train", "id": "h0348"}
+{"text": "Mamba is a state space architecture that processes long sequences without quadratic attention.", "terms": ["Mamba"], "neg": [], "split": "train", "id": "h0349"}
+{"text": "We replaced the transformer block with Mamba to cut memory cost on very long sequences.", "terms": ["Mamba"], "neg": [], "split": "train", "id": "h0350"}
+{"text": "The Mamba architecture uses a selective state space model instead of softmax attention.", "terms": ["Mamba"], "neg": [], "split": "train", "id": "h0351"}
+{"text": "Benchmarks showed Mamba scaling linearly with sequence length where attention scaled quadratically.", "terms": ["Mamba"], "neg": [], "split": "val", "id": "h0352"}
+{"text": "Researchers combined Mamba layers with a few attention heads for a hybrid SSM design.", "terms": ["Mamba"], "neg": [], "split": "train", "id": "h0353"}
+{"text": "Because Mamba is an SSM, its hidden state compresses the entire past sequence efficiently.", "terms": ["Mamba"], "neg": [], "split": "val", "id": "h0354"}
+{"text": "Training a Mamba model on long documents avoided the attention memory blowup entirely.", "terms": ["Mamba"], "neg": [], "split": "train", "id": "h0355"}
+{"text": "The state space recurrence in Mamba lets inference run with constant memory per token.", "terms": ["Mamba"], "neg": [], "split": "train", "id": "h0356"}
+{"text": "Our ablation compared Mamba against a transformer baseline on sequence modeling tasks.", "terms": ["Mamba"], "neg": [], "split": "train", "id": "h0357"}
+{"text": "Mamba selectively gates which parts of the sequence flow into its state space.", "terms": ["Mamba"], "neg": [], "split": "train", "id": "h0358"}
+{"text": "Engineers ported the Mamba SSM kernel to run efficiently on the GPU.", "terms": ["Mamba"], "neg": [], "split": "train", "id": "h0359"}
+{"text": "The hybrid stacked Mamba blocks under a thin layer of attention for better recall.", "terms": ["Mamba"], "neg": [], "split": "train", "id": "h0360"}
+{"text": "Triton lets you write a custom GPU kernel in Python that compiles down to fast CUDA.", "terms": ["Triton"], "neg": [], "split": "train", "id": "h0361"}
+{"text": "We rewrote the attention kernel in Triton to squeeze more throughput from the GPU.", "terms": ["Triton"], "neg": [], "split": "train", "id": "h0362"}
+{"text": "The Triton compiler handles memory coalescing so the kernel runs near peak bandwidth.", "terms": ["Triton"], "neg": [], "split": "train", "id": "h0363"}
+{"text": "Porting the softmax to a Triton kernel beat the handwritten CUDA version on our GPU.", "terms": ["Triton"], "neg": [], "split": "train", "id": "h0364"}
+{"text": "Triton abstracts thread blocks, letting engineers focus on the GPU kernel's math.", "terms": ["Triton"], "neg": [], "split": "train", "id": "h0365"}
+{"text": "Our fused layernorm kernel in Triton avoided extra reads from GPU global memory.", "terms": ["Triton"], "neg": [], "split": "train", "id": "h0366"}
+{"text": "The team profiled the Triton kernel and tuned block sizes for the target GPU.", "terms": ["Triton"], "neg": [], "split": "val", "id": "h0367"}
+{"text": "Compared to raw CUDA, Triton cut the kernel development time dramatically.", "terms": ["Triton"], "neg": [], "split": "train", "id": "h0368"}
+{"text": "A single Triton kernel replaced three separate CUDA launches in the forward pass.", "terms": ["Triton"], "neg": [], "split": "train", "id": "h0369"}
+{"text": "Triton autotunes the kernel across configurations to find the fastest GPU schedule.", "terms": ["Triton"], "neg": [], "split": "train", "id": "h0370"}
+{"text": "We compiled the matmul with Triton and the GPU kernel matched cuBLAS performance.", "terms": ["Triton"], "neg": [], "split": "train", "id": "h0371"}
+{"text": "Debugging the Triton kernel was easier because the compiler exposed the generated PTX.", "terms": ["Triton"], "neg": [], "split": "val", "id": "h0372"}
+{"text": "Flux is a text-to-image diffusion model from Black Forest Labs known for sharp generation.", "terms": ["Flux"], "neg": [], "split": "train", "id": "h0373"}
+{"text": "We fine-tuned Flux on product photos to improve text-to-image generation for the catalog.", "terms": ["Flux"], "neg": [], "split": "train", "id": "h0374"}
+{"text": "Black Forest Labs released Flux, and its diffusion pipeline renders detailed images quickly.", "terms": ["Flux"], "neg": [], "split": "train", "id": "h0375"}
+{"text": "The Flux model handles long prompts well, producing coherent image generation from dense descriptions.", "terms": ["Flux"], "neg": [], "split": "train", "id": "h0376"}
+{"text": "Our pipeline calls Flux for the base diffusion step, then upscales the generated image.", "terms": ["Flux"], "neg": [], "split": "train", "id": "h0377"}
+{"text": "Compared to earlier diffusion models, Flux shows cleaner text rendering in generated images.", "terms": ["Flux"], "neg": [], "split": "train", "id": "h0378"}
+{"text": "Designers used Flux to draft concept art directly from a text-to-image prompt.", "terms": ["Flux"], "neg": [], "split": "val", "id": "h0379"}
+{"text": "The Flux diffusion weights load on a single GPU for fast local image generation.", "terms": ["Flux"], "neg": [], "split": "train", "id": "h0380"}
+{"text": "We compared Flux against another diffusion model on prompt adherence and image quality.", "terms": ["Flux"], "neg": [], "split": "train", "id": "h0381"}
+{"text": "Black Forest Labs trained Flux to follow compositional prompts during image generation.", "terms": ["Flux"], "neg": [], "split": "val", "id": "h0382"}
+{"text": "A LoRA fine-tune of Flux let the diffusion model match our brand's visual style.", "terms": ["Flux"], "neg": [], "split": "train", "id": "h0383"}
+{"text": "The text-to-image demo ran Flux at several steps to balance speed and generation quality.", "terms": ["Flux"], "neg": [], "split": "train", "id": "h0384"}
+{"text": "We host the fine-tuned model on Together AI and hit their inference endpoint from production.", "terms": ["Together"], "neg": [], "split": "train", "id": "h0385"}
+{"text": "Together AI gives us cheap GPU cloud inference for the 70B model we just shipped.", "terms": ["Together"], "neg": [], "split": "val", "id": "h0386"}
+{"text": "Switching to Together cut our inference latency because their endpoint pools requests across GPUs.", "terms": ["Together"], "neg": [], "split": "train", "id": "h0387"}
+{"text": "Our team decided to host embeddings on Together rather than spin up a private GPU cloud.", "terms": ["Together"], "neg": [], "split": "train", "id": "h0388"}
+{"text": "The Together AI endpoint streams tokens fast enough for a real-time chat assistant.", "terms": ["Together"], "neg": [], "split": "train", "id": "h0389"}
+{"text": "I benchmarked inference on Together against three other GPU cloud providers last week.", "terms": ["Together"], "neg": [], "split": "train", "id": "h0390"}
+{"text": "Together AI lets you fine-tune and host an open model without managing any GPU infrastructure.", "terms": ["Together"], "neg": [], "split": "val", "id": "h0391"}
+{"text": "Point the SDK at the Together inference endpoint and it just works for batch jobs.", "terms": ["Together"], "neg": [], "split": "train", "id": "h0392"}
+{"text": "We migrated the serving layer to Together because their GPU cloud scaled with our traffic.", "terms": ["Together"], "neg": [], "split": "train", "id": "h0393"}
+{"text": "Together AI charges per token, so our inference bill tracks usage on the hosted endpoint.", "terms": ["Together"], "neg": [], "split": "train", "id": "h0394"}
+{"text": "To host a quantized model with low cold starts, Together AI was the obvious endpoint choice.", "terms": ["Together"], "neg": [], "split": "train", "id": "h0395"}
+{"text": "Their docs show how to call the Together inference API and stream completions from the GPU cloud.", "terms": ["Together"], "neg": [], "split": "train", "id": "h0396"}
+{"text": "I prototyped the landing page in Bolt and deployed it straight from the app builder.", "terms": ["Bolt"], "neg": [], "split": "train", "id": "h0397"}
+{"text": "Bolt generated the whole React frontend from a single prompt inside StackBlitz.", "terms": ["Bolt"], "neg": [], "split": "train", "id": "h0398"}
+{"text": "With Bolt you describe the app in a prompt and it scaffolds and deploys it instantly.", "terms": ["Bolt"], "neg": [], "split": "train", "id": "h0399"}
+{"text": "Bolt runs on StackBlitz, so the app builder previews your code in the browser as it writes it.", "terms": ["Bolt"], "neg": [], "split": "train", "id": "h0400"}
+{"text": "I tweaked the prompt and Bolt regenerated the dashboard, then redeployed it in seconds.", "terms": ["Bolt"], "neg": [], "split": "train", "id": "h0401"}
+{"text": "Our designer used Bolt to spin up a working prototype before any engineer touched the repo.", "terms": ["Bolt"], "neg": [], "split": "train", "id": "h0402"}
+{"text": "The Bolt app builder wired up the database and auth from my plain-English prompt.", "terms": ["Bolt"], "neg": [], "split": "train", "id": "h0403"}
+{"text": "Compared to other no-code tools, Bolt deploys faster because StackBlitz runs everything client-side.", "terms": ["Bolt"], "neg": [], "split": "train", "id": "h0404"}
+{"text": "I asked Bolt to add Stripe checkout and it patched the app builder project without breaking the deploy.", "terms": ["Bolt"], "neg": [], "split": "train", "id": "h0405"}
+{"text": "Teams love Bolt for hackathons since one prompt gives a deployable full-stack app.", "terms": ["Bolt"], "neg": [], "split": "val", "id": "h0406"}
+{"text": "We iterate on the marketing site in Bolt, refining the prompt until the app builder nails the layout.", "terms": ["Bolt"], "neg": [], "split": "train", "id": "h0407"}
+{"text": "After exporting from Bolt, we pushed the StackBlitz project to GitHub and deployed on our own host.", "terms": ["Bolt"], "neg": [], "split": "val", "id": "h0408"}
+{"text": "We deploy the inference service on Modal because its serverless GPU containers scale to zero.", "terms": ["Modal"], "neg": [], "split": "train", "id": "h0409"}
+{"text": "Modal lets you wrap a Python function in a container and run it on serverless GPUs instantly.", "terms": ["Modal"], "neg": [], "split": "train", "id": "h0410"}
+{"text": "I moved the batch job to Modal so each GPU container spins up only when a request arrives.", "terms": ["Modal"], "neg": [], "split": "train", "id": "h0411"}
+{"text": "With Modal you decorate a Python function and deploy it as a serverless endpoint with one command.", "terms": ["Modal"], "neg": [], "split": "train", "id": "h0412"}
+{"text": "Modal handles the container image build and GPU scheduling, so we just write Python.", "terms": ["Modal"], "neg": [], "split": "train", "id": "h0413"}
+{"text": "Our nightly embedding pipeline runs on Modal, fanning out across dozens of serverless GPU workers.", "terms": ["Modal"], "neg": [], "split": "val", "id": "h0414"}
+{"text": "Cold starts on Modal are quick because it caches the container layers for your Python deploy.", "terms": ["Modal"], "neg": [], "split": "val", "id": "h0415"}
+{"text": "We deploy the whisper model to Modal and call the serverless GPU endpoint from our backend.", "terms": ["Modal"], "neg": [], "split": "train", "id": "h0416"}
+{"text": "Modal's Python SDK made it trivial to deploy a containerized training job on an A100.", "terms": ["Modal"], "neg": [], "split": "train", "id": "h0417"}
+{"text": "Instead of managing Kubernetes, we let Modal provision GPU containers from our Python code.", "terms": ["Modal"], "neg": [], "split": "train", "id": "h0418"}
+{"text": "The team prototyped on Modal first, since serverless GPUs meant no cluster to deploy or babysit.", "terms": ["Modal"], "neg": [], "split": "train", "id": "h0419"}
+{"text": "Modal scales our Python inference container up during traffic spikes and back down to zero overnight.", "terms": ["Modal"], "neg": [], "split": "train", "id": "h0420"}
+{"text": "I built the entire SaaS dashboard in Lovable by describing each screen in a prompt.", "terms": ["Lovable"], "neg": [], "split": "train", "id": "h0421"}
+{"text": "Lovable is a no-code app builder that generates a full-stack project from your prompt.", "terms": ["Lovable"], "neg": [], "split": "train", "id": "h0422"}
+{"text": "We used Lovable to ship a full-stack MVP, then deployed it without writing backend code.", "terms": ["Lovable"], "neg": [], "split": "val", "id": "h0423"}
+{"text": "Lovable wired up Supabase and auth automatically once I refined the prompt a couple of times.", "terms": ["Lovable"], "neg": [], "split": "val", "id": "h0424"}
+{"text": "Our non-technical founder built the admin panel in Lovable and deployed it the same afternoon.", "terms": ["Lovable"], "neg": [], "split": "train", "id": "h0425"}
+{"text": "Compared to other no-code tools, Lovable produces cleaner full-stack code you can export later.", "terms": ["Lovable"], "neg": [], "split": "train", "id": "h0426"}
+{"text": "I iterated on the prompt in Lovable until the app builder laid out the pricing page correctly.", "terms": ["Lovable"], "neg": [], "split": "train", "id": "h0427"}
+{"text": "Lovable lets you connect a database and deploy the full-stack app straight from the editor.", "terms": ["Lovable"], "neg": [], "split": "train", "id": "h0428"}
+{"text": "The marketing team prototyped a lead-capture flow in Lovable before handing it to engineering.", "terms": ["Lovable"], "neg": [], "split": "train", "id": "h0429"}
+{"text": "With Lovable, one prompt scaffolds the frontend, API, and database for a deployable app.", "terms": ["Lovable"], "neg": [], "split": "train", "id": "h0430"}
+{"text": "We chose Lovable over hand-coding because the no-code builder shipped a full-stack demo in hours.", "terms": ["Lovable"], "neg": [], "split": "train", "id": "h0431"}
+{"text": "Lovable regenerated the whole dashboard after I edited the prompt, then redeployed it cleanly.", "terms": ["Lovable"], "neg": [], "split": "train", "id": "h0432"}
+{"text": "Google's Antigravity is an agentic coding IDE where Gemini drives the editor and terminal.", "terms": ["Antigravity"], "neg": [], "split": "train", "id": "h0433"}
+{"text": "I let Antigravity run the agent across my repo while Gemini planned the refactor step by step.", "terms": ["Antigravity"], "neg": [], "split": "train", "id": "h0434"}
+{"text": "Antigravity ships with a CLI and SDK so you can script agentic coding tasks from the terminal.", "terms": ["Antigravity"], "neg": [], "split": "train", "id": "h0435"}
+{"text": "In Antigravity the Gemini agent opens files, edits code, and runs tests inside the IDE on its own.", "terms": ["Antigravity"], "neg": [], "split": "train", "id": "h0436"}
+{"text": "We evaluated Antigravity against other agentic coding tools for our internal Gemini workflows.", "terms": ["Antigravity"], "neg": [], "split": "train", "id": "h0437"}
+{"text": "Google released Antigravity as an IDE built around Gemini for end-to-end agentic coding.", "terms": ["Antigravity"], "neg": [], "split": "val", "id": "h0438"}
+{"text": "The Antigravity SDK lets you wire custom tools into the Gemini agent that drives the editor.", "terms": ["Antigravity"], "neg": [], "split": "val", "id": "h0439"}
+{"text": "Antigravity's CLI launched a background agent that fixed the failing build before I finished coffee.", "terms": ["Antigravity"], "neg": [], "split": "train", "id": "h0440"}
+{"text": "Using Antigravity, the Gemini agent navigated our monorepo and proposed a multi-file change.", "terms": ["Antigravity"], "neg": [], "split": "train", "id": "h0441"}
+{"text": "Our platform team is piloting Antigravity to see if agentic coding speeds up code review prep.", "terms": ["Antigravity"], "neg": [], "split": "train", "id": "h0442"}
+{"text": "Antigravity from Google treats the IDE as an agent surface, not just a place to type Gemini prompts.", "terms": ["Antigravity"], "neg": [], "split": "train", "id": "h0443"}
+{"text": "I scripted a nightly cleanup with the Antigravity CLI so the agent triages stale branches.", "terms": ["Antigravity"], "neg": [], "split": "train", "id": "h0444"}
+{"text": "OpenCode runs as a TUI right in your terminal, no browser tab needed.", "terms": ["OpenCode"], "neg": [], "split": "train", "id": "h0445"}
+{"text": "I wired OpenCode up to a local coding agent and let it edit files autonomously.", "terms": ["OpenCode"], "neg": [], "split": "train", "id": "h0446"}
+{"text": "The OpenCode CLI lets you swap models between requests without restarting.", "terms": ["OpenCode"], "neg": [], "split": "train", "id": "h0447"}
+{"text": "Our team standardized on OpenCode as the terminal coding agent for backend work.", "terms": ["OpenCode"], "neg": [], "split": "train", "id": "h0448"}
+{"text": "With OpenCode you can drive several models from one terminal session.", "terms": ["OpenCode"], "neg": [], "split": "train", "id": "h0449"}
+{"text": "OpenCode ships a sleek TUI that renders diffs inline as the agent works.", "terms": ["OpenCode"], "neg": [], "split": "train", "id": "h0450"}
+{"text": "I prefer OpenCode over the IDE plugin because the CLI feels faster.", "terms": ["OpenCode"], "neg": [], "split": "train", "id": "h0451"}
+{"text": "The coding agent in OpenCode streamed its reasoning straight into my terminal.", "terms": ["OpenCode"], "neg": [], "split": "val", "id": "h0452"}
+{"text": "Configuring OpenCode to use a cheaper model for routine edits saved tokens.", "terms": ["OpenCode"], "neg": [], "split": "train", "id": "h0453"}
+{"text": "OpenCode hooks into multiple model providers through one config file.", "terms": ["OpenCode"], "neg": [], "split": "train", "id": "h0454"}
+{"text": "Running OpenCode in a tmux pane gives me a persistent coding agent.", "terms": ["OpenCode"], "neg": [], "split": "val", "id": "h0455"}
+{"text": "The OpenCode TUI shows token usage per request at the bottom of the terminal.", "terms": ["OpenCode"], "neg": [], "split": "train", "id": "h0456"}
+{"text": "Stagehand sits on top of Playwright so you can act, extract, and observe pages.", "terms": ["Stagehand"], "neg": [], "split": "train", "id": "h0457"}
+{"text": "We use Stagehand with Browserbase to run browser automation in the cloud.", "terms": ["Stagehand"], "neg": [], "split": "train", "id": "h0458"}
+{"text": "Stagehand lets an agent observe the DOM and then act on the right element.", "terms": ["Stagehand"], "neg": [], "split": "train", "id": "h0459"}
+{"text": "With Stagehand you call extract to pull structured data from messy pages.", "terms": ["Stagehand"], "neg": [], "split": "train", "id": "h0460"}
+{"text": "The browser automation flow in Stagehand falls back to Playwright selectors when needed.", "terms": ["Stagehand"], "neg": [], "split": "train", "id": "h0461"}
+{"text": "Stagehand made it trivial to act on a button without writing a brittle selector.", "terms": ["Stagehand"], "neg": [], "split": "train", "id": "h0462"}
+{"text": "Running Stagehand on Browserbase scaled our scraping to hundreds of sessions.", "terms": ["Stagehand"], "neg": [], "split": "val", "id": "h0463"}
+{"text": "I let Stagehand observe the checkout page before deciding which field to fill.", "terms": ["Stagehand"], "neg": [], "split": "train", "id": "h0464"}
+{"text": "Stagehand wraps Playwright with natural-language act and extract calls.", "terms": ["Stagehand"], "neg": [], "split": "train", "id": "h0465"}
+{"text": "Our browser automation pipeline uses Stagehand to extract prices from listings.", "terms": ["Stagehand"], "neg": [], "split": "train", "id": "h0466"}
+{"text": "Stagehand can observe, then act, then extract in a single agent loop.", "terms": ["Stagehand"], "neg": [], "split": "train", "id": "h0467"}
+{"text": "We debugged a flaky test by having Stagehand observe the page state first.", "terms": ["Stagehand"], "neg": [], "split": "val", "id": "h0468"}
+{"text": "Comet is Perplexity's browser, built on Chromium with an assistant baked in.", "terms": ["Comet"], "neg": [], "split": "train", "id": "h0469"}
+{"text": "I let the Comet assistant summarize all my open tabs at once.", "terms": ["Comet"], "neg": [], "split": "train", "id": "h0470"}
+{"text": "Perplexity shipped Comet so the assistant can act inside the browser itself.", "terms": ["Comet"], "neg": [], "split": "train", "id": "h0471"}
+{"text": "Comet groups noisy tabs and lets the assistant answer across them.", "terms": ["Comet"], "neg": [], "split": "val", "id": "h0472"}
+{"text": "Because Comet is Chromium-based, my old extensions installed without issue.", "terms": ["Comet"], "neg": [], "split": "train", "id": "h0473"}
+{"text": "The assistant in Comet read my open tabs and drafted a reply for me.", "terms": ["Comet"], "neg": [], "split": "train", "id": "h0474"}
+{"text": "I switched to Comet because its browser assistant handles research tabs well.", "terms": ["Comet"], "neg": [], "split": "train", "id": "h0475"}
+{"text": "Perplexity's Comet can navigate the browser and click links on your behalf.", "terms": ["Comet"], "neg": [], "split": "val", "id": "h0476"}
+{"text": "With Comet, the assistant condenses a dozen tabs into one short summary.", "terms": ["Comet"], "neg": [], "split": "train", "id": "h0477"}
+{"text": "Comet keeps the Chromium feel while adding an agentic assistant sidebar.", "terms": ["Comet"], "neg": [], "split": "train", "id": "h0478"}
+{"text": "I asked Comet to close duplicate tabs and the assistant did it instantly.", "terms": ["Comet"], "neg": [], "split": "train", "id": "h0479"}
+{"text": "Perplexity positions Comet as a browser where the assistant does the busywork.", "terms": ["Comet"], "neg": [], "split": "train", "id": "h0480"}
+{"text": "Kilo Code is a VS Code extension for agentic coding with MCP support.", "terms": ["Kilo Code"], "neg": [], "split": "train", "id": "h0481"}
+{"text": "I installed Kilo Code in VS Code to get an agentic pair programmer.", "terms": ["Kilo Code"], "neg": [], "split": "train", "id": "h0482"}
+{"text": "Kilo Code forked from Roo and added its own MCP server integrations.", "terms": ["Kilo Code"], "neg": [], "split": "train", "id": "h0483"}
+{"text": "You can run Kilo Code from the CLI or as the VS Code extension.", "terms": ["Kilo Code"], "neg": [], "split": "train", "id": "h0484"}
+{"text": "We connected Kilo Code to an MCP server so it could query our database.", "terms": ["Kilo Code"], "neg": [], "split": "val", "id": "h0485"}
+{"text": "Kilo Code handles agentic coding tasks across an entire repo inside VS Code.", "terms": ["Kilo Code"], "neg": [], "split": "train", "id": "h0486"}
+{"text": "The Roo lineage shows in how Kilo Code structures its agent modes.", "terms": ["Kilo Code"], "neg": [], "split": "train", "id": "h0487"}
+{"text": "Kilo Code's CLI lets me run the agent in headless mode for scripts.", "terms": ["Kilo Code"], "neg": [], "split": "train", "id": "h0488"}
+{"text": "Adding an MCP tool to Kilo Code took just a few lines of config.", "terms": ["Kilo Code"], "neg": [], "split": "val", "id": "h0489"}
+{"text": "Kilo Code, like Roo, exposes orchestrator and code modes for agentic work.", "terms": ["Kilo Code"], "neg": [], "split": "train", "id": "h0490"}
+{"text": "The VS Code extension Kilo Code streams diffs as the agent edits files.", "terms": ["Kilo Code"], "neg": [], "split": "train", "id": "h0491"}
+{"text": "I benchmarked Kilo Code against the Roo extension on a refactoring task.", "terms": ["Kilo Code"], "neg": [], "split": "train", "id": "h0492"}
+{"text": "Claude Fable 5 is Anthropic's latest model in the Mythos release line.", "terms": ["Claude Fable 5"], "neg": [], "split": "train", "id": "h0493"}
+{"text": "We upgraded our agent to Claude Fable 5 right after Anthropic announced it.", "terms": ["Claude Fable 5"], "neg": [], "split": "val", "id": "h0494"}
+{"text": "Claude Fable 5 joined the Mythos family alongside the other Claude models.", "terms": ["Claude Fable 5"], "neg": [], "split": "train", "id": "h0495"}
+{"text": "Benchmarks show Claude Fable 5 outperforming the previous Anthropic model on coding.", "terms": ["Claude Fable 5"], "neg": [], "split": "train", "id": "h0496"}
+{"text": "The Mythos release introduced Claude Fable 5 as a faster Claude variant.", "terms": ["Claude Fable 5"], "neg": [], "split": "train", "id": "h0497"}
+{"text": "Our pipeline routes long-context jobs to Claude Fable 5 from Anthropic.", "terms": ["Claude Fable 5"], "neg": [], "split": "train", "id": "h0498"}
+{"text": "Anthropic positioned Claude Fable 5 as the mid-tier model in the Mythos lineup.", "terms": ["Claude Fable 5"], "neg": [], "split": "train", "id": "h0499"}
+{"text": "I switched the assistant to Claude Fable 5 to test the new Claude reasoning.", "terms": ["Claude Fable 5"], "neg": [], "split": "train", "id": "h0500"}
+{"text": "Claude Fable 5 handled our tool-calling workload better than the older model.", "terms": ["Claude Fable 5"], "neg": [], "split": "train", "id": "h0501"}
+{"text": "After the Mythos release, Claude Fable 5 became our default Anthropic model.", "terms": ["Claude Fable 5"], "neg": [], "split": "train", "id": "h0502"}
+{"text": "Documentation lists Claude Fable 5 among the Claude models that support caching.", "terms": ["Claude Fable 5"], "neg": [], "split": "train", "id": "h0503"}
+{"text": "We fine-tuned prompts specifically for Claude Fable 5 after the Anthropic launch.", "terms": ["Claude Fable 5"], "neg": [], "split": "val", "id": "h0504"}
+{"text": "She tied one end of the rope to the fence and the other to the canoe.", "terms": [], "neg": ["RoPE"], "split": "train", "id": "h0505"}
+{"text": "The climbers checked their rope twice before starting up the steep granite face.", "terms": [], "neg": ["RoPE"], "split": "val", "id": "h0506"}
+{"text": "He coiled the old rope and tossed it into the back of the truck.", "terms": [], "neg": ["RoPE"], "split": "train", "id": "h0507"}
+{"text": "A frayed rope snapped while they were hauling the bucket up from the well.", "terms": [], "neg": ["RoPE"], "split": "train", "id": "h0508"}
+{"text": "Kids took turns jumping the rope in the schoolyard until the bell rang.", "terms": [], "neg": ["RoPE"], "split": "val", "id": "h0509"}
+{"text": "It took me a while to grok how the new tax rules affect freelancers.", "terms": [], "neg": ["Grok"], "split": "val", "id": "h0510"}
+{"text": "Once you grok the rhythm of the dance, the steps feel completely natural.", "terms": [], "neg": ["Grok"], "split": "train", "id": "h0511"}
+{"text": "The hikers scrambled over a huge rock that blocked the narrow mountain trail.", "terms": [], "neg": ["Grok"], "split": "train", "id": "h0512"}
+{"text": "She finally began to grok why her grandmother insisted on saving every glass jar.", "terms": [], "neg": ["Grok"], "split": "train", "id": "h0513"}
+{"text": "A loose rock tumbled down the slope and splashed into the river below.", "terms": [], "neg": ["Grok"], "split": "val", "id": "h0514"}
+{"text": "A grey goose waddled across the road and held up traffic for a minute.", "terms": [], "neg": ["Goose"], "split": "train", "id": "h0515"}
+{"text": "The farmer chased the angry goose away from the vegetable patch every morning.", "terms": [], "neg": ["Goose"], "split": "train", "id": "h0516"}
+{"text": "We watched a goose lead its goslings toward the pond at dawn.", "terms": [], "neg": ["Goose"], "split": "val", "id": "h0517"}
+{"text": "Roasting the goose for the holiday dinner took most of the afternoon.", "terms": [], "neg": ["Goose"], "split": "val", "id": "h0518"}
+{"text": "A startled goose honked loudly and flapped its wings near the lake shore.", "terms": [], "neg": ["Goose"], "split": "train", "id": "h0519"}
+{"text": "A black mamba slid through the dry grass and disappeared behind the rocks.", "terms": [], "neg": ["Mamba"], "split": "val", "id": "h0520"}
+{"text": "The zookeeper warned us that a mamba can strike faster than almost any snake.", "terms": [], "neg": ["Mamba"], "split": "train", "id": "h0521"}
+{"text": "Locals avoid the riverbank at dusk because a mamba was spotted there last week.", "terms": [], "neg": ["Mamba"], "split": "train", "id": "h0522"}
+{"text": "He froze when a green mamba coiled itself around the low branch above him.", "terms": [], "neg": ["Mamba"], "split": "train", "id": "h0523"}
+{"text": "The documentary followed a mamba hunting through the savanna during the dry season.", "terms": [], "neg": ["Mamba"], "split": "val", "id": "h0524"}
+{"text": "The whole department is in a state of flux while the new managers settle in.", "terms": [], "neg": ["Flux"], "split": "train", "id": "h0525"}
+{"text": "Plans for the wedding remained in flux until the venue finally confirmed the date.", "terms": [], "neg": ["Flux"], "split": "train", "id": "h0526"}
+{"text": "He applied a dab of flux to the joint before touching it with the soldering iron.", "terms": [], "neg": ["Flux"], "split": "val", "id": "h0527"}
+{"text": "Their travel itinerary was in constant flux because of the unpredictable weather.", "terms": [], "neg": ["Flux"], "split": "train", "id": "h0528"}
+{"text": "The market stayed in flux all week as traders waited for the interest rate decision.", "terms": [], "neg": ["Flux"], "split": "val", "id": "h0529"}
+{"text": "The whole family showed up together for dinner on Sunday afternoon.", "terms": [], "neg": ["Together"], "split": "val", "id": "h0530"}
+{"text": "Let's work together on the garden fence this weekend if the weather holds.", "terms": [], "neg": ["Together"], "split": "train", "id": "h0531"}
+{"text": "They glued the broken pieces of the vase back together with steady hands.", "terms": [], "neg": ["Together"], "split": "train", "id": "h0532"}
+{"text": "The hikers stayed close together as the fog rolled across the trail.", "terms": [], "neg": ["Together"], "split": "train", "id": "h0533"}
+{"text": "We sang together around the campfire until the embers finally died down.", "terms": [], "neg": ["Together"], "split": "val", "id": "h0534"}
+{"text": "He tightened every bolt on the bike frame before the long ride downhill.", "terms": [], "neg": ["Bolt"], "split": "val", "id": "h0535"}
+{"text": "The startled deer made a bolt for the treeline the moment we appeared.", "terms": [], "neg": ["Bolt"], "split": "train", "id": "h0536"}
+{"text": "A sudden bolt of lightning lit up the whole valley during the storm.", "terms": [], "neg": ["Bolt"], "split": "val", "id": "h0537"}
+{"text": "She slid the bolt across the door and double-checked the lock before bed.", "terms": [], "neg": ["Bolt"], "split": "train", "id": "h0538"}
+{"text": "The carpenter dropped a bolt and spent ten minutes searching the sawdust for it.", "terms": [], "neg": ["Bolt"], "split": "train", "id": "h0539"}
+{"text": "A small modal popped up asking the user to confirm before deleting the file.", "terms": [], "neg": ["Modal"], "split": "val", "id": "h0540"}
+{"text": "The grammar lesson covered modal verbs like can, should, and might in English.", "terms": [], "neg": ["Modal"], "split": "val", "id": "h0541"}
+{"text": "Clicking outside the modal should dismiss it, but on mobile it stayed stubbornly open.", "terms": [], "neg": ["Modal"], "split": "train", "id": "h0542"}
+{"text": "Designers argued whether a modal or a side panel was friendlier for the checkout flow.", "terms": [], "neg": ["Modal"], "split": "train", "id": "h0543"}
+{"text": "She closed the modal dialog and went back to scrolling through her photo gallery.", "terms": [], "neg": ["Modal"], "split": "train", "id": "h0544"}
+{"text": "The puppy was so lovable that the whole shelter staff fought over who got to feed it.", "terms": [], "neg": ["Lovable"], "split": "train", "id": "h0545"}
+{"text": "Her grandmother had a lovable habit of saving every birthday card she ever received.", "terms": [], "neg": ["Lovable"], "split": "val", "id": "h0546"}
+{"text": "The film's hero is clumsy but lovable, which is why audiences forgive his mistakes.", "terms": [], "neg": ["Lovable"], "split": "train", "id": "h0547"}
+{"text": "Despite his grumpy exterior, the old shopkeeper turned out to be quite lovable.", "terms": [], "neg": ["Lovable"], "split": "train", "id": "h0548"}
+{"text": "They adopted a scruffy, lovable mutt that follows them everywhere around the farm.", "terms": [], "neg": ["Lovable"], "split": "val", "id": "h0549"}
+{"text": "The science museum had an exhibit explaining why true antigravity remains pure science fiction.", "terms": [], "neg": ["Antigravity"], "split": "train", "id": "h0550"}
+{"text": "His physics paper dismissed antigravity as incompatible with general relativity.", "terms": [], "neg": ["Antigravity"], "split": "train", "id": "h0551"}
+{"text": "The comic's villain built an antigravity belt that let him float above the city.", "terms": [], "neg": ["Antigravity"], "split": "train", "id": "h0552"}
+{"text": "Kids love the antigravity ride that makes them feel weightless for a few seconds.", "terms": [], "neg": ["Antigravity"], "split": "val", "id": "h0553"}
+{"text": "Researchers joked about antigravity over lunch, knowing no propulsion lab takes it seriously.", "terms": [], "neg": ["Antigravity"], "split": "val", "id": "h0554"}
+{"text": "She decided to open code review early so everyone could comment before lunch.", "terms": [], "neg": ["OpenCode"], "split": "train", "id": "h0555"}
+{"text": "We rely on open-source code for most of our internal tooling these days.", "terms": [], "neg": ["OpenCode"], "split": "train", "id": "h0556"}
+{"text": "They keep the open code of conduct posted near the workshop door.", "terms": [], "neg": ["OpenCode"], "split": "val", "id": "h0557"}
+{"text": "Please open code editor before the meeting so we can walk through it together.", "terms": [], "neg": ["OpenCode"], "split": "val", "id": "h0558"}
+{"text": "Many libraries use open-source code that anyone can read and modify freely.", "terms": [], "neg": ["OpenCode"], "split": "train", "id": "h0559"}
+{"text": "The stagehand quietly moved the props between scenes while the lights were down.", "terms": [], "neg": ["Stagehand"], "split": "train", "id": "h0560"}
+{"text": "Backstage, a stagehand handed the actor a lantern just before her entrance.", "terms": [], "neg": ["Stagehand"], "split": "train", "id": "h0561"}
+{"text": "Every stagehand wore black so the audience wouldn't notice them during the change.", "terms": [], "neg": ["Stagehand"], "split": "val", "id": "h0562"}
+{"text": "As a stagehand in college, I learned how to rig curtains and hang lights.", "terms": [], "neg": ["Stagehand"], "split": "train", "id": "h0563"}
+{"text": "The union stagehand was paid extra for the late-night set teardown.", "terms": [], "neg": ["Stagehand"], "split": "val", "id": "h0564"}
+{"text": "Last night we watched a comet streak across the sky over the desert.", "terms": [], "neg": ["Comet"], "split": "val", "id": "h0565"}
+{"text": "Astronomers tracked the comet for months as it neared the sun.", "terms": [], "neg": ["Comet"], "split": "val", "id": "h0566"}
+{"text": "The bright comet won't be visible again from Earth for seventy years.", "terms": [], "neg": ["Comet"], "split": "train", "id": "h0567"}
+{"text": "Kids gathered on the hill hoping to spot the comet through a telescope.", "terms": [], "neg": ["Comet"], "split": "train", "id": "h0568"}
+{"text": "A passing comet left a faint tail glowing against the dark horizon.", "terms": [], "neg": ["Comet"], "split": "train", "id": "h0569"}
+{"text": "The recipe calls for a kilo of flour and half a kilo of sugar.", "terms": [], "neg": ["Kilo Code"], "split": "val", "id": "h0570"}
+{"text": "At the market I bought a kilo of ripe tomatoes for the sauce.", "terms": [], "neg": ["Kilo Code"], "split": "train", "id": "h0571"}
+{"text": "She weighed out a kilo of rice before packing it for the trip.", "terms": [], "neg": ["Kilo Code"], "split": "val", "id": "h0572"}
+{"text": "The shipping label said the parcel was just over a kilo in weight.", "terms": [], "neg": ["Kilo Code"], "split": "train", "id": "h0573"}
+{"text": "We split a kilo of cherries between the four of us at the picnic.", "terms": [], "neg": ["Kilo Code"], "split": "train", "id": "h0574"}
+{"text": "Grandpa told a fable about a tortoise and a hare before we slept.", "terms": [], "neg": ["Claude Fable 5"], "split": "train", "id": "h0575"}
+{"text": "The old fable teaches that slow and steady can still win the race.", "terms": [], "neg": ["Claude Fable 5"], "split": "train", "id": "h0576"}
+{"text": "Each fable in the book ends with a tidy little moral lesson.", "terms": [], "neg": ["Claude Fable 5"], "split": "val", "id": "h0577"}
+{"text": "Teachers love that fable because it warns children against telling lies.", "terms": [], "neg": ["Claude Fable 5"], "split": "train", "id": "h0578"}
+{"text": "We read a classic fable about an ant who saved food for winter.", "terms": [], "neg": ["Claude Fable 5"], "split": "val", "id": "h0579"}

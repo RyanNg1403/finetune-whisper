@@ -17,8 +17,8 @@ terms:
   # ============================================================
   - canonical: "Qwen"
     category: model
-    spoken: "chwen"            # provisional; espeak says "kwen" letters otherwise
-    alts: ["qn3", "queen", "quinn", "when", "gwen", "q when"]
+    spoken: "kwen"             # /kwɛn/, rhymes with "when" (Alibaba tech report + common usage); official site says "chwen" but kwen is what's heard
+    alts: ["qn3", "queen", "quinn", "when", "gwen", "q when", "chwen"]
   - canonical: "DeepSeek"
     category: model
     alts: ["deep seek", "deep seq", "deep-seek are one", "deepseq"]
@@ -83,8 +83,8 @@ terms:
     alts: ["g l m", "gee el em", "glm"]
   - canonical: "Cerebras"
     category: lab               # wafer-scale inference chip (2026 IPO)
-    spoken: "se-reb-ras"
-    alts: ["cerebros", "cerebris", "cerberus", "sara bras"]
+    spoken: "suh-ree-bruhs"     # /səˈriːbrəs/ (suh-REE-bruhs), user-confirmed
+    alts: ["cerebros", "cerebris", "cerberus", "sara bras", "se reb ras"]
   - canonical: "GRPO"
     category: method            # group relative policy optimization
     spoken: "G R P O"
@@ -171,10 +171,10 @@ terms:
     alts: ["bolt", "bold", "boltt"]
   - canonical: "Modal"
     category: tool              # serverless GPU platform — KEEP (hot: $4.65B, May 2026; best homophone vs "model")
-    spoken: "moh-dal"
+    spoken: "modal"            # the company IS the word: /ˈmoʊdəl/ (MOH-duhl); prior "moh-dal" wrongly forced /moʊdæl/
     anchors: ["serverless", "GPU", "deploy", "container", "Python"]
     everyday: "modal (dialog / modal verb) / model"
-    alts: ["model", "modal", "module", "noodle"]
+    alts: ["model", "modal", "module", "noodle", "moh dal"]
   - canonical: "Lovable"
     category: product           # vibe-coding app builder (category leader, $6.6B)
     anchors: ["app builder", "prompt", "full-stack", "deploy", "no-code"]
