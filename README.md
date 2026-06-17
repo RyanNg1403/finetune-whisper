@@ -45,16 +45,20 @@ on Google Drive — too large for git, fully reproducible from the synth + train
 
 **Drive folder:** https://drive.google.com/drive/folders/1SjRzRAguKup-FInrpSE5XVxAp_kt8ScS
 
-It holds `data/` and `checkpoints/`. In the Drive UI, select both and click **Download** (Drive
-zips them), then extract into the repo root so you end up with `data/audio/` and `checkpoints/`.
-With the checkpoints in place the web-app demo and the finetuned eval run immediately — no retraining.
-
-Or via CLI (best-effort; for the large `audio/` folder the Drive "Download as zip" above is more reliable):
+It holds two archives — the audio dataset and the trained checkpoints. Fetch + extract both:
 
 ```bash
-bash scripts/download_audio.sh    # gdown --folder on the link above
+bash scripts/download_audio.sh        # → data/audio/ and checkpoints/
 ```
 
+Or download the two files from the folder manually and extract:
+
+```bash
+tar xzf whisper-aidev-audio.tar.gz       -C data    # → data/audio/
+tar xzf whisper-aidev-checkpoints.tar.gz            # → checkpoints/
+```
+
+With the checkpoints in place the web-app demo and finetuned eval run immediately — no retraining.
 Or synthesize the audio yourself (see **Run** below) — needs `espeak-ng` for Kokoro and an OpenAI
 key for the paid 1/3.
 
