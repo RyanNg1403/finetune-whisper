@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Whisper · A/B</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <main class="stage">
+    <header class="masthead">
+      <div class="brand">
+        <span class="kicker">on-device transcription trial</span>
+        <h1>Whisper <em>A / B</em></h1>
+        <p class="lede">Speak an AI-software sentence. Hear how stock <code>base.en</code> and your
+          finetune spell the vocabulary &mdash; side by side.</p>
+      </div>
+      <div class="status">
+        <span class="dot" id="deviceDot"></span>
+        <span id="deviceLabel">connecting&hellip;</span>
+      </div>
+    </header>
+
+    <section class="console">
+      <button id="recBtn" class="rec" aria-pressed="false">
+        <span class="rec-ring"></span>
+        <span class="rec-core"></span>
+        <span class="rec-label">hold&nbsp;/&nbsp;tap to speak</span>
+      </button>
+
+      <div class="scope">
+        <canvas id="wave" width="900" height="120"></canvas>
+        <div class="scope-meta">
+          <span id="timer">00:00</span>
+          <span id="hint">idle</span>
+        </div>
+      </div>
+
+      <label class="ckpt">
+        <span>finetune checkpoint</span>
+        <select id="ckptSel"><option>loading&hellip;</option></select>
+      </label>
+    </section>
+
+    <section class="panels">
+      <article class="panel" id="panel-base">
+        <div class="panel-top">
+          <h2>Baseline <span class="tag">stock&nbsp;base.en</span></h2>
+          <div class="metrics"><span class="hits" id="hits-base">&mdash;</span><span class="ms" id="ms-base"></span></div>
+        </div>
+        <div class="transcript" id="text-base"><span class="placeholder">awaiting audio&hellip;</span></div>
+        <div class="missed" id="missed-base"></div>
+      </article>
+
+      <div class="versus">vs</div>
+
+      <article class="panel hot" id="panel-ft">
+        <div class="panel-top">
+          <h2>Finetuned <span class="tag" id="ft-tag">&mdash;</span></h2>
+          <div class="metrics"><span class="hits" id="hits-ft">&mdash;</span><span class="ms" id="ms-ft"></span></div>
+        </div>
+        <div class="transcript" id="text-ft"><span class="placeholder">awaiting audio&hellip;</span></div>
+        <div class="missed" id="missed-ft"></div>
+      </article>
+    </section>
+
+    <footer class="tryline">
+      <span class="tl-label">try saying</span>
+      <span class="chips" id="tryChips"></span>
+    </footer>
+  </main>
+  <script src="/static/app.js"></script>
+</body>
+</html>
