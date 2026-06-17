@@ -38,19 +38,25 @@ homophones).*
 - **Training** — HuggingFace `Seq2SeqTrainer`, full finetune, fp32 on Apple-Silicon MPS.
 - **Eval** — WER (jiwer) plus a strict per-term recall metric (`src/metrics.py`).
 
-## Audio dataset (Google Drive)
+## Dataset + checkpoints (Google Drive)
 
-The ~1.2 GB of pre-synthesized speech (`data/audio/`) is hosted on Google Drive — too large
-for git, fully reproducible from the synth scripts.
+The ~1.2 GB of pre-synthesized speech (`data/audio/`) and the trained `checkpoints/` are hosted
+on Google Drive — too large for git, fully reproducible from the synth + train scripts.
 
-**Download:** `PASTE_GOOGLE_DRIVE_SHARE_LINK_HERE`
+**Drive folder:** https://drive.google.com/drive/folders/1SjRzRAguKup-FInrpSE5XVxAp_kt8ScS
+
+It holds `data/` and `checkpoints/`. In the Drive UI, select both and click **Download** (Drive
+zips them), then extract into the repo root so you end up with `data/audio/` and `checkpoints/`.
+With the checkpoints in place the web-app demo and the finetuned eval run immediately — no retraining.
+
+Or via CLI (best-effort; for the large `audio/` folder the Drive "Download as zip" above is more reliable):
 
 ```bash
-bash scripts/download_audio.sh "PASTE_GOOGLE_DRIVE_SHARE_LINK_HERE"   # → data/audio/
+bash scripts/download_audio.sh    # gdown --folder on the link above
 ```
 
-Or synthesize it yourself (see **Run** below) — needs `espeak-ng` for Kokoro and an OpenAI key
-for the paid 1/3.
+Or synthesize the audio yourself (see **Run** below) — needs `espeak-ng` for Kokoro and an OpenAI
+key for the paid 1/3.
 
 ## Try it — voice A/B demo
 
@@ -61,8 +67,9 @@ vs your finetuned checkpoint side-by-side, with domain terms highlighted and a p
 PYTHONPATH=. python -m webapp.server      # → http://127.0.0.1:8765
 ```
 
-It lists every checkpoint under `checkpoints/`, so train a model first (`python -m src.train`)
-or drop a checkpoint there. (No new dependencies — stdlib HTTP server + the project's stack.)
+It lists every checkpoint under `checkpoints/` — download them from the Drive folder above (or
+train your own with `python -m src.train`). The dropdown's `finetuned · epoch 2` entry is the
+shipped model. (No new dependencies — stdlib HTTP server + the project's stack.)
 
 ## Layout
 

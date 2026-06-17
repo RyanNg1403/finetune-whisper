@@ -55,38 +55,34 @@ def boot():
     print(f"[ready] device={DEVICE}  terms={len(_terms.canonicals)}")
 
 
-# Friendly aliases for the two checkpoints worth picking. `final/` is hidden from the UI
-# because it is a byte-identical copy of best_wer (epoch 2) and only caused confusion.
+# Friendly alias for the recommended checkpoint. `final/` is hidden from the UI because it
+# is a byte-identical copy of the epoch-2 model and only caused confusion. All four epoch
+# checkpoints land ~98.2-98.8% strict recall, so there's no meaningful pick beyond epoch 2
+# (lowest WER, the shipped model); the rest are listed raw for comparison.
 NAMED = {
-    1072: ("best_wer", "epoch 2 · WER 1.61% (lowest val WER)", 0),
-    1608: ("best_strict_recall", "epoch 3 · strict recall 93.20% (highest)", 1),
+    1072: ("finetuned", "epoch 2 · shipped model", 0),
 }
 
 
 def list_checkpoints():
-    """Weight dirs under checkpoints/ (+ the archived prior-run dir). The two best
-    checkpoints get named aliases and sort first; `final/` is excluded."""
+    """Weight dirs under checkpoints/. The recommended checkpoint gets a named alias and
+    sorts first; `final/` is excluded (it duplicates the epoch-2 model)."""
     out = []
-    roots = [config.CHECKPOINTS, config.CHECKPOINTS.parent / "checkpoints_prior_50term"]
-    for root in roots:
-        if not root.exists():
-            continue
-        for d in sorted(root.glob("checkpoint-*")):     # note: no glob("final") — hidden by design
+    root = config.CHECKPOINTS
+    if root.exists():
+        for d in sorted(root.glob("checkpoint-*")):     # no glob("final") — hidden by design
             if not (d / "model.safetensors").exists():
                 continue
             m = re.search(r"checkpoint-(\d+)", d.name)
             step = int(m.group(1)) if m else 0
-            prior = root.name.endswith("prior_50term")
-            if step in NAMED and not prior:
+            if step in NAMED:
                 alias, desc, rank = NAMED[step]
                 label = f"{alias}  ·  {desc}"
             else:
                 label = d.name + (f"  (epoch ~{step/536:.2f})" if step else "")
-                if prior:
-                    label += "  [prior 50-term run]"
                 rank = 2
-            out.append({"name": str(d), "label": label, "step": step, "prior": prior, "rank": rank})
-    out.sort(key=lambda x: (x["prior"], x["rank"], -x["step"]))
+            out.append({"name": str(d), "label": label, "step": step, "rank": rank})
+    out.sort(key=lambda x: (x["rank"], -x["step"]))
     return out
 
 
