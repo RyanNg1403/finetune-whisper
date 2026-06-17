@@ -21,6 +21,10 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--split", choices=["train", "val"], required=True)
     ap.add_argument("--limit", type=int, default=None)
+    ap.add_argument("--append", action="store_true",
+                    help="skip sentences already in the manifest and append (don't truncate existing audio)")
+    ap.add_argument("--per-sentence", type=int, default=None,
+                    help="override renditions per sentence (e.g. to match the existing density)")
     # Kokoro is deterministic + pronunciation is controlled via spoken-form and validated by
     # the one-time per-term audit, so per-clip QC is OFF by default (the QC judge can't read
     # our domain jargon and would false-drop good audio). Opt in with --qc to re-enable.
@@ -34,25 +38,33 @@ def main():
     ref = get_reference(config.QC_MODEL) if args.qc else None
 
     full = [r for r in load_corpus() if r["split"] == args.split]
-    n_full = len(full)
-    corpus = full[:args.limit] if args.limit else full
 
     if args.split == "train":
         out_dir, voices, speeds = config.TRAIN_DIR, config.KOKORO_TRAIN_VOICES, config.KOKORO_SPEEDS
-        per_sentence = max(1, round(config.ENGINE_RATIO[0] * config.TARGET_TRAIN_CLIPS / n_full))
+        default_ps = max(1, round(config.ENGINE_RATIO[0] * config.TARGET_TRAIN_CLIPS / len(full)))
     else:
         out_dir, voices, speeds = config.VAL_CLEAN_DIR, config.KOKORO_VAL_VOICES, [1.0]
-        per_sentence = 1
+        default_ps = 1
+    per_sentence = args.per_sentence or default_ps
+
+    out_dir.mkdir(parents=True, exist_ok=True)
+    manifest = out_dir / "manifest_kokoro.jsonl"
+    done_texts = set()
+    if args.append and manifest.exists():
+        done_texts = {json.loads(l)["text"] for l in open(manifest) if l.strip()}
+    corpus = [r for r in full if r["text"] not in done_texts]
+    if args.limit:
+        corpus = corpus[:args.limit]
+    print(f"kokoro {args.split}: {len(corpus)} new sentences x{per_sentence} "
+          f"(skipped {len(full) - len(corpus)} already synthesized)")
 
     def synth(text, voice, speed):
         s, sr = kok.create(text, voice=voice, speed=speed, lang="en-us")
         return librosa.resample(np.asarray(s, np.float32), orig_sr=sr, target_sr=config.SAMPLE_RATE)
 
-    out_dir.mkdir(parents=True, exist_ok=True)
-    manifest = out_dir / "manifest_kokoro.jsonl"
     n = 0
     dropped = []
-    with open(manifest, "w") as mf:
+    with open(manifest, "a" if args.append else "w") as mf:
         for row in corpus:
             spoken_text = to_spoken(row["text"], ts)   # TTS hears 'rag'; transcript stays 'RAG'
             for j in range(per_sentence):
