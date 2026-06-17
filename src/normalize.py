@@ -34,11 +34,11 @@ def english_normalize(text: str) -> str:
 
 
 def load_terms(path=None) -> TermSet:
-    """Load + merge term files. Default = official `terms.yaml` + `terms_hard.yaml` combined.
+    """Load the term set. Default = the single combined `terms.yaml` (official + hard, 92 terms).
     Group B homophones (terms with an `everyday` field) are deliberately kept OUT of the
     alt-map: they're scored case-sensitively (see `cased_count`) so the everyday word never
     collapses into the canonical (e.g. 'model' must not become 'Modal')."""
-    paths = path if isinstance(path, (list, tuple)) else ([path] if path else config.TERMS_PATHS)
+    paths = path if isinstance(path, (list, tuple)) else ([path] if path else [config.TERMS_PATH])
     terms = []
     for p in paths:
         terms.extend(yaml.safe_load(open(p))["terms"])

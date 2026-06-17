@@ -11,6 +11,16 @@ __pycache__/
 # Generated data & model artifacts (large, reproducible)
 data/audio/
 checkpoints/
+checkpoints_prior_50term/
+*.tar.gz
+
+# Reports & diagnostics — local only, regenerated from code
+results/
+analysis/
+logs/
+
+# Scratch term collection — fed into future iterations manually
+more_terms.text
 
 # OS
 .DS_Store

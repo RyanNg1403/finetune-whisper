@@ -8,24 +8,23 @@ Concise map of every file and its purpose. Kept under 100 lines. `[planned]` = n
 | `README.md` | Project overview, results, and how to run. |
 | `LICENSE` | MIT license. |
 | `requirements.txt` | Pinned Python deps (torch/MPS, transformers, audiomentations, TTS clients). |
-| `.gitignore` | Ignores `.env`, `.venv/`, `data/audio/`, `checkpoints/`, `kokoro_models/`, and dev-only `docs/` / `research/` / `NEXT_SESSION.md`. |
+| `.gitignore` | Ignores `.env`, `.venv/`, `data/audio/`, `checkpoints/`, `kokoro_models/`, `*.tar.gz`, local-only `results/` `analysis/` `logs/` `checkpoints_prior_50term/` `more_terms.text`, and dev-only `docs/` / `research/`. |
 | `.env` | `OPENAI_API_KEY` (gitignored, never printed). |
 | `FILEMAP.md` | This file. |
 
 ## data/
 | File | Purpose |
 |------|---------|
-| `terms.yaml` | 50 curated AI-dev terms: canonical spelling + category + spoken alts. |
-| `terms_hard.yaml` | 42 research-backed hard terms (Jun-2026 trending pass): Group A OOV + Group B context-anchored homophones (`anchors`/`everyday` fields). Not yet merged into the dataset. |
-| `corpus.jsonl` | 1047 authored sentences `{id,text,terms,split}` (963 train / 84 val). |
+| `terms.yaml` | 92 AI-dev terms (50 core + 42 hard, merged): canonical + category + spoken alts; Group B homophones add `anchors`/`everyday`. |
+| `corpus.jsonl` | 1626 authored sentences `{id,text,terms,split}` (1428 train / 198 val). |
 | `audio/{train,val_clean,val_aug}/` | `[planned]` generated WAVs + per-engine manifests (gitignored). |
 
 ## src/
 | File | Purpose |
 |------|---------|
 | `config.py` | Single source of truth: paths + constants (sample rate, ratios, voices, model ids). |
-| `normalize.py` | Load terms; `english_normalize` (WER), `canonicalize` (alt→canonical), `to_spoken` (TTS pronunciation override). |
-| `metrics.py` | `compute_wer` (jiwer) and `term_recall` (per-term domain-vocab accuracy). |
+| `normalize.py` | Load combined terms; `english_normalize` (WER), `canonicalize` (alt→canonical), `cased_count` (homophones), `to_spoken`. |
+| `metrics.py` | `compute_wer` (jiwer), `term_recall` (boundary-matched, homophone-aware strict/lenient), `false_triggers`. |
 | `qc.py` | Back-transcription QC: reference ASR + fuzzy term-intelligibility check + regenerate-on-fail. |
 | `build_corpus.py` | Validate per-term coverage (≥8) + train/val split. CLI. |
 | `audio_io.py` | Save / load 16 kHz mono WAV (resample + downmix). |
@@ -54,10 +53,22 @@ Concise map of every file and its purpose. Kept under 100 lines. `[planned]` = n
 |------|---------|
 | `term_audit.py` | Per-term Kokoro pronunciation audit across voices (reused for new hard terms). |
 
-## results/ (deliverables)
+## webapp/ (local A/B voice demo)
 | File | Purpose |
 |------|---------|
-| `finetune-report.html` | Visual before/after results report (WER + term-recall, training curve, fixes). |
+| `server.py` | Stdlib HTTP server: loads `base.en` + a chosen checkpoint; `/transcribe` scores both, term-highlighted. |
+| `static/` | `index.html` + `styles.css` + `app.js` — mic capture → 16 kHz WAV → side-by-side compare. |
+
+## scripts/
+| File | Purpose |
+|------|---------|
+| `download_audio.sh` | Fetch + extract the pre-synthesized audio dataset (~1.2 GB) from Google Drive. |
+
+## Local-only (gitignored, not in repo)
+| Path | Purpose |
+|------|---------|
+| `results/*.html` | Generated visual reports (finetune results, residual-miss diagnosis). |
+| `analysis/` | One-off diagnostic scripts (e.g. `diagnose_misses.py`). |
 
 ## kokoro_models/ (gitignored)
 Kokoro ONNX bulk-TTS engine: `kokoro-v1.0.onnx` + `voices-v1.0.bin`. Needs system `espeak-ng`.

@@ -159,3 +159,229 @@ terms:
   - canonical: "PyTorch"
     category: tool
     alts: ["pie torch", "py torch", "pytorch"]
+
+  # ============================================================
+  # HARD TERMS  (merged from terms_hard.yaml on 2026-06-17)
+  # Research-backed genuinely-hard terms (Mar-Jun 2026 trending pass).
+  # Group B homophones add two fields:
+  #   anchors  : words that must co-occur for the tech sense to be valid
+  #   everyday : the ordinary word the model must NOT trigger out of context
+  # Homophones (those with `everyday`) are scored case-sensitively and
+  # kept out of the alt-map. See src/normalize.py:load_terms.
+  # ============================================================
+  # ============================================================
+  # Group A — OOV / spelling-hard (fail regardless of context)
+  # ============================================================
+  - canonical: "Qwen"
+    category: model
+    spoken: "kwen"             # /kwɛn/, rhymes with "when" (Alibaba tech report + common usage); official site says "chwen" but kwen is what's heard
+    alts: ["qn3", "queen", "quinn", "when", "gwen", "q when", "chwen"]
+  - canonical: "DeepSeek"
+    category: model
+    alts: ["deep seek", "deep seq", "deep-seek are one", "deepseq"]
+  - canonical: "Kimi"
+    category: model
+    spoken: "kee-mee"
+    alts: ["kimmy", "kimi k2", "kimike 2", "kim e"]
+  - canonical: "Groq"
+    category: lab               # inference-chip company (LPU)
+    spoken: "grock"
+    alts: ["groc", "grock", "rock", "grok"]
+  - canonical: "Cline"
+    category: product           # coding agent
+    spoken: "kline"
+    alts: ["climb", "client", "klein", "cline ai", "kline"]
+  - canonical: "Aider"
+    category: product           # coding agent — BORDERLINE (fading in mindshare; keep for ASR-hardness)
+    spoken: "ay-der"
+    alts: ["aider", "raider", "aid her", "ada", "aiter"]
+  - canonical: "Zed"
+    category: product           # Rust code editor (1.0, Apr 2026)
+    spoken: "zed"               # the letter Z, said "zed"
+    alts: ["said", "z", "zedd", "zee"]
+  - canonical: "GGUF"
+    category: format
+    spoken: "G G U F"          # spelled out
+    alts: ["g guff", "giga file", "gee gee you eff", "g-guff"]
+  - canonical: "SGLang"
+    category: tool              # inference engine
+    spoken: "S G lang"
+    alts: ["sg lang", "sql ang", "s g lang", "ess gee lang"]
+  - canonical: "ElevenLabs"
+    category: lab               # voice AI
+    alts: ["eleven labs", "11 labs", "eleven lab", "11labs"]
+  - canonical: "Pydantic"
+    category: tool              # Python validation lib
+    spoken: "pie-dantic"
+    alts: ["pedantic", "py dantic", "pie dantic", "pedantik"]
+  - canonical: "llama.cpp"
+    category: tool              # local inference runtime
+    spoken: "llama C P P"
+    alts: ["llama cpp", "lama cpp", "llama c p p", "llama see plus plus", "lama, cpp"]
+  - canonical: "safetensors"
+    category: format
+    spoken: "safe tensors"
+    alts: ["safe tensors", "saffit sensors", "safety sensors", "safe sensors"]
+  - canonical: "DSPy"
+    category: tool              # prompt-compilation framework
+    spoken: "D S Pie"
+    alts: ["despy", "the spy", "d s pie", "dee spy", "d s p y"]
+  - canonical: "Unsloth"
+    category: tool              # finetuning lib
+    spoken: "un-sloth"
+    alts: ["un slot", "and sloth", "unslot", "on sloth"]
+  - canonical: "QLoRA"
+    category: method            # quantized finetuning
+    spoken: "Q-lora"           # "cue-LOR-ah"
+    alts: ["q lora", "koala", "cue laura", "q-lo ra", "kilora"]
+  - canonical: "GLM"
+    category: model             # Z.ai / Zhipu open model (GLM-5.1)
+    spoken: "G L M"
+    alts: ["g l m", "gee el em", "glm"]
+  - canonical: "Cerebras"
+    category: lab               # wafer-scale inference chip (2026 IPO)
+    spoken: "suh-ree-bruhs"     # /səˈriːbrəs/ (suh-REE-bruhs), user-confirmed
+    alts: ["cerebros", "cerebris", "cerberus", "sara bras", "se reb ras"]
+  - canonical: "GRPO"
+    category: method            # group relative policy optimization
+    spoken: "G R P O"
+    alts: ["grippo", "g r p o", "group o", "gripo"]
+  - canonical: "RLVR"
+    category: method            # RL with verifiable rewards
+    spoken: "R L V R"
+    alts: ["r l v r", "rlvr", "are el vee are"]
+  - canonical: "MiniMax"
+    category: model             # open model lab (M3)
+    spoken: "mini max"
+    alts: ["mini max", "many max", "mini-max", "minimax m3"]
+
+  # --- added 2026-06-15 (verified June-trend pass: Codex + user) ---
+  - canonical: "Kiro"
+    category: product           # AWS agentic IDE (replaced Amazon Q Developer, 2026)
+    spoken: "kee-roh"
+    alts: ["kero", "kiro", "kilo", "hero", "key row", "cairo"]
+  - canonical: "LiteLLM"
+    category: tool              # BerriAI LLM gateway / proxy
+    spoken: "light L L M"
+    alts: ["light llm", "lite lm", "light lm", "little lm", "lite l l m"]
+  - canonical: "smolagents"
+    category: tool              # Hugging Face minimalist agents lib (lowercase brand)
+    spoken: "small agents"
+    alts: ["small agents", "smol agents", "smallagents", "smole agents"]
+  - canonical: "Manus"
+    category: product           # autonomous AI agent (Butterfly Effect / Monica.im)
+    spoken: "man-us"
+    alts: ["minus", "manus", "madness", "mannes", "man us"]
+  - canonical: "Claude Mythos 5"
+    category: model             # Anthropic restricted Mythos-class model (Jun 9 2026)
+    spoken: "Claude Mith-oss five"
+    alts: ["claude mythos", "cloud mythos", "claude mithos", "claude methos", "mythos five", "claude mythos 5"]
+
+  # ============================================================
+  # Group B — homophone / context-dependent (MUST be anchored)
+  # Transcribe the tech spelling ONLY when anchors co-occur;
+  # otherwise the everyday word. Corpus needs positive AND
+  # negative sentences for each.
+  # ============================================================
+  - canonical: "RoPE"
+    category: method            # rotary positional encoding
+    spoken: "rope"
+    anchors: ["positional encoding", "context window", "attention", "extrapolation", "long context"]
+    everyday: "rope"
+    alts: ["rope", "row pe", "row p"]
+  - canonical: "Grok"
+    category: model             # xAI's model
+    spoken: "grock"
+    anchors: ["xAI", "model", "chatbot", "Grok 4", "Elon"]
+    everyday: "grok (to understand) / rock"
+    alts: ["grock", "rock", "crock"]
+  - canonical: "Goose"
+    category: product           # Block's coding agent
+    anchors: ["coding agent", "Block", "terminal", "open source", "extension"]
+    everyday: "goose (the bird)"
+    alts: ["goose", "guse"]
+  - canonical: "Mamba"
+    category: method            # state-space architecture
+    anchors: ["architecture", "state space", "sequence", "attention", "SSM"]
+    everyday: "mamba (the snake)"
+    alts: ["mamba", "number", "mambo"]
+  - canonical: "Triton"
+    category: tool              # GPU kernel language
+    spoken: "try-ton"
+    anchors: ["kernel", "GPU", "compiler", "OpenAI", "CUDA"]
+    everyday: "Triton (Neptune's moon)"
+    alts: ["tighten", "try ton", "triton", "frighten"]
+  - canonical: "Flux"
+    category: model             # Black Forest Labs image model
+    anchors: ["image", "diffusion", "generation", "Black Forest", "text-to-image"]
+    everyday: "flux (change/soldering)"
+    alts: ["flux", "flucks", "flex"]
+  - canonical: "Together"
+    category: lab               # Together AI (inference host)
+    anchors: ["Together AI", "inference", "host", "endpoint", "GPU cloud"]
+    everyday: "together (adverb)"
+    alts: ["together", "to gether"]
+  - canonical: "Bolt"
+    category: product           # bolt.new app builder
+    anchors: ["bolt.new", "StackBlitz", "app builder", "prompt", "deploy"]
+    everyday: "bolt (fastener / lightning)"
+    alts: ["bolt", "bold", "boltt"]
+  - canonical: "Modal"
+    category: tool              # serverless GPU platform — KEEP (hot: $4.65B, May 2026; best homophone vs "model")
+    spoken: "modal"            # the company IS the word: /ˈmoʊdəl/ (MOH-duhl); prior "moh-dal" wrongly forced /moʊdæl/
+    anchors: ["serverless", "GPU", "deploy", "container", "Python"]
+    everyday: "modal (dialog / modal verb) / model"
+    alts: ["model", "modal", "module", "noodle", "moh dal"]
+  - canonical: "Lovable"
+    category: product           # vibe-coding app builder (category leader, $6.6B)
+    anchors: ["app builder", "prompt", "full-stack", "deploy", "no-code"]
+    everyday: "lovable (adjective)"
+    alts: ["lovable", "loveable", "love a bull"]
+
+  # --- added 2026-06-15 (verified June-trend pass: Codex + user) ---
+  - canonical: "Antigravity"
+    category: product           # Google agentic dev platform (Antigravity 2.0, I/O 2026)
+    spoken: "anti gravity"
+    anchors: ["Google", "Gemini", "agentic coding", "IDE", "CLI", "SDK"]
+    everyday: "antigravity (the physics concept)"
+    alts: ["anti gravity", "anti-gravity", "antigravity", "entity gravity"]
+  - canonical: "OpenCode"
+    category: product           # terminal coding agent (opencode.ai) — proper-name caps (user call)
+    spoken: "open code"
+    anchors: ["terminal", "coding agent", "TUI", "CLI", "models"]
+    everyday: "open code / open-source code"
+    alts: ["open code", "opencode", "open-code", "open coat"]
+  - canonical: "Stagehand"
+    category: tool              # Browserbase AI browser-automation SDK
+    spoken: "stage hand"
+    anchors: ["Browserbase", "browser automation", "Playwright", "act", "extract", "observe"]
+    everyday: "stagehand (theater crew)"
+    alts: ["stage hand", "stagehand", "stage-hand", "staged hand"]
+  - canonical: "Comet"
+    category: product           # Perplexity AI browser (Chromium)
+    spoken: "comet"
+    anchors: ["Perplexity", "browser", "assistant", "Chromium", "tabs"]
+    everyday: "comet (astronomy) / comment"
+    alts: ["comet", "comment", "commet", "comit"]
+  - canonical: "Kilo Code"
+    category: product           # agentic coding tool (Roo fork; GA Apr 2026; confusable w/ Kiro)
+    spoken: "kilo code"
+    anchors: ["VS Code", "agentic coding", "MCP", "Roo", "extension", "CLI"]
+    everyday: "kilo code (literal)"
+    alts: ["kilo code", "key low code", "kilocode", "kilo-code", "kilo coat"]
+  - canonical: "Claude Fable 5"
+    category: model             # Anthropic's most capable public model (Jun 9 2026)
+    spoken: "Claude Fable five"
+    anchors: ["Anthropic", "Claude", "model", "Mythos", "release"]
+    everyday: "fable (a moral story)"
+    alts: ["claude fable", "cloud fable", "claude fabel", "claude foible", "fable five", "claude fable 5"]
+
+# ------------------------------------------------------------
+# DROPPED after the trending pass (faded as of June 2026):
+#   Falcon (TII), Granite (IBM), Yi (01.AI), Phi (no v5),
+#   Codestral, OpenHands, Sora (web/app sunset Apr 2026).
+# Already covered in terms.yaml (not duplicated here):
+#   Cursor, vLLM, MCP, Ollama, Mistral, LangChain, LlamaIndex.
+#   (vLLM: consider adding "vlm" to its alts in terms.yaml — the
+#    mis-hear collides with a real term, vision-language model.)
+# ------------------------------------------------------------

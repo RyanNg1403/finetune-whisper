@@ -7,9 +7,7 @@ AUDIO = DATA / "audio"
 TRAIN_DIR = AUDIO / "train"
 VAL_CLEAN_DIR = AUDIO / "val_clean"
 VAL_AUG_DIR = AUDIO / "val_aug"
-TERMS_PATH = DATA / "terms.yaml"
-HARD_TERMS_PATH = DATA / "terms_hard.yaml"
-TERMS_PATHS = [TERMS_PATH, HARD_TERMS_PATH]   # combined termset (official + hard)
+TERMS_PATH = DATA / "terms.yaml"   # single combined termset: official + hard terms (92 total)
 CORPUS_PATH = DATA / "corpus.jsonl"
 CHECKPOINTS = ROOT / "checkpoints"
 
