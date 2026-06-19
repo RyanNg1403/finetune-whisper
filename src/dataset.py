@@ -3,6 +3,7 @@ import json
 import glob
 from dataclasses import dataclass
 from torch.utils.data import Dataset
+from transformers import WhisperProcessor
 from src import config
 from src.audio_io import load_wav_16k_mono
 from src.augment import build_train_augmenter, apply
@@ -12,7 +13,7 @@ class WhisperASRDataset(Dataset):
     """Loads (audio, text) from per-split manifests. Optionally augments the waveform on the
     fly (train only) before feature extraction."""
 
-    def __init__(self, dirs, processor, augment=False):
+    def __init__(self, dirs, processor: WhisperProcessor, augment=False):
         self.processor = processor
         self.augment = augment
         self.aug = build_train_augmenter() if augment else None
@@ -40,7 +41,7 @@ class WhisperASRDataset(Dataset):
 
 @dataclass
 class DataCollatorSpeechSeq2SeqWithPadding:
-    processor: object
+    processor: WhisperProcessor
 
     def __call__(self, features):
         input_feats = [{"input_features": f["input_features"]} for f in features]
