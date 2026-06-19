@@ -58,7 +58,7 @@ def load_terms(path=None) -> TermSet:
     return ts
 
 
-def canonicalize(text: str, termset: TermSet = None) -> str:
+def canonicalize(text: str, termset: TermSet | None = None) -> str:
     """Normalize text, then rewrite any known alt phrase to its canonical (normalized) form.
     Longer alts are matched first so multi-word terms win over single words."""
     termset = termset or load_terms()
@@ -71,7 +71,7 @@ def canonicalize(text: str, termset: TermSet = None) -> str:
     return out
 
 
-def to_spoken(text: str, termset: TermSet = None) -> str:
+def to_spoken(text: str, termset: TermSet | None = None) -> str:
     """Build the TTS input text from a (canonical) transcript: replace each term whose
     `spoken` form differs from its canonical with that spoken form, so the TTS pronounces
     word-acronyms (RAG -> 'rag') as words. The transcript itself is left untouched."""

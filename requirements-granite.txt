@@ -1,0 +1,6 @@
+# Optional — only for the Granite Speech 4.1 panel in the web app demo.
+# Apple Silicon only (MLX). Install with:  pip install -r requirements-granite.txt
+#
+# The Granite model itself (~5 GB, Apache-2.0, no login) auto-downloads from Hugging Face
+# on the first Granite transcription and is cached afterward.
+mlx-audio>=0.4.4

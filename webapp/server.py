@@ -1,10 +1,11 @@
 # webapp/server.py
-# Local A/B transcription harness: record mic audio in the browser, transcribe it with
-# stock whisper-base.en AND a chosen finetune checkpoint, and compare term spelling.
+# Local transcription harness: record mic audio in the browser, transcribe it three ways and
+# compare term spelling — stock whisper-base.en, a chosen finetune checkpoint, and (zero-shot)
+# Granite Speech 4.1-2b served via mlx-audio with keyword biasing on our term list.
 #
 # Stdlib-only HTTP server (no FastAPI) so it runs against the project venv as-is.
 # Reuses the project's own term-matching logic (src.normalize) so the "hit" scoring
-# matches our eval metric exactly.
+# matches our eval metric exactly. Whisper runs on torch/MPS; Granite on mlx-audio (Metal).
 #
 # Run:  PYTHONPATH=. .venv/bin/python -m webapp.server   (then open http://127.0.0.1:8765)
 import io
@@ -30,6 +31,7 @@ HERE = Path(__file__).parent
 STATIC = HERE / "static"
 HOST, PORT = "127.0.0.1", int(os.environ.get("WHISPER_PORT", "8765"))
 DEVICE = os.environ.get("WHISPER_DEVICE") or ("mps" if torch.backends.mps.is_available() else "cpu")
+GRANITE_ID = "ibm-granite/granite-speech-4.1-2b"   # 3rd option: speech-LLM, keyword-biased, no finetune
 
 # ---- model registry -------------------------------------------------------
 # One processor (tokenizer + feature extractor) is shared: finetuning changed only
@@ -38,6 +40,7 @@ _lock = threading.Lock()              # serialize inference (single MPS context)
 _proc = None
 _models = {}                          # key -> WhisperForConditionalGeneration (cached)
 _terms = None
+_granite = None                       # lazily-loaded (proc, model, biased_prompt) — heavy (~4GB bf16)
 
 
 def _load(key, src):
@@ -55,12 +58,13 @@ def boot():
     print(f"[ready] device={DEVICE}  terms={len(_terms.canonicals)}")
 
 
-# Friendly alias for the recommended checkpoint. `final/` is hidden from the UI because it
-# is a byte-identical copy of the epoch-2 model and only caused confusion. All four epoch
-# checkpoints land ~98.2-98.8% strict recall, so there's no meaningful pick beyond epoch 2
-# (lowest WER, the shipped model); the rest are listed raw for comparison.
+# Friendly alias for the DEFAULT checkpoint (sorts first → preselected on load / hard-reload).
+# `final/` is hidden (byte-identical copy of the epoch-2 model). All four epochs land ~98.2-98.8%
+# strict recall — within noise — so the pick is marginal; epoch 4 has the highest strict (term)
+# recall (98.79%) and is the default here. (Epoch 2 has the lowest WER and is the "shipped" model
+# on main.) The rest are listed raw for comparison.
 NAMED = {
-    1072: ("finetuned", "epoch 2 · shipped model", 0),
+    2144: ("finetuned", "epoch 4 · best strict recall (default)", 0),
 }
 
 
@@ -96,6 +100,36 @@ def transcribe(model, wav):
     return _proc.batch_decode(ids, skip_special_tokens=True)[0].strip()
 
 
+def _load_granite():
+    """Lazy-load Granite Speech 4.1 (2B) on first use via mlx-audio — native Apple-Silicon
+    MLX, ~3-9x faster than transformers-on-MPS at identical accuracy (verified 8/10 on our
+    hard terms, ~1.7s/clip)."""
+    global _granite
+    if _granite is None:
+        from mlx_audio.stt.utils import load as mlx_load
+        print(f"[load] granite (mlx-audio) <- {GRANITE_ID} (first use)…")
+        _granite = mlx_load(GRANITE_ID)
+        print("[load] granite ready")
+    return _granite
+
+
+def _granite_prompt(extra_keywords=()):
+    """Keyword-biasing prompt: our dataset terms + any user-added keywords from the UI
+    (the model's intended, training-free way to handle jargon). Built per request so the
+    user's live keyword edits take effect immediately."""
+    kws = list(_terms.canonicals) + [k for k in extra_keywords if k]
+    return ("transcribe the speech with proper punctuation and capitalization. "
+            f"Keywords: {', '.join(kws)}.")
+
+
+def transcribe_granite(wav, extra_keywords=()):
+    model = _load_granite()
+    out = model.generate(audio=np.asarray(wav, dtype=np.float32),
+                         prompt=_granite_prompt(extra_keywords),
+                         temperature=0.0, max_tokens=200)
+    return (out.text if hasattr(out, "text") else str(out)).strip()
+
+
 def _heard(text, t):
     """Lenient: did the model *hear* the term (alt-map forgives phonetic misspellings)?
     Homophones bypass the alt-map and require the exact cased form."""
@@ -115,19 +149,17 @@ def _correct(text, t):
     return re.search(rf"(?<![a-z0-9]){re.escape(tn)}(?![a-z0-9])", english_normalize(text)) is not None
 
 
-def score(base_text, ft_text):
-    """Candidate term set = anything either model heard or spelled. Per model, a hit is
-    an exactly-correct spelling. This surfaces 'baseline heard it but misspelled' cases."""
-    cand = []
-    for t in _terms.canonicals:
-        if _heard(base_text, t) or _heard(ft_text, t) or _correct(base_text, t) or _correct(ft_text, t):
-            cand.append(t)
+def score(*texts):
+    """Candidate term set = anything ANY model heard or spelled. Per model, a hit is an
+    exactly-correct spelling. Returns (candidates, [detail per text, in the given order])."""
+    cand = [t for t in _terms.canonicals
+            if any(_heard(x, t) or _correct(x, t) for x in texts)]
     def detail(text):
         # cs = case-sensitive highlighting (homophones only), so the UI underlines the
         # exact surface form the strict metric credited.
         terms = [{"term": t, "correct": _correct(text, t), "cs": t in _terms.homophones} for t in cand]
         return {"terms": terms, "hits": sum(x["correct"] for x in terms), "total": len(cand)}
-    return cand, detail(base_text), detail(ft_text)
+    return cand, [detail(x) for x in texts]
 
 
 # ---- HTTP -----------------------------------------------------------------
@@ -160,7 +192,8 @@ class Handler(BaseHTTPRequestHandler):
         if route == "/":
             return self._file(STATIC / "index.html")
         if route == "/api/checkpoints":
-            return self._json({"checkpoints": list_checkpoints(), "device": DEVICE})
+            return self._json({"checkpoints": list_checkpoints(), "device": DEVICE,
+                               "keywords": _terms.canonicals})   # read-only: Granite biasing terms
         if route.startswith("/static/"):
             return self._file(STATIC / route[len("/static/"):])
         self.send_error(404)
@@ -169,7 +202,9 @@ class Handler(BaseHTTPRequestHandler):
         parsed = urlparse(self.path)
         if parsed.path != "/api/transcribe":
             return self.send_error(404)
-        ckpt = parse_qs(parsed.query).get("ckpt", [""])[0]
+        q = parse_qs(parsed.query)
+        ckpt = q.get("ckpt", [""])[0]
+        extra_kw = [k.strip() for k in q.get("kw", [""])[0].split(",") if k.strip()]   # user keywords
         if not ckpt:
             return self._json({"error": "no checkpoint selected"}, 400)
         n = int(self.headers.get("Content-Length", 0))
@@ -190,12 +225,19 @@ class Handler(BaseHTTPRequestHandler):
                 ft_text = transcribe(ft_m, wav); t2 = time.time()
             except Exception as e:
                 return self._json({"error": f"inference failed: {e}"}, 500)
-        cand, base_d, ft_d = score(base_text, ft_text)
+            # Granite is heavy + slower; a failure here is non-fatal — still return the A/B.
+            g_text, g_ms, g_err = "", 0, None
+            try:
+                g0 = time.time(); g_text = transcribe_granite(wav, extra_kw); g_ms = round((time.time() - g0) * 1000)
+            except Exception as e:
+                g_err = str(e)
+        cand, (base_d, ft_d, g_d) = score(base_text, ft_text, g_text)
         self._json({
             "candidates": cand,
             "baseline": {"text": base_text, "latency_ms": round((t1 - t0) * 1000), **base_d},
             "finetuned": {"text": ft_text, "latency_ms": round((t2 - t1) * 1000), **ft_d,
                           "checkpoint": Path(ckpt).name},
+            "granite": {"text": g_text, "latency_ms": g_ms, "error": g_err, **g_d},
         })
 
 
